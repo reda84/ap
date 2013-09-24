@@ -1,0 +1,40 @@
+	<div id="page_title">
+		Forum Reports
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+
+			<table cellpadding="0" cellspacing="1" width="100%">
+	 			<tr class="title" valign="top">
+	  				<td width="40" class="title">ID</td>
+	  				<td width="290" class="title">Report</td>
+	  				<td width="40" class="title">Topic</td>
+	  				<td width="40" class="title">Reply</td>
+	  				<td width="100" class="title">Reply Content</td>
+	  				<td width="70" class="title">Date</td>
+	  				<td width="110" class="title">Delete Comment</td>
+	  				<td width="90" class="title">Delete Report</td>
+	 			</tr>
+<!-- BEGIN report -->
+	 			<tr valign="top">
+	  				<td align="center">{report.RP_ID}</td>
+	  				<td>{report.RP_MESSAGE}</td>
+	  				<td align="center">{report.RP_TOPIC}</td>
+	  				<td align="center">{report.RP_REPLY}</td>
+	  				<td align="center"><a href="{report.RP_REPLY_CONTENT}" class="blue3">view comment</a></td>
+	  				<td align="center">{report.RP_DATE}</td>
+	  				<td align="center"><a href="forum.php?mod=delete2&id={report.RP_REPLY}&rid={report.RP_ID}" alt="delete comment" title="delete comment" onclick= "return (window.confirm('Are you sure to delete this forum comment?'))"><div id="small_delete"></div></a></td>
+	  				<td align="center"><a href="forum.php?mod=delete3&id={report.RP_ID}" alt="delete report" title="delete report" onclick= "return (window.confirm('Are you sure to delete this report?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="8">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END report -->
+			</table>
+
+			<p>{NPAGELIST}</p>
+		</div>
+	</div>
+</div>

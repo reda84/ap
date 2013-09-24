@@ -1,0 +1,34 @@
+	<div id="page_title">
+		Forum List
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<table cellpadding="0" cellspacing="1" width="100%">
+	 			<tr class="title" valign="top">
+	  				<td width="50" class="title">ID</td>
+	  				<td width="440" class="title">Forum Topic</td>
+	  				<td width="90" class="title">Author</td>
+	  				<td width="80" class="title">Date</td>
+	  				<td width="70" class="title">View Topic</td>
+	  				<td width="50" class="title">Delete</td>
+	 			</tr>
+<!-- BEGIN topic -->
+	 			<tr valign="top">
+	  				<td align="center">{topic.T_ID}</td>
+	  				<td>{topic.T_TOPIC2}</td>
+	  				<td align="center">{topic.T_AUTHOR}</td>
+	  				<td align="center">{topic.T_DATE}</td>
+	  				<td align="center"><a href="../id-{topic.T_ID}-topic-{topic.T_TOPIC}-page-0" target="_blank" alt="view topic" title="view topic"><div id="small_view"></div></a></td>
+	  				<td align="center"><a href="forum.php?mod=delete&id={topic.T_ID}" alt="delete topic" title="delete topic" onclick= "return (window.confirm('Are you sure to delete this topic?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END topic -->
+			</table>
+			<p>{NPAGELIST}</p>
+		</div>
+	</div>
+</div>

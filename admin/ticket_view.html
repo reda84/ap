@@ -1,0 +1,59 @@
+	<div id="page_title">
+		Tickets
+	</div>
+	<a href="tickets.php?mod=all">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">  
+			<h2>Ticket View</h2>
+			<form action="tickets.php?mod=send" method="post">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr valign="top">
+  					<td align="center">   
+						<hr class="bottom">	
+	      					<table cellpadding="6" cellspacing="6" border="0" width="100%" align="center">
+	  						<tr valign="top" class="white">
+								<td><b>User:</b></td>
+								<td>	
+									<input type="text" name="user" size="95" value="{USER}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Email:</b></td>
+								<td>	
+									<input type="text" name="email" size="95" value="{EMAIL}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Issue:</b></td>
+								<td>	
+									<input type="text" name="issue" size="95" value="{ISSUE}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Question:</b></td>
+								<td>	
+									<textarea name="question" cols="92" rows="8">{QUESTION}</textarea>
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Answer:</b></td>
+								<td>	
+									<textarea name="answer" cols="92" rows="8">{ANSWER}</textarea>
+								</td>
+	  						</tr>
+	 					</table>
+						<hr class="bottom">
+						<input name="save_item" type="submit" class="submit_btn" value="Send">
+					</td>
+  				</tr>
+			</table>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

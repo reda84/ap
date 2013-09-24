@@ -1,0 +1,59 @@
+	<div id="page_title">
+		Users
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field"> 
+			<h2>Edit "{USER}" Badges</h2>
+			<br><center><b style='color:red;'>IMPORTANT NOTE : You can check only 16 badges !</b></center><br>
+			<form action="" method="post">
+    			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	 			<tr>
+					<td align="center" width="100">
+						<b>Badge Select</b>	
+					</td>
+					<td align="center" width="100">
+						<b>Badge Image</b>	
+					</td>
+					<td width="580">
+						<b>Badge Title</b>		
+					</td>
+      				</tr>  
+	 			<tr>
+					<td colspan="4">
+						<hr class="bottom">
+					</td>
+      				</tr>	
+<!-- BEGIN badges -->   		  	   
+	 			<tr>
+					<td align="center">
+						<p><input type="checkbox" name="b[{badges.NUM}]" value="true" {badges.SELECT}></p>
+					</td>
+					<td align="center">
+						<p><img src="{badges.DIR}/{badges.MEM_BADGES1}"></p>
+
+					</td>
+					<td>	
+						<p>{badges.MEM_BADGES2}</p>
+					</td>
+      				</tr>	
+<!-- END badges -->	
+	 			<tr>
+					<td colspan="4">
+						<hr class="bottom">
+					</td>
+      				</tr>	  	   
+			</table>
+    			<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 			<tr>
+	  				<td align="center">
+	   					<input type="hidden" name="user" value="{USER}">
+	   					<input type="submit" class="submit_btn" name="save" value="Save">
+	  				</td>
+	 			</tr>
+			</table>
+ 
+			</form>
+			</div>	
+		</div>
+	</div>

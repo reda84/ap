@@ -1,0 +1,107 @@
+	<div id="page_title">
+		Users
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>User Badges</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   
+	 			<tr>
+					<td>
+						<p>
+		  					<form action="users.php?mod=badges" method="post">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td width="270">
+										&nbsp;
+									</td>
+									<td width="250">
+										Quick Member Search by Username :
+									</td>
+									<td width="250" align="left">
+										<input type="text" class="fields_small" name="username"> 
+									</td>
+									<td width="100" align="left">
+										<input type="submit" class="submit_btn" name="search" value="Search">
+									</td>
+								</tr>
+							</table>
+							</form>
+						</p>
+					</td>
+      				</tr>		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="140" class="title" align="center">Username</td>
+								<td width="200" class="title" align="center">Accomplishments</td>
+								<td width="130" class="title" align="center">Staff</td>
+								<td width="80" class="title" align="center">Community</td>
+								<td width="50" class="title" align="center">Buyers</td>
+								<td width="60" class="title" align="center">Authors</td>
+								<td width="70" class="title" align="center">Referrals</td>
+								<td width="50" class="title" align="center">Edit</td>
+							</tr>
+
+<!-- BEGIN user -->
+							<tr bgcolor="#ffffff">
+								<td>&nbsp;&nbsp;{user.MEM_NAME}</td>
+								<td align="center">
+									<div style="margin:10px 0 0 2px;">
+										<img src="{user.MEM_BADGE1}">
+										<img src="{user.MEM_BADGE2}">
+										<img src="{user.MEM_BADGE3}">
+										<img src="{user.MEM_BADGE4}">
+										<img src="{user.MEM_BADGE5}">
+										<img src="{user.MEM_BADGE6}">
+										<img src="{user.MEM_BADGE7}">
+									</div>
+								</td>
+								<td align="center">
+									<div style="margin:10px 0 0 2px;">
+										<img src="{user.MEM_BADGE8}">
+										<img src="{user.MEM_BADGE9}">
+										<img src="{user.MEM_BADGE10}">
+										<img src="{user.MEM_BADGE11}">
+									</div>
+								</td>
+								<td align="center">
+									<div style="margin:10px 0 0 2px;">
+										<img src="{user.MEM_BADGE12}">
+										<img src="{user.MEM_BADGE13}">
+									</div>
+								</td>
+								<td align="center">
+									<div style="margin:10px 0 0 2px;">
+										<img src="{user.MEM_BADGE14}">
+									</div>
+								</td>
+								<td align="center">
+									<div style="margin:10px 0 0 2px;">
+										<img src="{user.MEM_BADGE15}">
+									</div>
+								</td>
+								<td align="center">
+									<div style="margin:10px 0 0 2px;">
+										<img src="{user.MEM_BADGE16}">
+									</div>
+								</td>
+								<td align="center"><a href="users.php?mod=badges&sid={user.MEM_ID}&name={user.MEM_NAME}" alt="edit badge" title="edit badge"><div id="small_edit"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END user -->
+						</table>
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>	
+		</div>
+	</div>

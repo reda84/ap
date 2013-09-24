@@ -1,0 +1,106 @@
+.clear { clear: both;}
+#weekly-feature{
+  margin-top: 8px;
+}
+
+.block-welcome { display: inline-block; font-size: 15px; span{ text-decoration: underline; };  }
+.balance{#font > .shorthand(24px, 600,32px); .comfortaa; padding:0 5px; }
+.btn-deposit {.gradientBar(#f1f1f1,#f9f9f9,#000000); &:hover{.gradientBar(#eaeaea,#f4f2f2,#000000)};}
+.call-login { background: #e0e0e0; }
+.details-login,.current-featured { #font > .shorthand(14px, 600,20px);}
+
+.app-ads {
+  .gradientBar(#cf2727,#e64646,#ffffff);
+  border-top: 1px #ce2626 solid; margin: 27px 0;
+  #ads-wrapper{
+    border-top: #f67b7b 1px solid;
+    padding: 0 20px;
+    .ads-left{
+      #font > .shorthand(26px, 600,22px);  .comfortaa; padding: 25px 0; margin:0; width:53%;
+    }
+	.ads-img{margin:0;}
+    .ads-right{
+	margin:0; width:40%;
+      .ads-team { #font > .shorthand(15px, 600,33px); padding: 12px 0; }
+      .awesome-app { #font > .shorthand(21px, 600,33px); .comfortaa; padding-left: 8px; }
+    }
+  }
+}
+
+////////////////
+.after-log-access {
+  float: right;
+  .signOut { float: left; padding-left: 5px; }
+  .panda-username {
+    float: left;
+    background: url("../images/after-login/username.png");
+    cursor: pointer;
+    background-repeat: no-repeat;
+    .size(40px, 100px);
+    #font > .shorthand(16px, 600,26px); padding: 2px 10px;
+
+     ul { display: none;  width: 177px; background: #ffffff; }
+     &:hover > ul { display: block;  border: 1px solid #e0e0e0;  margin-top: 10px; margin-left: -10px; #font > .shorthand(13px, 600,26px); z-index: 9999; position: absolute; }
+     &:hover > ul > li { padding-left: 45px; border-bottom: 1px solid #e0e0e0; list-style-type: none; line-height: 33px;
+       .size(33px,132px);
+       background: url(../images/after-login/user.png) no-repeat;
+       &.uSettings{background-position:0 -33px;}
+       &.uDownloads{background-position:0 -65px;}
+       &.uBookmarks{background-position:0 -100px;}
+       &.uDeposit{background-position:0 -135px;}
+       &.uDesigner{background-position:0 -167px;}
+       &.uUpload{background-position:0 -200px;}
+       &.uWarehouse{background-position:0 -235px;}
+       &.uEarnings{background-position:0 -270px;}
+       &.uStatement{background-position:0 -304px;}
+       &.uWithdrawal{background-position:0 -337px;}
+     }
+     &:hover > ul > li:hover {
+       .size(33px,132px);
+       background: #f0f0f0 url(../images/after-login/user-hover.png) no-repeat;
+       &.uSettings{background-position:0 -33px;}
+       &.uDownloads{background-position:0 -65px;}
+       &.uBookmarks{background-position:0 -100px;}
+       &.uDeposit{background-position:0 -135px;}
+       &.uDesigner{background-position:0 -167px;}
+       &.uUpload{background-position:0 -200px;}
+       &.uWarehouse{background-position:0 -235px;}
+       &.uEarnings{background-position:0 -270px;}
+       &.uStatement{background-position:0 -304px;}
+       &.uWithdrawal{background-position:0 -337px;}
+     }
+     &:hover > ul > li:hover > a { color: #e4434b; text-decoration: none; }
+     &:hover > ul > li a { color: #383838;
+
+     }
+  }
+}
+
+///////////////////////
+ul#navigation{
+  position: fixed; margin: 0px; padding: 0px; top: 200px; right: -56px; list-style: none; z-index:9999;
+  #font > .shorthand(18px, 400,30px);
+  text-shadow: 1px 1px 0 rgba(44,44,44,1);
+  li.newsletter{
+    background:  url("../images/after-login/nav.png") no-repeat;
+    .rotate (-90deg); text-align: center;
+    .border-top-right-radius(8px);
+    .border-top-left-radius(8px);
+    .box-shadow( -2px -1px 2px rgba(210,210,210,1));
+    padding: 9px;
+    a { color: @white;  }
+    a:hover { text-decoration: none;  }
+    }
+
+  li.kit{
+    background:  url("../images/after-login/nav-kit.png") no-repeat;
+    .rotate (-90deg);
+    .border-top-right-radius(8px);
+    .border-top-left-radius(8px);
+    margin-top: 120px; text-align: center;
+    .box-shadow( -2px -1px 2px rgba(210,210,210,1));
+    padding: 9px;
+    a { color: @white;  }
+    a:hover {  text-decoration: none;  }
+  }
+}

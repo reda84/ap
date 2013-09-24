@@ -1,0 +1,641 @@
+<SCRIPT LANGUAGE = "Javascript">
+<!--
+   function checkEmail(the_email)
+   {
+      var the_at = the_email.indexOf("@");
+      var the_dot = the_email.lastIndexOf(".");
+      var a_space = the_email.indexOf(" ");
+      var invalidChars = "!#$%^&*()/:;,+";
+      var is_valid = false;
+
+      var the_char = "";
+
+      if ((the_at != -1) &&
+              (the_at != 0) &&
+         (the_dot != -1) &&
+         (the_dot > the_at + 1) &&
+         (the_dot < the_email.length -1) &&
+         (a_space == -1))
+                {
+              is_valid = true;
+      }
+      else
+      {
+              is_valid = false;
+      }
+
+      for( var i = 0; i < invalidChars.length; i++)
+      {
+              the_char = invalidChars.charAt(i);
+         if (the_email.indexOf(the_char) != -1)
+         {
+                 is_valid = false;
+         }
+      }
+                return is_valid;
+   }
+
+-->
+</SCRIPT>
+
+
+<SCRIPT language="JavaScript"><!-- //script hider
+function form_validator(theForm)
+{
+
+//Check email
+        if  (!checkEmail(theForm.email.value)){
+                 alert("Missing Email Address");
+                 theForm.email.focus();
+                 return(false);
+        }
+
+        return (true);
+}
+// end script hiding --></SCRIPT>
+
+<script language="JavaScript"><!--
+ts = <?= $ts ?>;
+--></script>
+
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div class="txt_white" align="center">{ERROR}</div>
+					<div id="content_wrapper" class="down">
+						<div id="form_1">
+              					<form action="signup" method="post"> 
+              						<table border="0" cellpadding="4" cellspacing="0">		
+					  				<tr>
+					   					<td colspan="2" align="center">
+					    						<span class="txt_red"> {ERROR}</span>
+										</td>
+					  				</tr>
+					  				<tr>
+					   					<td width="26%">
+					    						&nbsp;
+										</td>
+					   					<td width="74%">
+					    						<br><br><br><div id="reg_pen"></div>
+										</td>
+					  				</tr>
+					  				<tr>
+					   					<td>
+					    						<div id="reg_t1"></div>
+										</td>
+					   					<td>
+					    						<h2 class="b28">Your Details</h2>
+										</td>
+					  				</tr>
+                      						<tr> 
+                        							<td>
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">First Name  </h3> 
+										</td>
+                        							<td align="left">
+											<input name="firstname" type="text" class="register" value="{FIRSTNAME}" />
+											<br><span style="color: blue;"> {FIRSTNAME_ALERT}</span>
+										</td>
+                      						</tr>	
+                      						<tr> 
+                        							<td>
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Last Name  </h3> 
+										</td>
+                        							<td align="left">
+											<input name="lastname" type="text" class="register" value="{LASTNAME}" />
+											<br><span style="color: blue;"> {LASTNAME_ALERT}</span>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td>
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Your Email  </h3>
+										</td>
+                        							<td align="left">
+											<input name="email" type="text" class="register" value="{EMAIL}" />
+											<br><span style="color: blue;"> {EMAIL_ALERT}</span>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td>
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Re-Type  </h3>
+										</td>
+                        							<td align="left">
+											<input name="remail" type="text" class="register" value="{REMAIL}" />
+											<br><span style="color: blue;"> {REMAIL_ALERT}</span>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td colspan="2">
+											<hr class="gray">
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td>
+											<div id="reg_t2">
+										</td>
+                        							<td>
+											<h2 class="b28">Desired Username</h2> 
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td>
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Username  </h3> 
+										</td>
+                        							<td style="" align="left">
+											<input name="username" type="text" class="register" value="{USERNAME}" />
+											<br><span style="color: blue;"> {USERNAME_ALERT}</span>
+										</td>
+                      						</tr>					  
+                      						<tr> 
+                        							<td>
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Password  </h3>
+										</td>
+                        							<td align="left">
+											<input name="pass" type="password" class="register" value="{PASSWORD}" />
+											<br><span style="color: blue;"> {PASSWORD_ALERT}</span>
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td>
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Re-Type  </h3>
+										</td>
+                        							<td align="left">
+											<input name="repass" type="password" class="register" value="{REPASSWORD}" />
+											<br><span style="color: blue;"> {REREPASSWORD_ALERT}</span>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td colspan="2">
+											<hr class="gray">
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td>
+											<div id="reg_t3"></div> 
+										</td>
+                        							<td>
+											<h2 class="b28">Terms and Conditions</h2> 
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td colspan="2">
+											<div id="reg_terms">
+<table style="width:480px;" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top">
+<div id="legals2"><img src="{IMAGES_PATH}/legals_2.png" alt="" /></div>
+<p class="gr16"><span style="font-size: medium;">The following Membership terms and conditions (Membership Terms) govern access to, and use (as a Member) of the following StartMarketplace web sites</span></p>
+<p class="gr16"><span style="font-size: medium;"><br /></span></p>
+<p><span style="font-size: small;">The Sites and the content uploaded to the Sites are available to be viewed by any person browsing the internet but only a person, who has agreed to the Membership Terms, is able to sell and buy Products.</span></p>
+<p><span style="font-size: small;">Once you click &ldquo;I agree&rdquo; you will be deemed to have agreed to the Membership Terms and a legally binding contract, incorporating those Membership Terms, will then exist between you and Site in relation to your use of the Sites.&rdquo;</span></p>
+<p><span style="font-size: small;">If you do not want to agree to these Membership Terms, you should navigate away from this page.</span></p>
+<p><span style="font-size: small;">Members who buy Products will only acquire a license to use that product. This is dealt with in more detail in clause 14.</span></p>
+<p><span style="font-size: small;">If you agree to be bound by the Membership Terms on behalf of a third party (which may include your employer or other entity) named in the application details you provide before clicking &ldquo;I agree&rdquo;, you represent and warrant that you have full legal authority to bind that third party to the Membership Terms. If you do not have the authority to do so, then you must not agree to be bound by the Membership Terms or use the Sites on behalf of such third party.</span></p>
+<br />
+<h2>Membership Terms and Conditions</h2>
+<hr class="gray2" />
+<h2 class="b18">1. Definitions</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">In these Membership Terms:</span></p>
+<p><span style="font-size: small;">1. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Buyer</strong> means a Member who buys Products made available for sale on the Sites.</span></p>
+<p><span style="font-size: small;">2. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Exclusive Seller</strong> means a Member who makes Products available for sale exclusively on the Sites.</span></p>
+<p><span style="font-size: small;">3. &nbsp;&nbsp;&nbsp;&nbsp;<strong>General Seller</strong> means a Member who makes Products available for sale non-exclusively on the Sites.</span></p>
+<p><span style="font-size: small;">4. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Member</strong> means a person who is registered as a Member by completing and submitting the Membership application, accepts these Membership Terms and that application is accepted by Site.</span></p>
+<p><span style="font-size: small;">5. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Member Account</strong> has the meaning given to that term in clause 12.</span></p>
+<p><span style="font-size: small;">6. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Member Ledger</strong> has the meaning given to that term in clause 12.</span></p>
+<p><span style="font-size: small;">7. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Payment Agent</strong> means any payment agent approved by the administrator from time to time including, but not limited to, PayPal and Moneybookers.</span></p>
+<p><span style="font-size: small;">8. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Products</strong> mean products available for sale on the Sites including, but not limited to, web templates, Content Management&nbsp; System themes, stock music, audio effects and other forms of stock content in the form of creative digital computer files.</span></p>
+<p><span style="font-size: small;">9. &nbsp;&nbsp;&nbsp;&nbsp;<strong>Seller</strong> means a General Seller and an Exclusive Seller.</span></p>
+<p><span style="font-size: small;">10. &nbsp;&nbsp;&nbsp;&nbsp;In these Membership Terms, a reference to <strong>&ldquo;we&rdquo;</strong> or <strong>&ldquo;us&rdquo;</strong> means Site and a reference to <strong>&ldquo;you&rdquo;</strong> or <strong>&ldquo;your&rdquo;</strong> means a Member.</span></p>
+</div>
+<br />
+<h2 class="b18">2. Membership</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You may only become a Member if you are 18 years or over.</span></p>
+<p><span style="font-size: small;">You do not have an automatic entitlement to Membership and this Site may, at its sole discretion, elect to:</span></p>
+<p><span style="font-size: small;">a. refuse your application to become a Member; or</span></p>
+<p><span style="font-size: small;">b. once Membership is granted, suspend, terminate or restrict your Membership at any time.</span></p>
+<p><span style="font-size: small;">StartMarketplace is not obliged to give reasons for its decision to reject your application or suspend, terminate or restrict your Membership at any time.</span></p>
+<p><span style="font-size: small;">Once Membership is granted you will only be able to access all areas of the Sites with use of the username and password you set up at the time you become a Member.</span></p>
+<p><span style="font-size: small;">You are responsible for each and every access or use of the Sites that occurs in conjunction with use of your username and password.</span></p>
+<p><span style="font-size: small;">Use of your username and password is conclusive evidence that you have accessed the Membership sections of the Sites.</span></p>
+<p><span style="font-size: small;">You must use all reasonable efforts to keep your username and password confidential.</span></p>
+<p><span style="font-size: small;">You must not allow any third party to access the Sites using your username and password and make use of the Sites on your behalf.</span></p>
+<p><span style="font-size: small;">You must notify this Site in writing as soon as you become aware of any unauthorised use of your Member Account, username or password.</span></p>
+<p><span style="font-size: small;">You acknowledge and agree that you are liable for, and will indemnify StartMarketplace, its related bodies corporate, affiliates, officers, directors, agents and employees against, any and all claims made by a third party arising out of your access to, and use of, the Sites as a Member.</span></p>
+</div>
+<br />
+<h2 class="b18">3. Benefits conferred by Membership</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">By being registered as a Member, you are entitled to:</span></p>
+<p><span style="font-size: small;">a. buy Products from other Members;</span></p>
+<p><span style="font-size: small;">b. sell Products to other Members (subject to <strong>clause 15</strong>);</span></p>
+<p><span style="font-size: small;">c. participate in online forums;</span></p>
+<p><span style="font-size: small;">d. generally make use of the Membership section of the Sites; and</span></p>
+<p><span style="font-size: small;">e. participate in the referral program as described in <strong>clause 18</strong> but subject to these terms and conditions.</span></p>
+</div>
+<br />
+<h2 class="b18">4. Site&rsquo;s Role</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">The Sites are online facility that allows you to sell, and buy, Products.</span></p>
+<p><span style="font-size: small;">Ownership of Products remains with the seller. Site does not obtain any right of ownership or use (including any intellectual property rights) in respect of the Products.</span></p>
+<p><span style="font-size: small;">StartMarketplace&nbsp;does not have any control over, and does not take any responsibility for, the quality, safety or legality of any Products downloaded by you from the Sites.</span></p>
+<p><span style="font-size: small;">StartMarketplace&nbsp;does not warrant that the Products or any content, code, data or materials downloaded from the Sites does not infringe the intellectual property rights of a third party. Each Seller is required to warrant that its Product does not infringe the intellectual property rights of any third party.</span></p>
+</div>
+<br />
+<h2 class="b18">5. Availability and Use of the Sites</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">The Sites will usually be available 24 hours a day, seven days a week or as otherwise stated on the Sites.</span></p>
+<p><span style="font-size: small;">StartMarketplace&nbsp;may, in its absolute discretion, and for any reason, and at any time, with or without notice:</span></p>
+<p><span style="font-size: small;">a. interrupt or suspend your right to access the whole or any part of the Sites; and/or</span></p>
+<p><span style="font-size: small;">b. alter, interrupt or suspend the provision of the whole or any part of the content and/or the services available on the Sites.</span></p>
+<p><span style="font-size: small;">You agree that Site will not be liable to you for any loss that you may suffer as a result of any such interruption, suspension or alteration.</span></p>
+<p><span style="font-size: small;">When accessing the Sites (as a Member) and using the content and/or the services available on the Sites, you must also comply with any directions, instructions or protocols posted on the Sites from time to time.</span></p>
+</div>
+<br />
+<h2 class="b18">6. Fees and Services</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You do not have to pay a fee to become a Member.</span></p>
+<p><span style="font-size: small;">You do not have to pay a fee to sell Products on the Sites.</span></p>
+<p><span style="font-size: small;">If you are a Buyer of a Product, you will pay a fee to buy the right to use that Product in accordance with <strong>clause 14</strong>.</span></p>
+<p><span style="font-size: small;">If you are a Seller, you will receive the fee (less the commission to which Site is entitled in accordance with <strong>clause 17</strong>) collected by Site for each sale of your Products to a Buyer.</span></p>
+<p><span style="font-size: small;">All payments by Buyers on the Sites must be paid through a Payment Agent.</span></p>
+<p><span style="font-size: small;">You are responsible for paying all fees and taxes (including withholding tax), associated with your use of the Sites wherever levied (including any goods and services or value added taxes, which will be added to amounts billed to you, if applicable).</span></p>
+<p><span style="font-size: small;">All references on the Sites or in this Membership Terms to &ldquo;$&rdquo; are to the virtual currency of Site, known as the Site Credit.</span></p>
+<p><span style="font-size: small;">All prices on the Sites are expressed in Site Credit where 1 Site Credit is equal to 1 US Dollar, which is the currency of the United States of America. Payment will be made in US currency and accordance with the rules of the applicable Payment Agent.</span></p>
+<p><span style="font-size: small;">The Buyer is responsible for all costs of currency conversion from his or her preferred currency to the US Dollar, which in turn will be converted to the Site Credit at time of purchase at no cost to the Buyer.</span></p>
+<p><span style="font-size: small;">Where a payment is made by Site to a Seller, the Seller is responsible for all costs of converting the amount of the payment from US currency into his or her preferred currency.</span></p>
+</div>
+<br />
+<h2 class="b18">7. Member Information</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">In the course of your application for Membership and your use of the Sites, you may be asked to provide certain personal information to us (Member Information). You promise that the Member Information you provide is true, accurate and complete.</span></p>
+<p><span style="font-size: small;">Site&rsquo;s information collection and use policies with respect to the privacy of such Member Information are set out in the Site&rsquo;s <a class="blue3">Privacy Policy</a>.</span></p>
+<p><span style="font-size: small;">Any Member Information that you disclose may be used by StartMarketplace, its agents and contractors in relation to the provision of services accessible on the Sites, including marketing activities in relation to the Sites.</span></p>
+</div>
+<br />
+<h2 class="b18">8. Proprietary Rights</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">StartMarketplace, its licensors, advertisers or affiliates own all:</span></p>
+<p><span style="font-size: small;">a. the content of the Sites (<strong>other than Products which are owned by Members who offer them for sale on the Sites</strong>);</span></p>
+<p><span style="font-size: small;">b. the look and feel, design and the organisation of the Sites;</span></p>
+<p><span style="font-size: small;">c. the compilation of the materials on the Sites; and</span></p>
+<p><span style="font-size: small;">d. the intellectual property rights (if any) subsisting in the works described in paragraphs (a), (b) and (c) above.</span></p>
+<p><span style="font-size: small;">Your use of the Sites does not grant to you any ownership or like interest in any content, code, data or materials you may access on or through the Sites or any intellectual property rights subsisting in any of those things.</span></p>
+</div>
+<br />
+<h2 class="b18">9. Copyright Agent</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">Site respects the intellectual property rights of others.&nbsp;StartMarketplace requires that you do the same. If you believe that a work of which you are the owner is infringed by a Product being offered for sale on a Site has been copied in a way that constitutes copyright infringement, please forward the following information (Copyright Claim) to StartMarketplace:</span></p>
+<p><span style="font-size: small;">a. your address, telephone number, and email address;</span></p>
+<p><span style="font-size: small;">b. a description of the location of the alleged infringing material;</span></p>
+<p><span style="font-size: small;">c. a description of the copyright work that has been allegedly infringed</span></p>
+<p><span style="font-size: small;">d. a statement by you, that you warrant that the information given in the Copyright Claim is accurate and that you are either the copyright owner or are authorised to act on the copyright owner&rsquo;s behalf.</span></p>
+<p><span style="font-size: small;">On receipt of a Copyright Claim, this Site will take down the Product that is the subject of the Copyright Claim and seek an explanation from its Seller</span></p>
+</div>
+<br />
+<h2 class="b18">10. Trade Marks</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">The trade marks, logos, service marks and trade names (collectively the Trade Marks) displayed on the Sites are, unless otherwise stated, the registered and unregistered Trade Marks of&nbsp;StartMarketplace and others.</span></p>
+<p><span style="font-size: small;">A Trade Mark may not be used by you without the approval of its owner.</span></p>
+<p><span style="font-size: small;">Nothing contained on the Sites should be construed as granting, by implication, estoppel, or otherwise, any license or right to use any Trade Mark displayed on the Sites without the written permission of its owner.</span></p>
+</div>
+<br />
+<h2 class="b18">11. Confidential Information and Privacy</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">StartMarketplace&nbsp;does not warrant or represent that your use of the Sites will be confidential.</span></p>
+<p><span style="font-size: small;">StartMarketplace&nbsp;is not responsible for any harm that you or any person may suffer as a result of a breach of your confidentiality in respect of your use of the Sites.</span></p>
+<p><span style="font-size: small;">While&nbsp;StartMarketplace has taken precautions to protect information that you transmit to the Sites over the internet,&nbsp;StartMarketplace does not warrant the security of that information. Once&nbsp;StartMarketplace receives your transmission,&nbsp;StartMarketplace will take reasonable steps to preserve the security of such information.</span></p>
+<p><span style="font-size: small;">You must not disclose any confidential information made available to you through the Sites.</span></p>
+<p><span style="font-size: small;">When using the Sites or dealing with other users of the Sites you must respect the privacy and legal rights of other Members.</span></p>
+<p><span style="font-size: small;">If a Member provides you with (or your Product accesses or uses) user-names, passwords or other login information or personal information of the Member (<strong>Personal Information</strong>) you must:</span></p>
+<p><span style="font-size: small;">a. make the Member aware that the Personal Information will be available to you; and</span></p>
+<p><span style="font-size: small;">b. ensure that, by proceeding to transact with you, the Member is giving you permission to use the Member&rsquo;s Personal Information; and</span></p>
+<p><span style="font-size: small;">c. provide a privacy notice to the user, recording the manner in which the Personal Information will be handled by you, that is legally sufficient; and</span></p>
+<p><span style="font-size: small;">d. use the Personal Information for the limited purposes for which the Member gave permission; and</span></p>
+<p><span style="font-size: small;">e. handle the information in accordance with the terms of the privacy notice.</span></p>
+<p><span style="font-size: small;">If the Member has entered into a separate agreement with you that allows you (or your Product) to store or use the Member&rsquo;s Personal Information directly related to your Product (not including other products or applications) then the terms of that separate agreement will govern your use of such Personal Information.</span></p>
+<p><span style="font-size: small;">Without limiting the generality of the foregoing, if the user provides you information about the Member&rsquo;s Member Accounts , you may only use that information to access the Member&rsquo;s Member Accounts when, and for the limited purposes for which, the user gave permission for you to do so.</span></p>
+</div>
+<br />
+<h2 class="b18">12. Member Accounts</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">When your application for Membership is accepted by the Site, you will have a single account that is accessible by you from any of the Sites (<strong>Member Account</strong>). Among other things, through your Member Account, you will be able to access a ledger which records payments by you to the Site (as a Buyer) and payments made by the Site to you (as a Seller or in accordance with <strong>clause 18</strong>) (<strong>Member Ledger</strong>).</span></p>
+</div>
+<br />
+<h2 class="b18">13. Payments from Member Ledger</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You can make a payment into your Member Ledger by credit card or using the services of a Payment Agent.</span></p>
+<p><span style="font-size: small;">You authorise the Site to:</span></p>
+<p><span style="font-size: small;">a. on your direction, debit monies from your Member Ledger, to pay for Products you buy at a Site;</span></p>
+<p><span style="font-size: small;">b. credit to your Member Ledger any amounts due to you in respect of sales of your Products on a Site; and</span></p>
+<p><span style="font-size: small;">c. credit to your Member Ledger any Referral Commissions earned from referring new Members to the Sites (in accordance with <strong>clause 18</strong>).</span></p>
+<p><span style="font-size: small;">StartMarketplace&nbsp;is not a licensed financial service provider, nor does it conduct the business of banking and&nbsp;StartMarketplace provides its services as a cashier using a payment processing service.</span></p>
+<p><span style="font-size: small;">Any monies that you deposit into your Member Ledger must be used to pay for Products you buy on the Sites.</span></p>
+<p><span style="font-size: small;">The Site will not refund any monies that you deposit into your Member Ledger as a Buyer. Any monies that you deposit into your Member Ledger as a Buyer, that are not used for a period of 12 months, will be forfeited to the Site.</span></p>
+<p><span style="font-size: small;">However, if you make a new deposit into your Member Ledger, before forfeiture of any unutilised previously made deposits, the whole of the balance of your Member Ledger (comprising both the new deposit and the balance of the previous deposit) will be available for use by you for a period of 12 months from the date of the new deposit but to the extent it is not used after the expiration of 12 months will be forfeited to the Site.</span></p>
+<p><span style="font-size: small;">StartMarketplace&nbsp;may, but is not obliged to, warn you about the forfeiture before it occurs.</span></p>
+<p><span style="font-size: small;">We will pay to you amounts earned by you as a Seller and Referral Commissions earned by you in accordance with clause 18 subject to the following conditions:</span></p>
+<p><span style="font-size: small;">1. &nbsp;&nbsp;&nbsp;&nbsp;If you have earned less than $50.00 from sales of your Products or in Referral Commissions in the period of 12 months from the date of your first sale or the date on which Site last paid out monies standing to your credit in your Member Ledger (whichever is more recent),We will pay the balance of your Member Ledger to you &ndash; but only if paid by the Site through&nbsp; PayPal (and in no other manner).</span></p>
+<p><span style="font-size: small;">2. &nbsp;&nbsp;&nbsp;&nbsp;If you have earned more than $50.00 in the period of 12 months from the date of your first sale or the date on which Site last paid out monies standing to your credit in your Member Ledger (which ever is most recent), We will pay a minimum of $50.00 if through a Payment Agent (and in no other manner).</span></p>
+<p><span style="font-size: small;">3. &nbsp;&nbsp;&nbsp;&nbsp;If the amount requested is greater than $500.00, We will transfer the amount, if requested, by way of electronic funds transfer.</span></p>
+<p><span style="font-size: small;">Other than as provided for in clause 13, We will not pay any earnings or Referral Commissions standing to your credit in your Member Ledger which are less than $50.00 in total but you may use this to buy Products..</span></p>
+<p><span style="font-size: small;">You must bear all expenses incurred by Site in paying monies back to you. Payments made via a SWIFT transfer incur a processing fee of $35 for each payment.</span></p>
+<p><span style="font-size: small;">The Payment Agent&rsquo;s standard terms and conditions regarding refunds, chargeback, and unauthorised transactions will apply and you authorise Site to automatically deduct such refunds, chargeback and unauthorised transactions to the Member Ledger. The following additional terms apply to your distribution of Products on the Sites.</span></p>
+<p><span style="font-size: small;">1. &nbsp;&nbsp;&nbsp;&nbsp;No refund is required or allowed on Products that can be previewed by the Buyer (such as audio and graphics)</span></p>
+<p><span style="font-size: small;">2. &nbsp;&nbsp;&nbsp;&nbsp;Where Products cannot be previewed by the Buyer (such as WordPress themes, Adobe After Effect Projects, applications) and the Buyer asserts that the Product is not as described or is broken or is corrupt, you authorise us to give the Buyer a full refund on the Product price if the Buyer requests the refund within 30 calendar days after purchase and the claim is found to be valid.</span></p>
+</div>
+<br />
+<h2 class="b18">14. Buying Products</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">When you buy a Product, you acquire a license to use that Product.</span></p>
+<p><span style="font-size: small;">Products are subject to different terms of use &ndash; depending on the type of license that you choose when buying the Product.</span></p>
+<p><span style="font-size: small;">The different types of licenses (and associated fees) and the conditions of use are set out in the Pricing and Licensing Matrix.</span></p>
+<p><span style="font-size: small;">Depending on the use you want to make of a Product, you will need to select the correct license required by you. You are responsible for choosing, and warrant that you have chosen, the correct license to meet your requirements.</span></p>
+<p><span style="font-size: small;">If you buy a Product, you do so on the following terms:</span></p>
+<p><span style="font-size: small;">a. you cannot cancel an order for a Product once the order has been submitted;</span></p>
+<p><span style="font-size: small;">b. Site does not give any undertaking as to the continued availability of Products offered for sale on the Sites;</span></p>
+<p><span style="font-size: small;">c. once your order for a Product is accepted, and you pay the fee, you acquire a non exclusive, non transferable license to use the Product in accordance with the conditions of the license that you acquire;</span></p>
+<p><span style="font-size: small;">d. ownership of the Product remains with the Seller;</span></p>
+<p><span style="font-size: small;">e. the Product may not be re-sold by the Buyer; and</span></p>
+<p><span style="font-size: small;">f. payment of the fee will be made at the time of download by deduction from your Member Ledger.</span></p>
+<p><span style="font-size: small;">You acknowledge and agree that despite Site&rsquo;s reasonable precautions, Products may be listed at an incorrect price or with incorrect information due to a typographical error or similar oversight. In these circumstances, Site reserves the right to cancel or reverse a transaction, even after your order has been confirmed and a payment has been processed. If a transaction is cancelled, Site will immediately arrange for any payment to be refunded.</span></p>
+<p><span style="font-size: small;">Due to the digital nature of the Products offered for sale at the Sites, we maintain a &ldquo;no refunds&rdquo; policy for Products which can be previewed by the Buyers (such as audio and graphics). A Buyer may make a claim for refund if a Product is one that cannot be previewed (such as WordPress themes, Adobe After Effect Projects, applications) and the Buyer asserts that the Product is not as described, or is broken or is corrupt. The deadline for a Buyer making any refund claim is 30 calendar days after purchase and this claim must be made to <a class="blue3" href="support">Support</a>. We will verify the validity of the claim before a refund is approved.</span></p>
+</div>
+<br />
+<h2 class="b18">15. Selling Products</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">As a Member, you may not start selling Products over a Site unless you first:</span></p>
+<p><span style="font-size: small;">a. read <a class="blue3" href="tutorial">the tutorial</a>; and</span></p>
+<p><span style="font-size: small;">b. pass the <a class="blue3" href="test">test</a> which you will be prompted to take at the end of the tutorial.</span></p>
+<p><span style="font-size: small;">You warrant to&nbsp;StartMarketplace and each Buyer that, as a Seller, in relation to each Product that you offer for sale on any of the Sites:</span></p>
+<p><span style="font-size: small;">a. you own the intellectual property rights in that Product;</span></p>
+<p><span style="font-size: small;">b. that Product does not infringe the intellectual property rights of a third party;</span></p>
+<p><span style="font-size: small;">c. that Product is not false, inaccurate or misleading;</span></p>
+<p><span style="font-size: small;">d. that Product is not fraudulent, stolen or an unlawful item;</span></p>
+<p><span style="font-size: small;">e. that Product does not violate any applicable law, statute, ordinance or regulation (including but not limited to, those governing export control, consumer protection, unfair competition, criminal law, antidiscrimination or trade practices or fair trading laws);</span></p>
+<p><span style="font-size: small;">f. that Product is not defamatory, unlawfully threatening or unlawfully harassing;</span></p>
+<p><span style="font-size: small;">g. that Product is not obscene and does not contain child pornography and does not constitute or contain material that is adult in nature or harmful to person under the age of 18 years;</span></p>
+<p><span style="font-size: small;">h. that Product does not contain any content that may be considered as prohibited or potentially prohibited content for the purposes of the Broadcasting Services;</span></p>
+<p><span style="font-size: small;">i. that Product does not contain viruses or other computer codes, files or programs which are designed to limit or destroy the functionality of other computer software or hardware;</span></p>
+<p><span style="font-size: small;">j. that Product would not create liability for Site or cause us to lose (in whole or in part) the services of its ISP or other suppliers; and</span></p>
+<p><span style="font-size: small;">k. that Product would not cause Site to violate any applicable law, statute, ordinance or regulation by making it available on the Sites.</span></p>
+<p><span style="font-size: small;">As a Seller, you must:</span></p>
+<p><span style="font-size: small;">a. ensure all copies of your Products bear a notice of ownership of the intellectual property rights in your Products;</span></p>
+<p><span style="font-size: small;">b. not offer to or sell to Members any of your Products that have not been approved by Site in accordance with this <strong>clause 15</strong>;</span></p>
+<p><span style="font-size: small;">c. notify us of any information which may affect or assist in sales of your Product(s);</span></p>
+<p><span style="font-size: small;">d. provide us with full and accurate information regarding enhancements and new releases of your Products;</span></p>
+<p><span style="font-size: small;">e. act in good faith at all times and provide such assistance and co-operation as we reasonably request; and</span></p>
+<p><span style="font-size: small;">f. to the extent practicable, maintain registrations of all relevant intellectual property rights and of all names relating in any way to your Products.</span></p>
+<p><span style="font-size: small;">You acknowledge and agree that any Product offered for sale by you on Sites must first be submitted to Site to enable it to check the quality of the Product and the information provided with the Product.</span></p>
+<p><span style="font-size: small;">Site may refuse, in its sole discretion, to allow you to offer the Product for sale on a Site.&nbsp;StartMarketplace is not required to give reasons for refusing to allow you to offer a Product for sale on a Site.</span></p>
+<p><span style="font-size: small;">You acknowledge and agree that If Site determines, in its absolute discretion, or is notified by a third party, that a Product that you offer for sale on a Site does not comply with any applicable laws and/or these Membership Terms, Site will disable your Member Account and Member Ledger and withhold all amounts that you may have earned from the sale of the relevant Product until the earlier of:</span></p>
+<p><span style="font-size: small;">a. any dispute in relation to the Product has been resolved to the satisfaction of Site; and</span></p>
+<p><span style="font-size: small;">b. the expiry of two years from the date your Member Account and Member Ledger is disabled.</span></p>
+<p><span style="font-size: small;">If after two years, the dispute has not been resolved, We will pay amounts standing to your credit in your Member Ledger to you via PayPal.</span></p>
+<p><span style="font-size: small;">You acknowledge and agreed that Site will, in its sole discretion, determine the fee payable for each Product on the Sites.</span></p>
+<p><span style="font-size: small;">Products on Sites are continuously reviewed to ensure the library remains coherent with Site&rsquo;s latest quality and technical standards, currency of software and market trends.</span></p>
+<p><span style="font-size: small;">You acknowledge and agree that Site may, at its sole discretion, elect at any time and for any reason to remove your Products from a Site without notice to you. Site is not responsible for any loss that you may suffer as a result a Product being removed from any of the Sites by the Site.</span></p>
+<p><span style="font-size: small;">StartMarketplace is not liable for any loss suffered by you as a result of a Buyer making use of a Product that you offer for sale on a Site contrary to the conditions on which the Product was sold to the Buyer.</span></p>
+<p><span style="font-size: small;">Unless you elect to become an Exclusive Seller in accordance with <strong>clause 16</strong>, you are free to sell the Product on other web sites or through other outlets as you see fit.</span></p>
+<p><span style="font-size: small;">You agree and acknowledge that Site may use the whole or any part of a Product which you offer for sale at the&nbsp;StartMarketplaces to promote the Sites. This promotional use may include use on a features page on a Site itself. No compensation is due or payable for such uses of your Product.</span></p>
+<p><span style="font-size: small;">You agree and acknowledge that an Site affiliate can use your watermarked previews in their promotion of the Sites. No compensation is due or payable for such uses of your preview.</span></p>
+<p><span style="font-size: small;">You agree that a Seller may use a watermarked preview of your Product in a preview of another Product without requiring permission from you, without violating your copyright and without providing monetary compensation to you. The Seller must credit such usage by providing a link to your Product.</span></p>
+</div>
+<br />
+<h2 class="b18">16. Exclusivity</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You may elect to become an Exclusive Seller which means that you agree only to sell your Products through the Sites and not through other web sites or other medium (<strong>Exclusive Seller</strong>).</span></p>
+<p><span style="font-size: small;">In order to become an Exclusive Seller, you must elect to opt into the Exclusive Author Program through your Member Account or after passing the test.</span></p>
+<p><span style="font-size: small;">For the avoidance of doubt, as an Exclusive Seller, you are still bound by these Membership Terms including the terms of clause 15 which sets out the obligations of Sellers generally.</span></p>
+</div>
+<br />
+<h2 class="b18">17. Commissions</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">If one or more of your Products is sold over the Sites, We will credit your Member Ledger with the balance of the fee received from the Buyer (that is the gross fee less Site&rsquo;s commission).</span></p>
+<p><span style="font-size: small;">You authorize Site to collect and distribute such fees and commissions on your behalf.</span></p>
+<p><span style="font-size: small;">The commission payable to Site on each sale of a Product will vary according to whether or not you are a General Seller or an Exclusive Seller.</span></p>
+<p><span style="font-size: small;">If you are a General Seller, We will be entitled to receive a commission of an amount equal to 75% of the fee payable for each Product sold over the Sites.</span></p>
+<p><span style="font-size: small;">If you are an Exclusive Seller, Site&rsquo;s commission for each of your Products that are sold over the Sites will be calculated by reference to the Commission Table and by reference to the accumulated value of gross sales of your Products you have achieved over the Sites (<strong>Lifetime Sales Volume</strong>).</span></p>
+<p><span style="font-size: small;">Commission rates may be varied by Site at its sole discretion, from time to time.</span></p>
+<p><span style="font-size: small;">Any changes to the commission rates by the Site will take effect on and from the date on which notice of the variation is posted by the Site on the Sites.</span></p>
+</div>
+<br />
+<h2 class="b18">18. Referrals</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">If you refer a new Member to any of the Sites you will receive a commission equal to 30% of that new Member&rsquo;s first cash deposit. (<strong>Referral Commission</strong>).</span></p>
+<p><span style="font-size: small;">You automatically have a referral code generated using your username. This code is available on the Referral Page.</span></p>
+<p><span style="font-size: small;">New Members referred via your referral link are eligible if they:</span></p>
+<p><span style="font-size: small;">a. have cookies enabled on their browser;</span></p>
+<p><span style="font-size: small;">b. do not clear their cookies;</span></p>
+<p><span style="font-size: small;">c. have not been previously referred by another Member;</span></p>
+<p><span style="font-size: small;">d. have been referred via an external site and not through an Our site; and</span></p>
+<p><span style="font-size: small;">e. make a cash deposit or purchase within three months of the referral.</span></p>
+<p><span style="font-size: small;">You may not refer new Members by:</span></p>
+<p><span style="font-size: small;">a. purchasing a domain name, search engine keyword or pay-per-click advertisement that use any Our trademarks and/or variations and mis-spellings thereof; or</span></p>
+<p><span style="font-size: small;">b. sending unsolicited email or other messaging that in any way may constitute spam;</span></p>
+<p><span style="font-size: small;">c. engaging in any conduct that would amount to a breach of any laws including, but not limited to, privacy, intellectual property and spam; and</span></p>
+<p><span style="font-size: small;">d. engaging in any conduct that is directly or indirectly in contravention of any direction given to you by the Site or these Membership Terms.</span></p>
+<p><span style="font-size: small;">We reserves the right, in its absolute discretion, to determine whether or not your use of the referral program complies with any applicable laws and/or these Membership Terms.</span></p>
+<p><span style="font-size: small;">Site&rsquo;s determination as to whether or not your use of the referral program is in breach of any applicable laws and/or these Membership Terms is final and binding.</span></p>
+<p><span style="font-size: small;">If Site determines that you have not complied with any applicable laws and/or these Membership Terms, We will disable your Member Account and withhold all Referral Commissions that may be payable by the Site to you at the time it becomes aware of your failure to comply.</span></p>
+</div>
+<br />
+<h2 class="b18">19. Prohibited Conduct</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You warrant that while using the Sites and the various services and features offered on or through the Sites, you will not:</span></p>
+<p><span style="font-size: small;">a. use a false email address or impersonate any person or entity or misrepresent your affiliation with any other person or entity;</span></p>
+<p><span style="font-size: small;">b. insert your own or a third party&rsquo;s advertising, branding or other promotional content into any of the Site&rsquo;s content, materials or services or use, redistribute, republish or exploit such content or service for any further commercial or promotional purposes; or</span></p>
+<p><span style="font-size: small;">c. attempt to gain unauthorised access to other computer systems through the Sites.</span></p>
+<p><span style="font-size: small;">You must not:</span></p>
+<p><span style="font-size: small;">a. engage in &ldquo;spidering&rdquo;, &ldquo;screen scraping,&rdquo; &ldquo;database scraping,&rdquo; harvesting of e-mail addresses, wireless addresses or other contact or personal information, or any other automatic means of obtaining lists of users or other information from or through the Sites or the services offered on or through the Sites, including without limitation any information residing on any server or database connected to the Sites or the services offered on or through the Sites;</span></p>
+<p><span style="font-size: small;">b. obtain or attempt to obtain unauthorised access to computer systems, materials or information through the Sites by any means;</span></p>
+<p><span style="font-size: small;">c. use the Sites or the services made available on or through the Sites in any manner with the intent to interrupt, damage, disable, overburden, or impair the Sites or such services, including, without limitation, sending mass unsolicited messages or &ldquo;flooding&rdquo; servers with requests;</span></p>
+<p><span style="font-size: small;">d. use the Sites, content or services offered on the Sites for any purpose or activity of an illegal, fraudulent, obscene, offensive, personally offensive or defamatory nature;</span></p>
+<p><span style="font-size: small;">e. use the Sites to distribute or make available any Product whose primary purpose is to facilitate the distribution of Products outside of the Sites;</span></p>
+<p><span style="font-size: small;">f. use any mechanism, device software or script to affect the proper functioning of the Sites including taking any action which may infect the Sites with any routine, including (but not limited to) any virus, time bomb, trojan horse, worm, cancelbot or other computer routine that may damage, interfere with, delay, intercept or expropriate any system, data or personal information;</span></p>
+<p><span style="font-size: small;">g. take any action which may interfere with, disrupt, manipulate, tamper with or otherwise abuse the Sites or networks connected to the Sites;</span></p>
+<p><span style="font-size: small;">h. use the Sites or the Sites&rsquo; services or features in violation of Site&rsquo;s or any third party&rsquo;s intellectual property or other proprietary or legal rights; or</span></p>
+<p><span style="font-size: small;">i. use the Sites or the Sites&rsquo; services in violation of any applicable law.</span></p>
+<p><span style="font-size: small;">You further agree that you must not attempt (or encourage or support anyone else&rsquo;s attempt) to circumvent, reverse engineer, decrypt, or otherwise alter or interfere with the Sites or the Sites&rsquo; services, or any content of the Sites or any of its domains, or make any unauthorised use of the Sites or the Sites&rsquo; services or any content of the Sites or any of the domains of the Sites.</span></p>
+<p><span style="font-size: small;">You agree that you must not use the Sites in any manner that could damage, disable, overburden, or impair the Sites or interfere with any other party&rsquo;s use and enjoyment of the Sites or any of its services.</span></p>
+<p><span style="font-size: small;">You must not obtain or attempt to obtain any materials or information through any means not intentionally made publicly available or provided for through the Sites.</span></p>
+<p><span style="font-size: small;">Site reserves the right, in its absolute discretion, to determine whether or not your use of the Sites or content or services available on the Sites complies with these Membership Terms.</span></p>
+<p><span style="font-size: small;">Any commercial or promotional distribution, publishing or exploitation of the Sites, or any content, code, data or materials on the Sites, is strictly prohibited unless you have received the express prior written permission from Site.</span></p>
+<p><span style="font-size: small;">Other than as expressly allowed in these Membership Terms, and unless otherwise indicated in these Membership Terms, you may not download, post, display, publish, copy, reproduce, distribute, transmit, modify, perform, broadcast, transfer, create derivative works from, sell or otherwise exploit any content, code, data or materials on or made available through the Sites.</span></p>
+</div>
+<br />
+<h2 class="b18">20. Linking to the Sites</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You agree that if you include a link from any other web site to one or more of the Sites, such link must link to the full version of an HTML formatted page of the relevant Site.</span></p>
+<p><span style="font-size: small;">You are not permitted to link directly to any image hosted on the Sites or our services, such as using an &ldquo;in-line&rdquo; linking method to cause the image hosted by us to be displayed on another web site.</span></p>
+<p><span style="font-size: small;">You agree not to download or use images hosted on the Sites on another web site, for any purpose, including, without limitation, posting such images on another site.</span></p>
+<p><span style="font-size: small;">You agree not to link from any other web site to any of the Sites in any manner such that the Sites, or any page of the Sites, is &ldquo;framed&rdquo;, surrounded or obfuscated by any third party content, materials or branding.</span></p>
+<p><span style="font-size: small;">We reserve all of our rights under the law to insist that any link to any of the Sites be discontinued, and to revoke your right to link to the Sites from any other web site at any time upon written notice to you.</span></p>
+</div>
+<br />
+<h2 class="b18">21. Third Party Sites</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You may be able to link from the Sites to third party web sites and third party web sites may link to the Sites (<strong>Linked Sites</strong>).</span></p>
+<p><span style="font-size: small;">You acknowledge and agree that we have no responsibility for the information, content, products, services, advertising, code or other materials which may or may not be provided by or through Linked Sites, even if they are owned or run by affiliates of ours.</span></p>
+<p><span style="font-size: small;">The inclusion of a link to a Linked Site on a Site does not constitute or indicate any relationship between Site and the operator of that Linked Site or any endorsement or sponsorship by the Site of that Linked Site.</span></p>
+<p><span style="font-size: small;">Site disclaims any liability for links:</span></p>
+<p><span style="font-size: small;">a. from another web site to any of the Sites; and</span></p>
+<p><span style="font-size: small;">b. to another web site from any of the Sites.</span></p>
+<p><span style="font-size: small;">Site is not responsible for any form of transmission received from any Linked Site.</span></p>
+</div>
+<br />
+<h2 class="b18">22. Third Party Developers</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">StartMarketplace&nbsp;is aware that third party developers offer applications for use in conjunction with the Sites and that use of these applications may require you to disclose confidential information (such as your Site password and user name).</span></p>
+<p><span style="font-size: small;">While welcoming the contribution made by these third party developers Site is not able to, and does not, warrant or endorse those applications and cannot be responsible for any interaction between you and a third party developer. Site disclaims any liability so arising.</span></p>
+<p><span style="font-size: small;">You will need to form your own view of the benefits to be derived from using any such applications and the reliability and trustworthiness of the third party developer.</span></p>
+</div>
+<br />
+<h2 class="b18">23. Public Forums</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">We may, from time to time, make messaging services, chat services, bulletin boards, message boards, blogs, other forums and other such services available on or through the Sites.</span></p>
+<p><span style="font-size: small;">In addition to any other rules or regulations that we may post in connection with a particular service, you agree that you must not upload, post, transmit, distribute or otherwise publish through the Sites or any service or feature made available on or through the Sites, any materials which:</span></p>
+<p><span style="font-size: small;">a. restrict or inhibit any other user from using and enjoying the Sites or the Sites&rsquo; services;</span></p>
+<p><span style="font-size: small;">b. are fraudulent, unlawful, threatening, abusive, harassing, libelous, defamatory, obscene, vulgar, offensive, pornographic, profane, sexually explicit or indecent;</span></p>
+<p><span style="font-size: small;">c. constitute or encourage conduct that would constitute a criminal offense, give rise to civil liability or otherwise violate any local, state, national or international law;</span></p>
+<p><span style="font-size: small;">d. violate, plagiarise or infringe the rights of third parties including, without limitation, copyright, trademark, trade secret, confidentiality, contract, patent, rights of privacy or publicity or any other proprietary right;</span></p>
+<p><span style="font-size: small;">e. contain a virus, spyware, or other harmful component;</span></p>
+<p><span style="font-size: small;">f. contain embedded links, commercial solicitation, advertising, chain letters, mass mailings or, pyramid schemes of any kind;</span></p>
+<p><span style="font-size: small;">g. constitute commercial solicitation or &lsquo;spam&rsquo; of any kind; or</span></p>
+<p><span style="font-size: small;">h. constitute or contain false or misleading indications of origin, endorsement or statements of fact.</span></p>
+<p><span style="font-size: small;">You further agree not to impersonate any other person or entity, whether actual or fictitious, including anyone from Site.</span></p>
+<p><span style="font-size: small;">You also may not offer to buy or sell any product or service on, or through, your comments submitted to our forums. You alone are responsible for all information and materials that you post to the Sites and the consequences of any of your activities on the Sites.</span></p>
+<p><span style="font-size: small;">We reserves the right, but does not have an obligation, to monitor and/or review all information and materials posted to the Sites or through the Sites, and the Site is not responsible for, and assumes no liability for, any such materials posted by users. However, the Site reserves the right at all times to disclose any information as necessary to satisfy any law, regulation or government request, or to edit, refuse to post or to remove any information or materials, in whole or in part, that in Site&rsquo;s sole discretion are objectionable or in violation of these Membership Terms, Site&rsquo;s policies or applicable law.</span></p>
+<p><span style="font-size: small;">We may also impose limits on certain features of the forums or restrict your access to part or all of the forums without notice or penalty if we believe you are in breach of these Membership Terms or applicable law, or for any other reason without notice or liability.</span></p>
+<p><span style="font-size: small;">It is important to remember that comments submitted to a forum may be recorded and stored in multiple places, both on our Sites and elsewhere on the Internet, which are likely to be accessible for a long time and you have no control over who will read them eventually.</span></p>
+<p><span style="font-size: small;">It is therefore important that you are careful and selective about the personal information that you disclose about yourself and others, and in particular, you should not disclose sensitive, embarrassing, proprietary or confidential information in your comments to our public forums.</span></p>
+</div>
+<br />
+<h2 class="b18">24. Disclaimer</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite"><span style="font-size: small;">StartMarketplace&nbsp;does not exclude any Non-excludable Rights but does exclude all other conditions and warranties implied by custom, law or statute.</span>
+<p><span style="font-size: small;">Except as provided for by the Non-excludable Rights:</span></p>
+<p><span style="font-size: small;">a. all content and services on the Sites is provided &ldquo;as is&rdquo; and without warranties of any kind, either express or implied;</span></p>
+<p><span style="font-size: small;">b.&nbsp;StartMarketplace and its suppliers expressly disclaim all warranties of any kind, including but not limited to implied warranties of merchantability and fitness for a particular purpose;</span></p>
+<p><span style="font-size: small;">c.&nbsp;StartMarketplace does not warrant that the functions contained in any content or your access to the Sites will be uninterrupted or error-free, that any defects will be corrected or that the Sites or the server which stores and transmits content to you are free of viruses or any other harmful components; and</span></p>
+<p><span style="font-size: small;">d.&nbsp;StartMarketplace does not warrant or make any representation regarding your access to, or the results of your access to, the Sites (including any related or linked websites) or any content in terms of correctness, accuracy, timeliness, completeness, reliability or otherwise.</span></p>
+<p><span style="font-size: small;">Under no circumstances (including but not limited to any act or omission on the part of StartMarketplace) will&nbsp;StartMarketplace or its affiliates be liable for any indirect, incidental, special and/or consequential damages or loss of profits whatsoever which result from any use or access of, or any inability to use or access, the Sites.</span></p>
+<p><span style="font-size: small;">To the fullest extent permitted by law, Site&rsquo;s liability for breach of any implied warranty or condition which cannot be excluded is limited at the option of Site to the following:</span></p>
+<p><span style="font-size: small;">a. in the case of services supplied or offered by the Site:</span></p>
+<p><span style="font-size: small;">&nbsp;&nbsp;&nbsp;i. the supply of the services again;</span></p>
+<p><span style="font-size: small;">&nbsp;&nbsp;&nbsp;ii.the payment of the cost of having services supplied again; and</span></p>
+<p><span style="font-size: small;">b. in the case of goods supplied or offered by the Site:</span></p>
+<p><span style="font-size: small;">&nbsp;&nbsp;&nbsp;i. the replacement of the goods or the supply of equivalent goods; or</span></p>
+<p><span style="font-size: small;">&nbsp;&nbsp;&nbsp;ii.the payment of the cost of replacing the goods or acquiring equivalent goods.</span></p>
+</div>
+<br />
+<h2 class="b18">25. Indemnification and Release</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">You are solely responsible (and agree that the Site has no responsibility to you or to any third party for) for, and you agree to indemnify and hold harmless&nbsp;StartMarketplace from any and all claims, liabilities, costs and expenses (including legal fees) arising in any way from, any of the following matters:</span></p>
+<p><span style="font-size: small;">a. your use of the Sites;</span></p>
+<p><span style="font-size: small;">b. any Products you sell or buy through the Sites;</span></p>
+<p><span style="font-size: small;">c. your placement or transmission of any Product, message, content, information, software or other materials through the Sites;</span></p>
+<p><span style="font-size: small;">d. your breach of any applicable related third party contract or terms of service</span></p>
+<p><span style="font-size: small;">e. your breach of the law or of these Membership Terms.</span></p>
+<p><span style="font-size: small;">Site reserves the right, at its own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, and in such case, you agree to cooperate with Site&rsquo;s defense of such claim.</span></p>
+</div>
+<br />
+<h2 class="b18">26. Changes to Membership Terms</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">We may, at its sole discretion, revise or change these Membership Terms (in whole or in part) or the content of the Sites from time to time and at any time without notice to you.</span></p>
+<p><span style="font-size: small;">Changes in the Membership Terms will be effective at the time notice of the change is posted by us on the Sites. It is your responsibility to check for these notices.</span></p>
+<p><span style="font-size: small;">Your continued use of the Sites and/or the content or services made available on or through the Sites after any changes to the Membership Terms are posted will be considered acceptance of those changes.</span></p>
+</div>
+<br />
+<h2 class="b18">27. Relationship between the Parties</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">Nothing in these Membership Terms:</span></p>
+<p><span style="font-size: small;">a. constitutes a partnership between the parties; and</span></p>
+<p><span style="font-size: small;">b. except as expressly provided, makes their party an agent of another party for any purpose.</span></p>
+<p><span style="font-size: small;">A party cannot in anyway or for any purpose:</span></p>
+<p><span style="font-size: small;">a. bind another party; or</span></p>
+<p><span style="font-size: small;">b. contract in the name of another party.</span></p>
+<p><span style="font-size: small;">If a party must fulfil an obligation and that party is dependent on another party, then that other party must do each thing reasonably within its power to assist the other in the performance of that obligation.</span></p>
+</div>
+<br />
+<h2 class="b18">28. Suspension or Termination</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">We may suspend or terminate your registration as a Member and deny you access to your Member Account immediately if:</span></p>
+<p><span style="font-size: small;">a. you breach these Membership Terms or any other terms and conditions, agreements or rules governing the Sites;</span></p>
+<p><span style="font-size: small;">b. Site is unable to verify or authenticate any information you provide to us as part of your original application or in the course of using the Sites; or</span></p>
+<p><span style="font-size: small;">c. We believes that your actions may cause legal liability for you, our other Members or us.</span></p>
+<p><span style="font-size: small;">Should Site elect to suspend, terminate or restrict your Membership in any way, you may be prohibited from accessing the Sites temporarily or permanently. In either case, you must not apply for a new Member account.</span></p>
+</div>
+<br />
+<h2 class="b18">29. Notices</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">Any notice given in accordance with these Membership Terms will be correctly given if it is in writing and is emailed to a party to the email address that that party has nominated or any other email address as may be notified for the purpose of the service of notices</span></p>
+<p><span style="font-size: small;">A notice will be deemed to have been given on the date of delivery.</span></p>
+</div>
+<br />
+<h2 class="b18">30. Applicable Laws</h2>
+<div id="sprite2"><hr class="gray2" /></div>
+<div id="sprite">
+<p><span style="font-size: small;">If you make use of the Sites, or the Products, content, code, data or materials on the Sites or available through the Sites, except as otherwise provided for in these Membership Terms, you may breach intellectual property laws (including copyright) and other state and federal laws of Australia and other countries and may be subject to liability for such unauthorised use.</span></p>
+<p><span style="font-size: small;">We do not represent that materials on the Sites are appropriate or available for use in other locations. Persons who choose to access the Sites from other locations do so on their own initiative, and are responsible for compliance with local laws, if and to the extent local laws are applicable.</span></p>
+</tr>
+</tbody>
+</table>
+              									</div>
+										</td>
+                      						</tr>
+					  				<tr>
+						 				<td align="center" colspan="2">
+            										<input class="checkbox" id="user_agrees_to_terms" name="accept_terms" type="checkbox" value="1" />
+            										<strong class="signup-agree">I Agree with Terms &amp; Conditions</strong>
+
+            										<input name="user[subscribed_to_foxmail]" type="hidden" value="0" /><input checked="checked" class="checkbox" id="user_subscribed_to_foxmail" name="user[subscribed_to_foxmail]" type="checkbox" value="1" />
+            										<strong class="signup-agree">Sign me up to monthly newsletter</strong>
+											<br><p><span style="color: blue;"> {ACCEPT_ALERT}</span></p>
+						 				</td>
+									</tr>
+					  				<tr>
+						 				<td align="center" colspan="2">
+											&nbsp; {SPAM2}
+						 				</td>
+									</tr>
+					  				<tr>
+						 				<td align="center" colspan="2">
+											<input type="hidden" name="ref" id="ref" value="{REF}">
+						 					<br><input type="submit" id="btn_submt" name="register"  value="Register">
+						 				</td>
+									</tr>
+              						</table>             
+							</form>
+						</div>   
+				</div>			
+			</td>

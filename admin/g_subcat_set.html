@@ -1,0 +1,44 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=subcategory&catid={MAIN_CAT_ID}">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content2">
+		<div id="content_area2">
+			<h2>Set Subcategory Information</h2>
+{INFORM}
+			<form action="general.php?mod=set_subcategory&subcatid={CAT_ID}" method="post">
+				<table cellpadding="0" cellspacing="1" width="100%"> 	
+	 				<tr valign="top">
+						<td>
+							<b class="error">*</b>Name<br>
+							<input class="fields" type="text" name="name" size="25" value="{CAT_NAME}">&nbsp;&nbsp;&nbsp;
+							{ALERT}
+						</td>
+	 				</tr> 	
+	 				<tr valign="top">
+						<td>
+							<b class="error">*</b>Key<br>
+							<input class="fields" type="text" name="page_key" size="25" value="{CAT_KEY}">&nbsp;&nbsp;&nbsp;
+							{ALERT}
+						</td>
+	 				</tr> 
+	 				<tr valign="top">
+						<td>
+							<br><b>*Saved category is automatically activated into the system</b><br>
+						</td>
+	 				</tr> 
+	  				<tr valign="top">
+						<td align="center">
+							<input type="hidden" name="catid" value="{MAIN_CAT_ID}">
+							<br><input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

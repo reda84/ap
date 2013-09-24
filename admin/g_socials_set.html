@@ -1,0 +1,63 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=socials">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Set Social Contact</h2>
+			<form action="general.php?mod=set_socials&id={SOC_ID}" method="post" enctype="multipart/form-data">
+				<table cellpadding="0" cellspacing="1" width="100%"> 	
+	 				<tr valign="top">
+						<td>
+							<hr class="bottom">
+							Social Name<br>
+							<input class="fields" type="text" name="name" size="25" value="{SOC_NAME}">
+						</td>
+	 				</tr>
+	 				<tr valign="top">
+						<td>
+							Social Title<br>
+							<input class="fields" type="text" name="title" size="25" value="{SOC_TITLE}">
+						</td>
+	 				</tr>
+	 				<tr valign="top">
+						<td>
+							Social URL<br>
+							<input class="fields" type="text" name="url" size="25" value="{SOC_URL}">
+						</td>
+	 				</tr> 	
+	 				<tr valign="top">
+						<td>
+							Social Image<br>
+							<input type="file" name="image" size="30"><br><br>
+							<input type="hidden" name="image2" value="{SOC_IMAGE}">
+							<img src="../../../{SOC_IMAGE}">
+						</td>
+	 				</tr> 
+	 				<tr valign="top">
+						<td>
+							Social Order<br>
+							<input type="text" name="order" size="3" value="{SOC_ORDER}">
+						</td>
+	 				</tr>
+	 				<tr valign="top">
+						<td>
+							Visible<br>
+							<input type="checkbox" name="visible" value="1" checked="checked" /> Yes
+						</td>
+	 				</tr>  
+	  				<tr valign="top">
+						<td align="center">
+							<hr class="bottom">
+							<br><input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

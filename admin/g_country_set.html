@@ -1,0 +1,43 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=country">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content2">
+		<div id="content_area2">
+			<h2>Set Country Information</h2>
+{INFORM}
+			<form action="general.php?mod=set_country&id={COUNTRY_ID}" method="post" enctype="multipart/form-data">
+				<table cellpadding="0" cellspacing="1" width="100%"> 	
+	 				<tr valign="top">
+						<td>
+							<b class="error">*</b>Country Name<br>
+							<input class="fields" type="text" name="name" size="25" value="{COUNTRY_NAME}">&nbsp;&nbsp;&nbsp;
+							{ALERT}
+						</td>
+	 				</tr> 	
+	 				<tr valign="top">
+						<td>
+							Country Flag<br>
+							<input type="file" name="flags" size="30">
+						</td>
+	 				</tr> 
+	 				<tr valign="top">
+						<td>
+							Country Visible<br>
+							<input type="checkbox" name="visible" value="1" checked="checked" /> Yes
+						</td>
+	 				</tr>  
+	  				<tr valign="top">
+						<td align="center">
+							<br><input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

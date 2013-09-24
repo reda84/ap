@@ -1,0 +1,48 @@
+	<div id="page_title">
+		News
+	</div>
+	<a href="newsletter.php?mod=add">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add News</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Newsletter List</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   	  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="80" class="title" align="center">ID</td>
+								<td width="360" class="title" align="center">Newsletter Name</td>
+								<td width="150" class="title" align="center">Date</td>
+								<td width="80" class="title" align="center">View</td>
+								<td width="80" class="title" align="center">Delete</td>
+							</tr>
+
+<!-- BEGIN news -->
+							<tr bgcolor="#ffffff">
+								<td align="center">{news.ID}</td>
+								<td>&nbsp;&nbsp;{news.SUBJECT}</td>
+								<td align="center">{news.DATE}</td>
+								<td align="center"><a href="newsletter.php?mod=view&id={news.ID}" alt="view content" title="view content"><div id="small_view"></div></a></td>
+								<td align="center"><a href="newsletter.php?mod=list&id={news.ID}&delete=yes" alt="delete news" title="delete news" onclick= "return (window.confirm('Are you sure to delete this news ?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END news -->
+						</table>
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>	
+		</div>
+	</div>

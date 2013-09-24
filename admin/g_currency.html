@@ -1,0 +1,43 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Currency List</h2>
+			<form action="general.php?mod=currency" method="post"> 
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="90" class="title">Select</td>
+	  				<td width="340" class="title">Currency</td>
+	  				<td width="90" class="title">Flag</td>
+	  				<td width="90" class="title">Sign</td>
+	  				<td width="80" class="title">Active</td>
+	  				<td width="80" class="title">Delete</td>
+	 			</tr>
+<!-- BEGIN currency -->
+	 			<tr valign="top">
+	  				<td align="center"><input type="radio" name="id" value="{currency.CURRENCY_ID}" style="margin-top: 8px;" /></td>
+	  				<td align="center">{currency.CURRENCY_NAME}</td>
+	  				<td align="center"><img src="../{FLAGS_DIR}/{currency.CURRENCY_FLAG}" width="23" height="22" style="margin-top: 8px;"></td>
+	  				<td align="center">{currency.CURRENCY_SIGN}</td>
+	  				<td align="center">{currency.CURRENCY_ACTIVE}</td>
+	  				<td align="center"><a href="general.php?mod=currency&id={currency.CURRENCY_ID}&delete=yes" alt="delete" title="delete" onclick= "return (window.confirm('Are you sure to delete this currency?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="6">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END currency -->
+			</table> 
+    			<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 			<tr>
+	  				<td align="center">
+	   					<input type="submit" class="submit_btn" name="{SAVE}" value="Save">{INFO}
+	  				</td>
+	 			</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>

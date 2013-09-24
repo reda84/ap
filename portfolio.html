@@ -1,0 +1,205 @@
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="table_form4">
+					<ul>
+						<li style="width: 10%;">
+							Order by:
+						</li>
+						<li style="width: 25%;">
+							<form action="" method="get">
+    								<select class="sort_form_small" id="sort_by" name="order" onchange="this.form.submit()">
+									<option value="id" {SELECT1}>Default</option>
+									<option value="published" {SELECT2}>Date</option>
+									<option value="name" {SELECT3}>Title</option>
+									<option value="username" {SELECT4}>Author</option>
+									<option value="category" {SELECT5}>Category</option>
+									<option value="cost" {SELECT6}>Price</option>
+								</select>
+    								<input class="sort" title="Descending">
+							</form>
+						</li>
+						<li style="width: 45%;">
+							{NPAGELIST}
+						</li>
+						<li style="width: 20%;">
+							<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} ITEMS</div>
+						</li>
+					</ul>
+				</div>
+				<div class="txt_white" align="center">{ERROR}</div>
+				<div id="content_wrapper2">
+					<div id="form_1">
+							<div id="List_Show">
+<!-- BEGIN new_product -->
+							<div id="table_form3">
+								<ul>
+									<li style="width: 13%;">
+										<a class="thumbnailz" href="{new_product.TITLE}.html"><img src="{new_product.IMG_DIR}/{new_product.BRIEF}" width="80" height="80" border="0" alt="{new_product.TITLE2}" title="{new_product.TITLE2}"/><span style="left:80px;"><img src="crop.php?h=560&w=560&f={new_product.IMG_DIR}/{new_product.IMAGE}" width="300" height="300" border="0"/></span></a>
+									</li>
+									<li style="width: 30%;">
+										<a href="{new_product.TITLE}.html" class="black02">{new_product.TITLE2}</a>
+										<form name="user" action="user-{new_product.USERNAME}" method="post">
+											<input type="hidden" name="username_q" value="{new_product.USERNAME}">
+											<h3 class="formtitle"><input type="submit" class="form_user" name="user" value="{new_product.USERNAME}"></h3>
+										</form>
+									</li>
+									<li style="width: 2%;">
+										&nbsp;
+									</li>
+									<li style="width: 38%; margin-top: 8px;">
+										in <a href="category-{new_product.SUBCATID}-{new_product.SUBCATEGORY}-{new_product.CATEGORY}" class="blue2">{new_product.CATEGORY} &#187; {new_product.SUBCATEGORY}</a><br>
+										Layered?: {new_product.LAYERED}, 
+										{new_product.CS} 
+										{new_product.PIXEL}
+										{new_product.PRINT}
+									</li>
+									<li style="width: 2%;">
+										&nbsp;
+									</li>
+									<li style="width: 15%; margin-top: -8px;">
+										<h2 class="b28">{CURRENCY}{new_product.PRICE}</h2>
+										<span style="margin: 60px 0 0 -30px; position: absolute;">{new_product.SALES} sales</span>
+									</li>
+								</ul>
+							</div>
+							<hr class="gray">				  
+<!-- END new_product -->
+							</div>
+							<div id="Grid_Show" style="display: none;">
+							<div id="table_form3" style="margin-top: 40px;">
+								<ul class="grid">
+<!-- BEGIN all_product2 -->
+									<li style="width: 153px; margin-left: -19px; margin-top: -35px;">
+										<p align="center"><a class="thumbnailz" href="{all_product2.TITLE}.html"><img src="{all_product2.IMG_DIR}/{all_product2.BRIEF}" width="80" height="80" border="0" alt="{all_product2.TITLE2}" title="{all_product2.TITLE2}"/><span style="left:80px;"><img src="crop.php?h=560&w=560&f={all_product2.IMG_DIR}/{all_product2.IMAGE}" width="300" height="300" border="0"/></span></a></p>
+										<p align="center" style="width: 150px;"><a href="{all_product2.TITLE}.html" class="black03">{all_product2.TITLE2}</a>
+											<ul>
+												<li style="margin-left: 22px;">{all_product2.SALES} Sales &nbsp;</li>
+												<li><hr class="vert"> &nbsp;&nbsp;&nbsp;</li>
+												<li>{CURRENCY}{all_product2.PRICE} &nbsp;</li>
+											</ul>
+										</p>	
+									</li>
+									<li style="width: 16px; height: 165px;"><hr class="vert2" style="height: 165px;margin-top: -30px;"></li>
+<!-- END all_product2 -->
+								</ul>
+							</div>
+							</div>
+						{NPAGELIST}<br>
+					</div>	   			
+			</td>
+
+			<td width="20">
+			</td>
+			<td valign="top">
+				<div id="sprite2"></div>
+				<div id="list-grid"><a id="List_Click" href="javascript:Cell2()"><small>:::</small> LIST VIEW</a></div>
+				<div id="list-grid2"><a id="Grid_Click" href="javascript:Cell()"><small>: :</small> GRID VIEW</a></div>
+				<div id="right_wrapper2">
+					<div id="form_r_gray">
+						<div id="sprite">
+							<p>
+								<form action="" method="post">
+    									<input type="text" name="keyword" class="search_form_small" onclick="if(this.value=='Search Portfolio'){this.value=''}" value="Search Portfolio">
+    									<input type="submit" class="search_btn" alt="search" title="search" value="">
+ 								</form>
+							</p>
+							<br>
+						</div>
+					</div>
+					<br>
+					<div id="form_r_gray">
+						<div id="right_hd">
+							About The Author
+						</div>
+						<div id="table_form7">
+							<ul>
+								<li>
+									<a href="user-{USER}"><img src="{AVATAR}" title="{USER}" border="0"></a>
+								</li>
+								<li>
+									<p><a href="user-{USER}" class="black02">{USER}</a></p>
+								</li>
+							</ul>
+							<ul>
+								<li>	
+									<br>
+<!-- BEGIN badges -->
+											{badges.MEM_BADGE1}
+											{badges.MEM_BADGE2}
+											{badges.MEM_BADGE3}
+											{badges.MEM_BADGE4}
+											{badges.MEM_BADGE5}
+											{badges.MEM_BADGE6}
+											{badges.MEM_BADGE7}
+											{badges.MEM_BADGE8}
+											{badges.MEM_BADGE9}
+											{badges.MEM_BADGE10}
+											{badges.MEM_BADGE11}
+											{badges.MEM_BADGE12}
+											{badges.MEM_BADGE13}
+											{badges.MEM_BADGE14}
+											{badges.MEM_BADGE15}
+											{badges.MEM_BADGE16}
+											{badges.MEM_BADGE17}
+											{badges.MEM_BADGE18}
+											{badges.MEM_BADGE19}
+											{badges.MEM_BADGE20}
+											{badges.MEM_BADGE21}
+											{badges.MEM_BADGE22}
+											{badges.MEM_BADGE23}
+											{badges.MEM_BADGE24}
+											{badges.MEM_BADGE25}
+											{badges.MEM_BADGE26}
+											{badges.MEM_BADGE27}
+											{badges.MEM_BADGE28}
+											{badges.MEM_BADGE29}
+											{badges.MEM_BADGE30}
+											{badges.MEM_BADGE31}
+											{badges.MEM_BADGE32}
+											{badges.MEM_BADGE33}
+											{badges.MEM_BADGE34}
+											{badges.MEM_BADGE35}
+<!-- END badges -->
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<SCRIPT LANGUAGE = "Javascript">
+<!--
+function Cell() {
+  var d1 = document.getElementById("Grid_Show");
+  var d2 = document.getElementById("Grid_Click");
+  var d3 = document.getElementById("List_Show");
+  var d4 = document.getElementById("List_Click");
+
+  if (d2) {
+	d1.style.display = "";
+	d3.style.display = "none";
+  }
+}
+-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE = "Javascript">
+<!--
+function Cell2() {
+  var d1 = document.getElementById("Grid_Show");
+  var d2 = document.getElementById("Grid_Click");
+  var d3 = document.getElementById("List_Show");
+  var d4 = document.getElementById("List_Click");
+
+  if (d4) {
+	d3.style.display = "";
+	d1.style.display = "none";
+  }
+}
+-->
+</SCRIPT>
+
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/zoomer.js"></script>

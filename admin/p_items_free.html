@@ -1,0 +1,51 @@
+	<div id="page_title">
+		Items
+	</div>
+	<a href="product.php?mod=items_free&add=new">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add New</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>Free Items List</h2>
+			<table cellpadding="0" cellspacing="1" border="0" width="100%">		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="70" class="title" align="center">Item ID</td>
+								<td width="400" class="title" align="center">Item Name</td>
+								<td width="160" class="title" align="center">Member</td>
+								<td width="50" class="title" align="center">Free</td>
+								<td width="100" class="title" align="center">Downloads</td>
+								<td width="90" class="title" align="center">Date</td>
+							</tr>
+<!-- BEGIN pro -->
+							<tr valign="top">
+								<td align="center">{pro.P_ID}</td>
+								<td>{pro.P_NAME2}</td>
+								<td>&nbsp;&nbsp;{pro.P_MEMBER}</td>
+								<td align="center">{pro.P_FREE}</td>
+								<td align="center">{pro.P_DOWNLOADS}</td>
+								<td align="center">{pro.P_DATE}</td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END pro -->
+						</table>
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>
+			<div>	
+		</div>
+	</div>

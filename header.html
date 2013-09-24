@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+    <head>
+
+        <title>{TITLE}</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <META NAME="keywords" CONTENT="{KEYWORDS}">
+        <META NAME="description" CONTENT="{DESCRIPTION}">
+        <META NAME="keywords" CONTENT="{KEYWORDS}">
+        <META NAME="author" CONTENT="{AUTHOR}">
+        <META NAME="copyright" CONTENT="{COPYRIGHT}">
+        <META NAME="robots" CONTENT="{ROBOTS}">
+        <META NAME="googlebot" CONTENT="{GOOGLEBOT}"> 
+        <META NAME="classification" CONTENT="{CLASSIFICATION}">
+        <META http-equiv="content-language" content="en">
+
+
+        <link rel="SHORTCUT ICON" href="{SITE_FAVICON}"/>
+
+
+        <!--<link rel="stylesheet" type="text/css" href="{TEMPLATE_DIR}/style.css" />
+        <link rel="stylesheet" type="text/css" href="{TEMPLATE_DIR}/css/skin.css" />-->
+
+
+        <link href="{TEMPLATE_DIR}/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="{TEMPLATE_DIR}/style/style.css" rel="stylesheet" type="text/css" />
+        <link href="{TEMPLATE_DIR}/style/default.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="{TEMPLATE_DIR}/js/responsive_slider/responsiveslides.css">
+        <link rel="stylesheet" href="{TEMPLATE_DIR}/js/responsive_slider/demo.css">
+
+
+
+   
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="bootstrap/js/html5shiv.js"></script>
+          <script src="js/jquery.html5-placeholder-shim.js"></script>
+        <![endif]-->
+
+
+    </head>
+    <body>	
+        <div id="page-wrapper">
+
+            <div id="header_wrapper">
+
+                <div id="header" class="mobile-logowrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span4 userlogo-mobile">
+                                <a href=""><img src="{SITE_LOGO}" border="0"></a>
+                            </div>
+                            <div class="span6 offset2">
+                                <form action="login.php" method="post">
+
+
+                                    <div class="row-fluid login-form">
+                                        <div class="span4" id="mobile-username">
+                                            <input name="username" class="span12" type="text" placeholder="Username" />
+                                        </div>
+                                        <div class="span4" id="mobile-password">
+                                            <input name="pass" class="span12" type="password" placeholder="Password" />
+                                        </div>
+                                        <div class="span2" id="mobile-signIn">
+                                            <button name="login1" type="submit" class="span12 btn" />Sign In</button></div>
+                                        <div class="span2" id="mobile-signUp">
+                                            <a href="signup" type="submit" class="span12 btn btn-danger" >Sign Up</a></div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="container page-content">
+                    <div id="nav" >
+                        <div class="row" id="mobilehwrap">
+                            <div class="span2" id="mobileCategories">
+                                <select style="width:100%; padding:10px;" onchange="location = this.options[this.selectedIndex].value;">
+                                    <option value="">Categories</option>
+                                    <option value="all">All Files</option>
+                                    <!-- BEGIN cat -->
+                                    <option value="category-{cat.ID}-{cat.NAME}">{cat.CAT_NAME}</option>
+                                    <!-- END cat -->    
+                                </select>
+                            </div>
+                            <div class="span6" id="mobileMenu">
+
+
+
+                                <ul id="main-memu">
+                                    <li><a class="home-menu" href="/"></a></li>
+                                    <!--<li><a href="category" onmouseover="mopen('m2')" onmouseout="mclosetime()" class="menuSub">Files</a>-->
+                                    <li><a href="category">Files</a>
+                                        <!--<ul onmouseover="mcancelclosetime()" onmouseout="mclosetime()" class="menyFly menuHidden">-->
+                                        <ul>
+                                            <li><a href="category">Browse Categories</a></li>
+                                            <li><a href="top_sellers">Popular Files</a></li>
+                                            <li><a href="feature">Featured Files</a></li>
+                                            <li><a href="collections">Public Collections</a></li>
+                                            <li><a href="top_authors">Top Authors</a></li>
+                                            <li><a href="top_new_sellers">Top New Authors</a></li>
+                                        </ul>
+
+                                    </li>
+                                    <!-- BEGIN main_pages -->
+                                    <li><a href="{main_pages.MAIN_PAGE_KEY}" id="top_bt" class="top_txt"  >{main_pages.MAIN_PAGE_NAME}</a>
+                                        <ul id="m{main_pages.MAIN_PAGE_ID}">
+                                            <!-- BEGIN sub_pages -->
+                                            <li><a href="{main_pages.sub_pages.SUB_PAGE_KEY}">{main_pages.sub_pages.SUB_PAGE_NAME}</a></li>
+                                            <!-- END sub_pages -->
+                                        </ul>
+                                    </li>
+                                    <!-- END main_pages -->
+                                    <li><a href="forum" id="top_bt" class="top_txt" onmouseover="mopen('m0')" onmouseout="mclosetime()">Forum</a>
+                                    </li>
+                                    <li><a href="support" id="top_bt" class="top_txt" onmouseover="mopen('m1')" onmouseout="mclosetime()">Support</a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                            <div class="span4" id="mobileSearch">
+                                <div class="row-fluid" id="filter">
+
+                                    <form id="ui_element" class="sb_wrapper" name="searchfrm" method="get" action="search.php">
+
+
+
+
+                                        <div class="span6" id="mobilehinput">
+                                            <input name="keyword"   class="span12" type="text" placeholder="Search" />
+                                        </div>
+                                        <div  class="span4" id="mobilehselect">
+                                            <select name="category" id="someDropDown" class="ctrDropDown span12" onBlur="this.className = 'ctrDropDown';" onMouseDown="this.className = 'ctrDropDownClick';" onChange="this.className = 'ctrDropDown';">
+                                                <option name="all" value="all">All Files</option>
+                                                <!-- BEGIN cat -->
+                                                <option name="{cat.CAT_NAME}" value="{cat.ID}">{cat.CAT_NAME}</option>
+                                                <!-- END cat -->
+                                            </select>
+
+                                        </div>
+                                        <div class="span2" id="mobilehsubmit">
+                                            <input class="search-btn sb_search" type="submit" value=""/>
+                                        </div> 
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="container page-content">

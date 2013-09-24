@@ -1,0 +1,62 @@
+  
+       <div class="row">
+           <div class="span12">
+
+                <div class="gStartTitle">
+                    {TITLE}<!--Support-->
+                </div>
+
+           </div>
+       </div>
+
+
+<div class="span9 support-ticket">
+					<div class="span9 ticket-row text-center">
+<!-- BEGIN error -->
+	{error.ERROR}
+<!-- END error -->
+					</div>
+<form action="login.php" method="post">
+
+
+
+					<div class="span9 ticket-row">
+					<div class="span2 text-right ticket">Username</div>
+					<div class="span6"><input type="text" class="span5" name="username"  value="{USERNAME}"  />
+					<br> {USERNAME_ALERT}
+					</div>
+					</div>
+
+					<div class="span9 ticket-row">
+					<div class="span2 text-right">Password</div>
+					<div class="span6"><input class="span5" name="pass" type="password" value="{PASSWORD}" />
+					<br> {PASSWORD_ALERT}
+					</div>
+					</div>
+
+					<div class="span9 ticket-row text-center">
+					<div class="span3 text-right"></div>
+					<div class="span5 text-center">
+					{SPAM}
+					<a href="reset_password" class="blue2">Forgot Password?</a> | 
+					<a href="lost_usernames" class="blue2">Forgot Username?</a>
+					</div>
+					</div>
+
+
+					<div class="span8 ticket-btn text-right">
+					<input type="hidden" name="ref" id="ref" value="{REF}">
+					<input type="submit" name="login2" class="btn btn-danger ticket" id="btn_submt" value="Login">
+					</div>
+</form>
+
+
+        </div>
+
+<div class="clearfix"></div>
+<br><br><br> 
+
+<div>
+
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>

@@ -1,0 +1,58 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+					<form action="general.php?mod=product" method="post">   
+    						<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 						<tr valign="top">
+	  							<td colspan="9" align="left">
+									<h2>Product Settings</h2>
+									<hr class="bottom">
+								</td>
+	 						</tr>
+	 						<tr valign="top">
+	  							<td align="center" width="162">
+									<img src="{TEMPLATE_DIR}/images/u_list_48.png">
+									<h4>Products posting per member</h4>
+	  								<input type="text" name="product_per_free_member" class="fields_little" value="{PRODUCT_PER_FREE_MEMBER}">
+								</td>
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="162">
+									<img src="{TEMPLATE_DIR}/images/f_num_48.png">
+									<h4>Number of feature products</h4>
+	  								<input type="text" name="feature_product_num" class="fields_little" value="{FEATURE_PRODUCT_NUM}">
+								</td>	
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="162">
+									<img src="{TEMPLATE_DIR}/images/p_page_48.png">
+									<h4>Products listed per page</h4>
+	  								<input type="text" name="product_per_page" class="fields_little" value="{PRODUCT_PER_PAGE}">
+								</td>
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="162">
+									<img src="{TEMPLATE_DIR}/images/f_fee_48.png">
+									<h4>Feature product posting fee</h4>
+	  								<input type="text" name="feature_posting_fee" class="fields_little" value="{FEATURE_POSTING_FEE}">
+								</td>
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="162">
+									<img src="{TEMPLATE_DIR}/images/n_fee_48.png">
+									<h4>Normal product posting fee</h4>
+	  								<input type="text" name="normal_posting_fee" class="fields_little" value="{NORMAL_POSTING_FEE}">
+								</td>
+							</tr>	
+						</table>
+						<br>
+    						<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 						<tr>
+	  							<td align="center">
+									<hr class="bottom">
+	   								<input type="submit" class="submit_btn" name="{SAVE}" value="Save">{INFO}
+	  							</td>
+	 						</tr>
+						</table>
+					</form>
+		</div>
+	</div>
+</div>

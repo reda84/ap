@@ -1,0 +1,44 @@
+	<div id="page_title">
+		Users
+	</div>
+	<a href="users.php?mod=referrals">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>{USER_R} - Referrals List</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="170" class="title" align="center">Referral Name</td>
+								<td width="500" class="title" align="center">Clickthrough</td>
+								<td width="100" class="title" align="center">Deposit</td>
+								<td width="100" class="title" align="center">Date</td>
+							</tr>
+
+<!-- BEGIN user -->
+							<tr bgcolor="#ffffff">
+								<td>&nbsp;{user.REF_NAME}</td>
+								<td>&nbsp;<a href="{user.REF_CLICK}" target=_new">{user.REF_CLICK}</a></td>
+								<td align="center">{user.REF_DEPOSIT}</td>
+								<td align="center">{user.REF_DATE}</td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END user -->
+						</table>
+						{NODATA}
+					</td>
+      				</tr>		  	   
+			</table>
+			</div>	
+		</div>
+	</div>

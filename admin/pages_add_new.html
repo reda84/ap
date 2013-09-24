@@ -1,0 +1,100 @@
+	<div id="page_title">
+		Add New Page
+	</div>
+	<a href="pages.php?mod=all">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+				<h2>Page Information</h2>
+				<form action="pages.php?mod=add" method="post">
+				<table cellpadding="0" cellspacing="1" width="100%">
+	 				<tr valign="top">
+						<td>
+							<b class="error">*</b>Page Name<br>
+							<input class="fields" type="text" name="page_name" size="25" value="{PAGE_NAME}">&nbsp;&nbsp;&nbsp;
+							{PAGE_NAME_ALERT}
+						</td>
+	 				</tr> 	
+	 				<tr valign="top">
+						<td>
+							<b class="error">*</b>Page Key<br>
+							<input class="fields" type="text" name="page_key" size="25" value="{PAGE_KEY}">&nbsp;&nbsp;&nbsp;
+							{PAGE_KEY_ALERT}
+						</td>
+	 				</tr> 
+	 				<tr valign="top">
+						<td>
+							Meta Title<br>
+							<input class="fields" type="text" name="page_mtitle" size="25" value="{PAGE_META_TITLE}">
+						</td>
+	 				</tr> 
+	 				<tr valign="top">
+						<td>
+							Meta Keywords<br>
+							<input class="fields" type="text" name="page_mkeyword" size="25" value="{PAGE_META_KEYWORDS}">
+						</td>
+	 				</tr> 
+	 				<tr valign="top">
+						<td>
+							Meta Description<br>
+							<input class="fields" type="text" name="page_mdescription" size="25" value="{PAGE_META_DESCRIPTION}">
+						</td>
+	 				</tr> 
+	  				<tr valign="top">
+						<td>
+							Page Text Content<br>
+							<textarea name="page_content" cols="130" rows="35">{PAGE_CONTENT}</textarea>
+						</td>
+	  				</tr>
+	  				<tr valign="top">
+						<td>
+							Show In Main Menu<br>
+							<input type="checkbox" name="page_menu" value="true" checked="checked" /> Yes
+						</td>
+	  				</tr>
+	  				<tr valign="top">
+						<td>
+							Page Visible<br>
+							<input type="checkbox" name="page_visible" value="true" checked="checked" /> Yes
+						</td>
+	  				</tr>
+	  				<tr valign="top">
+						<td align="center">
+							<input type="hidden" name="page_sub_of" value="{ID}">
+							<input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+tinyMCE.init({
+        // General options
+        mode : "textareas",
+        theme : "advanced",
+        plugins : "imanager,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+
+        // Theme options
+        theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2 : "bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,imanager,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+        theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,ltr,rtl",
+        theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,insertfile,insertimage",
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_statusbar_location : "bottom",
+        theme_advanced_resizing : true,
+
+        // Skin options
+        skin : "o2k7",
+        skin_variant : "silver"
+
+});
+</script>

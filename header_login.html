@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+
+<title>{TITLE}</title>
+
+<META http-equiv="Content-Type" content="text/html; iso-8859-1">
+<META NAME="keywords" CONTENT="{KEYWORDS}">
+<META NAME="description" CONTENT="{DESCRIPTION}">
+<META NAME="keywords" CONTENT="{KEYWORDS}">
+<META NAME="author" CONTENT="{AUTHOR}">
+<META NAME="copyright" CONTENT="{COPYRIGHT}">
+<META NAME="robots" CONTENT="{ROBOTS}">
+<META NAME="googlebot" CONTENT="{GOOGLEBOT}"> 
+<META NAME="classification" CONTENT="{CLASSIFICATION}">
+<META http-equiv="content-language" content="en">
+
+
+<link rel="SHORTCUT ICON" href="{SITE_FAVICON}"/>
+
+<!--
+<link rel="stylesheet" type="text/css" href="{TEMPLATE_DIR}/style.css" />
+<link rel="stylesheet" type="text/css" href="{TEMPLATE_DIR}/css/skin.css" />
+<script type="text/javascript" src="template/default/js/hide_show.js"></script>
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/jquery-1.4.2.min.js"></script>
+-->
+
+<!--
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ 	$('ul.thumb li').Zoomer({speedView:200,speedRemove:400,altAnim:true,speedTitle:400,debug:false});
+});
+</script>
+-->
+<!--
+<script type="text/javascript">
+$(function() {
+	var $ui = $('#ui_element');
+	$ui.find('.sb_input').bind('focus click',function(){
+		$ui.find('.sb_down')
+		.addClass('sb_up')
+		.removeClass('sb_down')
+		.andSelf()
+		.find('.sb_dropdown')
+		.show();
+	});
+	$ui.bind('mouseleave',function(){
+		$ui.find('.sb_up')
+		.addClass('sb_down')
+		.removeClass('sb_up')
+		.andSelf()
+		.find('.sb_dropdown')
+		.hide();
+	});
+	$ui.find('.sb_dropdown').find('label[for="all"]').prev().bind('click',function(){
+	$(this).parent().siblings().find(':checkbox').attr('checked',this.checked).attr('disabled',this.checked);
+	});
+});
+</script>
+-->
+<!--
+<script type="text/javascript">
+
+var timeout = 500;
+var closetimer = 0;
+var ddmenuitem = 0;
+
+// open hidden layer
+function mopen(id)
+{	
+	// cancel close timer
+	mcancelclosetime();
+	// close old layer
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+	// get new layer and show it
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+}
+// close showed layer
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+
+// close layer when click-out
+document.onclick = mclose; 
+//
+</script> -->
+
+<!--
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel();
+});
+</script>-->
+
+
+        <!-- Le styles -->
+        <link href="{TEMPLATE_DIR}/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="{TEMPLATE_DIR}/less/style.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="{TEMPLATE_DIR}/js/responsive_slider/responsiveslides.css">
+        <link rel="stylesheet" href="{TEMPLATE_DIR}/js/responsive_slider/demo.css">
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{TEMPLATE_DIR}/bootstrap/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{TEMPLATE_DIR}/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{TEMPLATE_DIR}/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="{TEMPLATE_DIR}/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="{TEMPLATE_DIR}/bootstrap/ico/favicon.png">
+
+
+</head>
+<body>	
+
+
+        <ul id="navigation">
+            <li class="newsletter"><a href="">Get Newsletter</a></li>
+            <li class="kit"><a href="" class="kit">Get FREE KIT</a></li>
+        </ul>
+
+ <div id="page-wrapper">
+            <div id="header" class="login-logo">
+                <div class="container">
+                    <div class="row">
+                        <div class="span4 userlogo-mobile">
+                            <a href="/"><img src="{SITE_LOGO}"  border="0" /></a>
+                        </div>
+                        <div class="span6 offset2">
+                            <div class="row-fluid login-form">
+                              
+                               <div class="after-log-access">
+                                <div class="panda-username">
+                                 <a href="user-{USERNAME}">{USERNAME}</a>
+                                 <ul>
+                                    <li><a href="user-{USERNAME}">My Profile</a></li>
+                                    <li class="uSettings"><a href="edit" >Settings</a></li>
+                                    <li class="uDownloads"><a href="downloads">My Downloads</a></li>
+                                    <li class="uBookmarks"><a href="bookmarks">My Bookmarks</a></li>
+                                    <li class="uDeposit"><a href="deposit">Make a Deposit</a></li>
+                                    <li class="uDesigner"><a href="#">Designer Dashboard</a></li>
+                                    <li class="uUpload"><a href="#">Upload Design</a></li>
+                                    <li class="uWarehouse"><a href="#">Warehouse</a></li>
+                                    <li class="uEarnings"><a href="earnings">My Earnings</a></li>
+                                    <li class="uStatement"><a href="statement">My Statement</a></li>
+                                    <li class="uWithdrawal"><a href="withdraw">Withdrawal</a></li>
+                                </ul>
+                                </div>
+                                <div class="signOut"><a  href="login.php?mod=logout" type="submit" class="btn btn-danger" >Sign Out</a></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+<!-- To Get Other Link
+	<div id="header_content1">
+		<div id="top_content">
+			<ul>
+				<li><a href="deposit" class="white">{CURRENCY}{BALANCE}</a></li>
+				<li><a href="author_dashboard" class="middle_white2"><div id="btn_top">MY ACCOUNT</div></a></li>
+			</ul>
+		</div>
+	</div>
+	-->
+
+
+
+<div class="container page-content">
+                <div id="nav" >
+                    <div class="row" id="mobilehwrap">
+                        <div class="span2" id="mobileCategories">
+ 
+                           <select style="width:100%; padding:10px;" onchange="location = this.options[this.selectedIndex].value;">
+                          <option value="">Categories</option>
+                           <option value="all">All Files</option>
+                           <!-- BEGIN cat -->
+                                <option value="category-{cat.ID}-{cat.NAME}">{cat.CAT_NAME}</option>
+                            <!-- END cat -->    
+                            </select>
+						                        
+                        </div>
+
+
+
+                        <div class="span6" id="mobileMenu">
+
+                            <ul id="main-memu">
+                                <li><a href="/" class="home-menu"></a></li>
+                                <!--<li><a href="category" onmouseover="mopen('m2')" onmouseout="mclosetime()" class="menuSub">Files</a>-->
+                                <li><a href="category">Files</a>
+                                <!--<ul onmouseover="mcancelclosetime()" onmouseout="mclosetime()" class="menyFly menuHidden">-->
+                                <ul>
+                                	<li><a href="category">Browse Categories</a></li>
+                                	<li><a href="top_sellers">Popular Files</a></li>
+                                	<li><a href="feature">Featured Files</a></li>
+                                	<li><a href="collections">Public Collections</a></li>
+                                	<li><a href="top_authors">Top Authors</a></li>
+                                	<li><a href="top_new_sellers">Top New Authors</a></li>
+                                </ul>
+
+                                </li>
+
+<!-- BEGIN main_pages -->
+				<li><a href="{main_pages.MAIN_PAGE_KEY}">{main_pages.MAIN_PAGE_NAME}</a>
+					<ul id="m{main_pages.MAIN_PAGE_ID}">
+<!-- BEGIN sub_pages -->
+						<li><a href="{main_pages.sub_pages.SUB_PAGE_KEY}">{main_pages.sub_pages.SUB_PAGE_NAME}</a></li>
+<!-- END sub_pages -->
+					</ul>
+				</li>
+<!-- END main_pages -->
+
+                                <li><a href="forum"  onmouseover="mopen('m0')" onmouseout="mclosetime()">Forum</a></li>
+                                <li><a href="support" onmouseover="mopen('m1')" onmouseout="mclosetime()">Support</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="span4" id="mobileSearch">
+                            <div class="row-fluid" id="filter">
+                <form id="ui_element" class="sb_wrapper" name="searchfrm" method="get" action="search.php">
+                        <div class="span6" id="mobilehinput">
+                            <input name="keyword" class="span12" type="text" onclick="if(this.value=='Search'){this.value=''}" placeholder="Search"/>
+                        </div>
+                                <div  class="span4" id="mobilehselect">
+                                    <select name="category" class="span12" onBlur="this.className='ctrDropDown';" onMouseDown="this.className='ctrDropDownClick';" onChange="this.className='ctrDropDown';">
+							<option name="all" value="all">All Files</option>
+<!-- BEGIN cat -->
+							<option name="{cat.CAT_NAME}" value="{cat.ID}">{cat.CAT_NAME}</option>
+<!-- END cat -->
+                                      </select>
+                                </div>
+                        <div class="span2" id="mobilehsubmit">
+                        <input type="submit" class="search-btn"/>
+                        </div>
+                </form>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>  

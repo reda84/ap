@@ -1,0 +1,77 @@
+	<div id="page_title">
+		Statistic
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<table style="height:350px;">
+				<tr>
+					<td width="370" valign="top">
+						<font size="4"><b>Online Users: {ONLINE_COUNT}</b></font><hr/><br>
+						<b style="float:left;">Username</b><b style="float:right;margin-right:180px;">Login Time</b>
+						<hr style="float:left;" class="bottom"><br>
+<!-- BEGIN online -->
+						<i style="float:left;">{online.NAME}</i><i style="float:right;">{online.TIME}</i>
+						<hr style="float:left;" class="bottom"><br>
+<!-- END online -->
+					</td>
+					<td width="40">
+
+					</td>
+					<td width="370" valign="top">
+						<font size="4"><b>Users Last Log</b></font><hr/><br>
+						<b style="float:left;">Username</b><b style="float:right;margin-right:190px;">Last Entry</b>
+						<hr style="float:left;" class="bottom"><br>
+<!-- BEGIN log -->
+						<i style="float:left;">{log.NAME}</i><i style="float:right;">{log.TIME}</i>
+						<hr style="float:left;" class="bottom"><br>
+<!-- END log -->
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" valign="top">
+						<br><br>
+						<font size="4"><b>Disk Usage</b></font><hr/><br>
+						<b style="float:left;">Total Space: {DISK_TOTAL}</b>
+						<div class='progress'>
+							<div class='prgtext'>{DISK_USAGE}% Disk Used</div>
+							<div class='prgbar'></div>
+							<div class='prginfo'>
+								<span style='color: #000;float: left;'>{USED_SPACE} Used</span>
+								<span style='color: #000;float: right;'>{FREE_SPACE} Free</span>
+								<span style='clear: both;'></span>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>	
+		</div>
+	</div>
+</div>
+
+<style type='text/css'>
+.progress {
+	border: 2px solid #F21624;
+	height: 32px;
+	width: 540px;
+	margin: 30px auto;
+}
+.progress .prgbar {
+	background: #1C1B1C;
+	width: {DISK_USAGE}%;
+	position: relative;
+	height: 32px;
+	z-index: 999;
+}
+.progress .prgtext {
+	color: #F21624;
+	text-align: center;
+	font-size: 13px;
+	padding: 5px 0 0;
+	width: 540px;
+	position: absolute;
+	z-index: 1000;
+}
+.progress .prginfo {
+	margin: 3px 0;
+}
+</style>

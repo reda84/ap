@@ -1,0 +1,80 @@
+	<div id="page_title">
+		Dashboard
+	</div>
+	<div id="page_title2">
+		01 - {THIS_DAY}  {THIS_MONTH} {THIS_YEAR}
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<table style="height:190px; border:0px solid red;">
+				<tr>
+					<td width="370" valign="top">
+						<font size="4"><b>Invoice Statistic</b></font><hr/>
+						<i style="float:left;">User's Sale Profit</i><i style="float:right;">{CURRENCY}{USER_PROFIT}</i>
+						<hr style="float:left;" class="bottom"><br>
+						<i style="float:left;">User's Referral Profit</i><i style="float:right;">{CURRENCY}{REFERRAL_PROFIT}</i>
+						<hr style="float:left;" class="bottom"><br>
+						<i style="float:left;">Total Profit</i><i style="float:right;">{CURRENCY}{TOTAL}</i>
+						<hr style="float:left;" class="bottom"><br>
+					</td>
+					<td width="40">
+
+					</td>
+					<td width="370" valign="top">
+						<font size="4"><b>User Statistic</b></font><hr/>
+						<i style="float:left;">User Signups</i><i style="float:right;">{USER_SIGNUPS}</i>
+						<hr style="float:left;" class="bottom"><br>
+						<i style="float:left;">User Sales</i><i style="float:right;">{USER_SALES}</i>
+						<hr style="float:left;" class="bottom"><br>
+						<i style="float:left;">User Deposits</i><i style="float:right;">{USER_DEPOSITS}</i>
+						<hr style="float:left;" class="bottom"><br>
+					</td>
+				</tr>
+			</table>
+			<table style="height:190px;margin-top: 5px;border:0px solid red;">
+				<tr>
+					<td width="370" valign="top">
+						<font size="4"><b>Top New Sellers</b></font><hr/>
+<!-- BEGIN top_new -->
+						<i style="float:left;">{top_new.USER}</i><i style="float:right;">{top_new.DATE}</i>
+						<hr style="float:left;" class="bottom"><br>
+<!-- END top_new -->
+					</td>
+					<td width="40">
+
+					</td>
+					<td width="370" valign="top">
+						<font size="4"><b>New Referrals</b></font><hr/>
+<!-- BEGIN new_ref -->
+						<i style="float:left;">{new_ref.USER}</i><i style="float:right;">{new_ref.DATE}</i>
+						<hr style="float:left;" class="bottom"><br>
+<!-- END new_ref -->
+					</td>
+				</tr>
+			</table>
+			<font size="4"><b>Daily Visits</b></font><hr/>
+			<form action="dashboard.php" method="post">
+			<table style="height:220px;margin-top: 2px; border:0px solid red;">
+				<tr>
+					<td width="100%" valign="top">
+					</td>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_day_next" value="{NEXT}">
+							<input type="hidden" name="first_dayz_next" value="{FIRST_NEXT}">
+							<input type="submit" name="date_d_next" value="&lsaquo;&lsaquo; NEXT">
+					</td>
+					<td width="80%" valign="top">
+						{CHART}
+					</td>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_day_back" value="{BACK}">
+							<input type="hidden" name="first_dayz_back" value="{FIRST_BACK}">
+							<input type="submit" name="date_d_back" value="BACK &rsaquo;&rsaquo;">
+					</td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+

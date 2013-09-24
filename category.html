@@ -1,0 +1,34 @@
+Category
+
+<table width="984" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td valign="top">
+            <div class="txt_white" align="center">{ERROR}</div>
+            <div id="content_wrapper2">
+                <div id="form_2" style="width: 900px;">
+                    <ul>				
+                        <!-- BEGIN cat -->
+                        <li style="float:left;margin-left: 24px;width: 200px;height:320px;">
+                            <div id="cat_list">
+                                <ul>
+                                    <li>
+                                        <a href="category-{cat.ID}-{cat.NAME}" class="blue3">{cat.CAT_NAME}</a>
+                                        <!-- BEGIN subcat -->
+                                        <div id="cat_vert"></div>
+                                        <div id="cat_horiz"></div>
+                                        <div id="cat_vert"></div>
+                                        <div id="cats">
+                                            <a href="category-{cat.subcat.ID}-{cat.subcat.NAME}-{cat.NAME}" class="blue3">{cat.subcat.NAME}</a>
+                                        </div>
+                                        <!-- END subcat -->
+                                    </li>
+                                </ul>
+                                <div>
+                                    </li>
+                                    <!-- END cat -->
+                                    </ul>
+                                </div>
+                            </div>
+                            </td>
+                            </tr>
+                            </table>

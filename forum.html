@@ -1,0 +1,104 @@
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="table_form4">
+					<ul>
+						<li style="width: 35%;">
+							&nbsp;
+						</li>
+						<li style="width: 45%;">
+							{NPAGELIST}
+						</li>
+						<li style="width: 20%;">
+							<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} THREADS</div>
+						</li>
+					</ul>
+				</div>
+				<div class="txt_white" align="center">{ERROR}</div>
+				<div id="content_wrapper2">
+					<div id="form_1">
+<!-- BEGIN topic -->
+							<div id="table_form3">
+								<ul>
+									<li style="width: 13%;">
+										<img src="{topic.T_AVATAR}" width="80" height="80" border="0">
+									</li>
+									<li style="width: 65%;">
+										<a href="id-{topic.T_ID}-topic-{topic.T_TOPIC}-page-0" class="black01">{topic.T_TOPIC2}</a><br><br>
+										<form name="t1" action="id-{topic.T_ID}-topic-{topic.T_TOPIC}-page-0" method="post">
+											<input type="submit" class="form_user" name="user" value="started by {topic.T_AUTHOR}">
+										</form>
+										<form name="t2" action="id-{topic.T_ID}-topic-{topic.T_TOPIC}-page-0" method="post">
+											<input type="submit" class="form_user" name="user" value="latest reply by {topic.T_REPLIER}">
+										</form>
+									</li>
+									<li style="width: 2%;">
+										&nbsp;
+									</li>
+									<li style="width: 20%; margin-top: -15px;">
+										<div style="margin: 10px 0 0 26px; position: absolute;">{topic.T_TIME}</div>
+										<div style="margin: 28px 0 0 20px; position: absolute;"><div id="reply_baloon"><b class="b24">{topic.T_REPLIES}</b><br>REPLIES</div></div>
+									</li>
+								</ul>
+							</div>
+							<br><hr class="gray">				  
+<!-- END topic -->
+							<div id="sprite">{NPAGELIST}</div><br>
+					</div>
+
+				</div>	   			
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<div id="sprite2"></div>
+				<a href="forum_new_topic" class="middle_white3"><div id="forum_btn">Start New Thread</div></a>
+				<div id="sprite">
+					<div id="table_form3">
+						<ul>
+							<li style="float:left; margin: 0 0 0 -10px; width: 48px;">
+								<a href="forum-rules"><img src="{IMAGES_PATH}/rules.png" width="48" height="44" border="0"></a>
+							</li>
+							<li style="margin: 6px 0 0 10px;">
+								<a href="forum-rules" class="black02">Forum Rules</a><br>Read these first! 
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="right_wrapper2">
+					<div id="form_r_gray" style="margin: -26px 0 20px 0;">
+						<table border="0" cellpadding="15" cellspacing="0" height="100%">		
+					  		<tr>
+					   			<td align="left">
+									<form action="forum_search.php" method="get">
+    										<input type="text" name="thread" class="search_form_small" onclick="if(this.value=='Search Threads'){this.value=''}" value="Search Threads">
+    										<input type="submit" class="search_btn" alt="search" title="search" value="">
+ 									</form>
+								</td>
+					  		</tr>
+						</table>
+					</div>
+					<div id="form_r_gray">
+						<div id="right_hd">
+							Your Recent Threads
+						</div>
+						<div id="sprite">
+							<h4 class="gr12">
+<!-- BEGIN activity -->
+								<p>
+									<a href="id-{activity.A_ID}-topic-{activity.A_TOPIC}-page-0" class="blue3">{activity.A_TOPIC2}</a><br>
+									<i style="float: right;">{activity.A_TIME}</i><br>
+								</p>
+								<hr class="gray2" style="width:180px;">
+<!-- END activity -->
+								<p align="center">last 20 activities</p> 
+							</h4>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+

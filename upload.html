@@ -1,0 +1,612 @@
+<link href="../../up/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../up/js/swfupload.js"></script>
+<script type="text/javascript" src="../../up/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="../../up/js/fileprogress.js"></script>
+<script type="text/javascript" src="../../up/js/handlers.js"></script>
+<script type="text/javascript">
+		var swfu;
+
+		window.onload = function() {
+			var settings = {
+				flash_url : "up/swfupload.swf",
+				upload_url: "upload.php?get_name=get_value",
+				assume_success_timeout: 10,
+				post_params: { "post_name1": "{USERNAME}", "post_name2": "post_value2" }, 	// Here are some POST values to send. These can be changed dynamically
+				file_post_name: "Filedata",	// This is the "name" of the file item that the server-side script will receive. Setting this doesn't work in the Linux Flash Player
+				requeue_on_error: false,
+				http_success : [123, 444],
+				file_size_limit : "500 MB",
+				file_types : "*.*",
+				file_types_description : "All Files",
+				file_upload_limit : 100,
+				file_queue_limit : 0,
+				custom_settings : {
+					progressTarget : "fsUploadProgress",
+					cancelButtonId : "btnCancel"
+				},
+				debug: false,
+
+				// Button settings
+				button_image_url: "up/images/button-upload.png",
+				button_width: "78",
+				button_height: "22",
+				button_placeholder_id: "spanButtonPlaceHolder",
+				button_text: '<span class="theFont">Upload</span>',
+				button_text_style: ".theFont { color:#ffffff; font-size: 13; }",
+				button_text_left_padding: 12,
+				button_text_top_padding: 3,
+				
+				// The event handler functions are defined in handlers.js
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+				queue_complete_handler : queueComplete	// Queue plugin event
+			};
+
+			swfu = new SWFUpload(settings);
+		
+			if (isIE) {
+				window.setInterval(getCookie, 100);
+			} else {
+				document.getElementById("divSWFUpload").style.display = "block";
+			}
+	     };
+
+	var last_cookie_value = "";
+	function getCookie() {
+		var cookie_value = readCookie("FlashCookie");
+		if (cookie_value && last_cookie_value && cookie_value !== last_cookie_value) {
+			var p = document.createElement("p");
+			p.innerHTML = "FlashCookie cookie changed to " + unescape(cookie_value.replace(/[+]/g, " "));
+			document.getElementById("divCookieValues").appendChild(p);
+		}
+
+		last_cookie_value = cookie_value;
+	}
+	
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	}
+	</script>
+
+
+
+<!-- BEGIN error -->
+	<div id='error' align='center'>
+		<div id='err_img'></div><br><br>
+		<p>{error.PRO_TITLE_ALERT}</p>
+		<p>{error.PRO_DESCRIPT_ALERT}</p>
+		<p>{error.PRO_URL_PREV_ALERT}</p>
+		<p>{error.PRO_URL_THUMB_ALERT}</p>
+		<p>{error.PRO_URL_MAIN_ALERT}</p>
+		<p>{error.PRO_GRAPH_INCL_ALERT}</p>
+		<p>{error.PRO_SUBCAT_ALERT}</p>
+		<br>
+	</div>
+<!-- END error -->
+
+<!-- BEGIN success -->
+	<div id='error' align='center'>
+		<div id='success_img'></div>
+		<br>{success.YES}
+		<br><br>
+	</div>
+<!-- END success -->
+
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+					<div id="content_wrapper" class="down">
+						<div id="form_1">
+              						<table border="0" cellpadding="4" cellspacing="0">
+					  				<tr>
+                        							<td width="20%">
+											&nbsp;
+										</td>
+                        							<td width="80%">
+											<span style="margin-top:20px;font-size:13px;float:right;">Trouble uploading? <a href="upload-using-ftp" class="blue3">Try our FTP service</a></span>
+										</td>
+					  				</tr>	
+                      						<tr> 
+                        							<td>
+											<div id="reg_t1"></div>
+										</td>
+                        							<td>
+											<h2 class="b24">Files</h2> 
+										</td>
+                      						</tr>
+					  				<tr>
+						 				<td align="center" colspan="2">
+<!-- BEGIN file_option -->
+											<div id="up_form_x">
+												<div id="oks"></div>
+												<div id="up_form_inside">
+													<span style="float:left;margin:5px 0 5px 50px;">Saved</span>
+													<span style="float:left; margin:20px 0 0 -30px;">{file_option.FILES}</span>
+													<span style="float:right;margin:5px 10px 0 0;">
+														<form action="upload.php" method="post">
+															<input type="hidden" name="delete_name" value="{file_option.FILES}">
+															<input type="submit" onclick="refresh_page();" class="small_remove" name="remove" value="remove">
+														</form>
+													</span>
+												</div>
+											</div>
+<!-- END file_option -->
+											<form action="" method="post" enctype="multipart/form-data">
+												<div class="fieldset flash" id="fsUploadProgress">
+												</div>
+												<div>
+													<span id="spanButtonPlaceHolder"></span>
+													<input type="hidden" name="post_name1" value="{USERNAME}"/>
+													<input id="btnCancel" type="hidden" value="" onclick="swfu.cancelQueue();" disabled="disabled"  />
+												</div>
+											</form>
+						 				</td>
+									</tr>
+              					<form action="upload.php?type={CURRENT_CAT}" method="post" enctype="multipart/form-data"> 
+                      						<tr> 
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Image Preview  </h3>
+										</td>
+                        							<td align="left">
+  											<select name="product_url_image_preview" class="field2">
+    												<option name="select" selected="selected" value="{PRO_URL_IMG}">{PRO_URL_IMG}</option>
+<!-- BEGIN file_option -->
+    												<option name="{file_option.NUM}" value="{file_option.FILES}">{file_option.FILES}</option>
+<!-- END file_option -->
+											</select>
+											<br><br><p><small><i>590 pixel wide JPG preview of your file. Recommended height is 700 pixels.</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Thumbnail  </h3>
+										</td>
+                        							<td align="left">
+  											<select name="product_url_thumbnail" class="field2">
+    												<option name="select" selected="selected" value="{PRO_URL_THUMB}">{PRO_URL_THUMB}</option>
+<!-- BEGIN file_option -->
+    												<option name="{file_option.NUM}" value="{file_option.FILES}">{file_option.FILES}</option>
+<!-- END file_option -->
+											</select>
+											<br><br><p><small><i>JPEG or PNG 80x80px Thumbnail</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Main Files(s)  </h3> 
+										</td>
+                        							<td style="" align="left">
+  											<select name="product_url_main" class="field2">
+    												<option name="select" selected="selected" value="{PRO_URL_MAIN}">{PRO_URL_MAIN}</option>
+<!-- BEGIN file_option -->
+    												<option name="{file_option.NUM}" value="{file_option.FILES}">{file_option.FILES}</option>
+<!-- END file_option -->
+											</select>
+											<br><br><p><small><i>ZIP - All Files For Download</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Preview Image<br> Set  </h3> 
+										</td>
+                        							<td style="" align="left">
+  											<select name="product_url_img_set" class="field2">
+    												<option name="select" selected="selected" value="{PRO_URL_IMG_SET}">{PRO_URL_IMG_SET}</option>
+<!-- BEGIN file_option -->
+    												<option name="{file_option.NUM}" value="{file_option.FILES}">{file_option.FILES}</option>
+<!-- END file_option -->
+											</select>
+											<br><br><p><small><i>ZIP file of images (png/jpg) w/ optional text descriptions for display on the site</i></small></p>
+										</td>
+                      						</tr>					  
+                      						<tr> 
+                       							<td colspan="2">
+											<div id="note_field1">Please note we only accept file sizes of up to 200MB.</div>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td colspan="2">
+											<hr class="gray">
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td>
+											<div id="reg_t2"></div>
+										</td>
+                        							<td>
+											<h2 class="b24">Name & Description</h2> 
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Name  </h3> 
+										</td>
+                        							<td align="left">
+											<input name="product_title" type="text" class="register" value="{PRO_TITLE2}" />
+											<br><br><br><p><small><i>Maximum 50 characters. Follow our <a href="item-title-naming-convention" class="blue2">Item Title Naming Conventions</a>.</i></small></p>
+										</td>
+                      						</tr>
+								</table>	
+								<table cellpadding="0" cellspacing="4" style="margin: 0 0 0 90px;">
+                      						<tr> 
+                        							<td valign="top" width="20%">
+											<h3 class="b14">Text  </h3> 
+										</td>
+                        							<td align="left" width="80%">
+											<textarea name="product_description" cols="65" rows="14"/>{PR0_DESCRIPTION}</textarea>
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td valign="top">
+											&nbsp;
+										</td>
+                        							<td align="left">
+											<small><i>This field is used for search, so please be descriptive!</i></small>
+										</td>
+                      						</tr>
+								</table>
+								<table cellpadding="0" cellspacing="4">
+                      						<tr> 
+                       							<td colspan="2">
+											<hr class="gray">
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td width="20%">
+											<div id="reg_t3"></div>
+										</td>
+                        							<td width="80%">
+											<h2 class="b24">Category & Attributes</h2> 
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td colspan="2">
+											<p><small><i>Not sure what all these attributes and settings mean for your file? <a href="files-attributes" class="blue2">Read our helpful explanations</a></i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Category  </h3>
+										</td>
+                        							<td align="left">
+  											<select name="product_subcategory" class="field2">
+<!-- BEGIN catselect -->
+    												<option value="{catselect.VALUE}" {catselect.SELECTED}>{catselect.NAME}</option>
+<!-- END catselect -->
+											</select>
+											<br><br><p><small><i>590 pixel wide JPG preview of your file. Recommended height is 700 pixels.</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Layered?  </h3>
+										</td>
+                        							<td align="left">
+											<label style="float:left;"><input name="product_layered" type="radio" value="1" /> Yes</label>
+											<label style="float:right;"><input name="product_layered" type="radio" value="0" /> No</label>
+										</td>
+                      						</tr>
+                      						<tr>
+<!-- BEGIN type1 -->
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">{type1.ATTRIBUTES}</h3>
+										</td>
+                        							<td align="left">
+											<select class="field1" multiple="multiple" name="product_graphic_incl[]" size="10">
+												<option value="Vector EPS">Vector EPS</option>
+												<option value="Layered PSD">Layered PSD</option>
+												<option value="Transparent PNG">Transparent PNG</option>
+												<option value="InDesign INDD">InDesign INDD</option>
+												<option value="Quark QXP">Quark QXP</option>
+												<option value="JPG Image">JPG Image</option>
+												<option value="AI Illustrator">AI Illustrator</option>
+												<option value="Photoshop ABR">Photoshop ABR</option>
+												<option value="Photoshop GRD">Photoshop GRD</option>
+												<option value="Photoshop PAT">Photoshop PAT</option>
+												<option value="Photoshop ASL">Photoshop ASL</option>
+												<option value="Photoshop ATN">Photoshop ATN</option>
+												<option value="Photoshop CSH">Photoshop CSH</option>
+											</select>
+										</td>
+<!-- END type1 -->
+
+<!-- BEGIN type2 -->
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">{type2.ATTRIBUTES}</h3>
+										</td>
+                        							<td align="left">
+											<select class="field1" multiple="multiple" name="product_graphic_incl[]" size="10">
+												<option value="Powerpoint PPT">Powerpoint PPT</option>
+												<option value="Powerpoint PPTX">Powerpoint PPTX</option>
+												<option value="Theme THMX">Theme THMX</option>
+												<option value="Keynote KEY">Keynote KEY</option>
+												<option value="Layered PSD">Layered PSD</option>
+												<option value="JPG Image">JPG Image</option>
+											</select>
+										</td> 
+<!-- END type2 -->
+
+<!-- BEGIN type3 -->
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">{type3.ATTRIBUTES}</h3>
+										</td>
+                        							<td align="left">
+											<select class="field1" multiple="multiple" name="product_graphic_incl[]" size="10">
+												<option value="Photoshop PSD">Photoshop PSD</option>
+												<option value="Transparent PNG">Transparent PNG</option>
+												<option value="Layered PNG">Layered PNG</option>
+												<option value="JPG Image">JPG Image</option>
+												<option value="Vector EPS">Vector EPS</option>
+												<option value="InDesign INDD">InDesign INDD</option>
+												<option value="Quark QXP">Quark QXP</option>
+												<option value="AI Illustrator">AI Illustrator</option>
+												<option value="Flat PNG">Flat PNG</option>
+												<option value="TIFF Image">TIFF Image</option>
+												<option value="TGA Image">TGA Image</option>
+												<option value="High Dynamic Range HDR">High Dynamic Range HDR</option>
+												<option value="OpenEXR Image">OpenEXR Image</option>
+											</select>
+										</td>
+<!-- END type3 -->
+                      						</tr>
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Minimum <br>Adobe CS </h3> 
+										</td>
+                        							<td style="" align="left">
+											<select class="field2" name="product_cs_incl">
+    												<option selected="selected" value="N/A">N/A</option>
+												<option value="CS">CS</option>
+												<option value="CS2">CS2</option>
+												<option value="CS3">CS3</option>
+												<option value="CS4">CS4</option>
+												<option value="CS5">CS5</option>
+											</select>
+										</td>
+                      						</tr>					  
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Pixel <br>Dimensions  </h3>
+										</td>
+                        							<td align="left">
+											<input name="product_pixel" type="text" class="register" value="{PRO_PIXEL}" />
+											<br><br><br><p><small><i>Image dimensions in Pixels for screen-based items. E.g. 300x600, 50x50</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Print <br>Dimensions  </h3>
+										</td>
+                        							<td align="left">
+											<input name="product_print" type="text" class="register" value="{PRO_PRINT}" />
+											<br><br><br><p><small><i>    Print dimensions in Inches for printable items, width x height. E.g. 3.5x2.5, 8.5x11</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td colspan="2">
+											<div id="note_field1">Some of our fields allow you to select multiple values. <br>Please use the CTRL key (PC) or COMMAND key (Mac) to select multiple items.</div>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td colspan="2">
+											<hr class="gray">
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td>
+											<div id="reg_t4"></div>
+										</td>
+                        							<td>
+											<h2 class="b24">Tags</h2> 
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Theme Tags  </h3>
+										</td>
+                        							<td align="left">
+											<input name="product_tag_theme" type="text" class="register" value="{PRO_TAG_THEME}" />
+											<br><br><br><p><small><i>e.g. peace, income, business, health</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Subject Tags  </h3>
+										</td>
+                        							<td align="left">
+											<input name="product_tag_subject" type="text" class="register" value="{PRO_TAG_SUBJECT}" />
+											<br><br><br><p><small><i>e.g. dog, woman, pencil, car</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Color Tags  </h3> 
+										</td>
+                        							<td style="" align="left">
+											<input name="product_tag_color" type="text" class="register" value="{PRO_TAG_COLOR}" />
+											<br><br><br><p><small><i>e.g. red, blue, yellow</i></small></p>
+										</td>
+                      						</tr>					  
+                      						<tr> 
+                        							<td valign="top">
+											<h3 class="b14" style="margin: 0px 0px 0px 50px;">Style Tags</h3>
+										</td>
+                        							<td align="left">
+											<input name="product_tag_style" type="text" class="register" value="{PRO_TAG_STYLE}" />
+											<br><br><br><p><small><i>e.g. grunge, clean, vintage</i></small></p>
+										</td>
+                      						</tr>
+                      						<tr> 
+                       							<td colspan="2">
+											<hr class="gray">
+										</td>
+                      						</tr>
+                      						<tr> 
+                        							<td>
+											<div id="reg_t5"></div>
+										</td>
+                        							<td>
+											<h2 class="b24">Message to the Reviewer</h2> 
+										</td>
+                      						</tr>
+								</table>
+								<table cellpadding="0" cellspacing="4" style="margin: 0 0 0 90px;">
+                      						<tr> 
+                        							<td valign="top" width="20%">
+											<h3 class="b14" style="margin: 0;">Text</h3>
+										</td>
+                        							<td align="left" width="80%">
+											<textarea name="product_comment" cols="65" rows="14"/>{PRO_COMMENT}</textarea>
+										</td>
+                      						</tr>
+								</table>
+								<table cellpadding="0" cellspacing="4">
+					  				<tr>
+						 				<td align="center" colspan="2">
+            										<input name="product_own" type="hidden" value="0" /><input class="checkbox" id="user_agrees_to_terms" name="product_own" type="checkbox" value="1" />
+											<div style="float: left;padding: 10px 0 0 10px;">
+												<p>
+													Any images, sounds, video, code, flash, or other assets that are not my own work, <br>
+													have been appropriately licensed for use in the file preview or main download. <br>
+													Other than these items, this work is entirely my own and I have full rights to sell it here.
+												</p>
+											</div>
+						 				</td>
+									</tr>
+					  				<tr>
+						 				<td align="center" colspan="2">
+						 					<br><input id="btn_normal_bb" class="middle_white3" type="submit" name="save_all" value="Upload"><br><br>
+						 				</td>
+									</tr>
+              						</table>             
+							</form>
+						</div>
+					</div>
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<div id="right_wrapper">
+					<div id="form_r_gray">
+						<div id="right_hd2">
+							<div id="sprite">
+								Switch Upload Category
+							</div>
+						</div>
+						<div id="sprite">
+							<div id="sprite" style="margin-bottom: 28px;">
+							<form action="upload.php?type=" method="get">
+								<div id="sprite">
+									<p>
+	           							<select class="sort_form_big" name="type">
+<!-- BEGIN only_catselect -->
+    										<option selected="" value="{only_catselect.NAME}">{only_catselect.NAME}</option>
+<!-- END only_catselect -->
+	               	           				</select>
+									</p>
+								</div>
+								<li><input id="btn_normal_bb" class="middle_white3" type="submit" value="SWITCH"></li>
+							</form>
+							<form action="upload-instruction" method="post">
+								<li><input id="btn_normal_bb" class="middle_white3" type="submit"  name="" value="HELP"></li>
+							</form>
+							</div>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								Get your item accepted
+							</div>
+						</div>
+						<div id="sprite">
+							<table border="0" cellpadding="10" cellspacing="0">		
+					  			<tr>
+					   				<td align="left">
+					    					<h4 class="b12">To give your item the best chance possible to be accepted, please make sure you've:</h4>
+										<div id="right_content">
+										<ul >
+    											<li class="right_arrow"><div class="right_arrow"></div> Read and follow the upload instructions.</li>
+    											<li class="right_arrow"><div class="right_arrow"></div> Added useful tags and ensured they're <br>spelled correctly (this helps find your file).</li>
+    											<li class="right_arrow"><div class="right_arrow"></div> Added a thorough and useful item <br>description (this also helps find your file).</li>
+										</ul>
+										</div>
+    										<br><br><br><br><br><br><p><h4 class="b12">If you've done all that, you're ready to upload. Thanks for selling with Us!</h4></p>
+									</td>
+					  			</tr>
+							</table>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								Trouble Uploading?
+							</div>
+						</div>
+						<div id="sprite">
+							<h4 class="b12">
+								<p>Some users have experienced problems uploading. We've compiled a <a href="upload-problem" class="blue3">list of things to check first</a> which might be of help. We're always working on improving our uploading infrastructure - but if you continue to experience problems please contact support.</p> 
+							</h4>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								Author Resources
+							</div>
+						</div>
+						<div id="sprite">
+							<table border="0" cellpadding="10" cellspacing="0">		
+					  			<tr>
+					   				<td align="left">
+					    					<h4 class="b12">The following archive utilities have been found to generate non-standard zip files that our server is often unable to decompress:</h4>
+										<div id="right_content">
+										<ul>
+    										<li class="right_arrow"><div class="right_arrow"></div> 7zip</li>
+   										<li class="right_arrow"><div class="right_arrow"></div> lzarc</li>
+    										<li class="right_arrow"><div class="right_arrow"></div> WinZip (Latest version)</li>
+										</ul>
+										</div>
+    										<br><br><br><br><p><h4 class="b12">Please use another archive utility to reduce the chance of problems with your uploads.</h4></p>
+									</td>
+					  			</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>	
+	<script type="text/javascript" language="JavaScript">
+	<!--
+	function refresh_page()
+	{
+    		window.location.replace( sURL );
+	}
+	//-->
+	</script>
+
+
+<script language="javascript" type="text/javascript" src="template/default/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+tinyMCE.init({
+		mode : "textareas",
+		theme : "simple"
+});
+</script>

@@ -1,0 +1,41 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=set_category">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add New</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">  
+			<h2>Category List</h2>
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="90" class="title">Category ID</td>
+	  				<td width="320" class="title">Category Name</td>
+	  				<td width="90" class="title">Active</td>
+	  				<td width="90" class="title">Subcategories</td>
+	  				<td width="90" class="title">Edit</td>
+	  				<td width="90" class="title">Delete</td>
+	 			</tr>
+<!-- BEGIN cat -->
+	 			<tr valign="top">
+	  				<td align="center">{cat.ID}</td>
+	  				<td>&nbsp;&nbsp;&nbsp;&nbsp;{cat.NAME}</td>
+	  				<td align="center"><div id="small_yes"></td>
+	  				<td align="center"><a href="general.php?mod=subcategory&catid={cat.ID}" alt="subcategory" title="subcategory"><div id="small_sub"></div></a></td>
+	  				<td align="center"><a href="general.php?mod=set_category&catid={cat.ID}" alt="edit" title="edit"><div id="small_edit"></div></a></td>
+	  				<td align="center"><a href="general.php?mod=category&catid={cat.ID}&delete=yes" alt="delete" title="delete" onclick= "return (window.confirm('Are you sure to delete this category?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END cat -->
+			</table>
+			</div>
+		</div>
+	</div>
+</div>

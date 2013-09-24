@@ -1,0 +1,39 @@
+	<div id="page_title">
+		Tickets
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Ticket List</h2>
+			<table cellpadding="0" cellspacing="1" width="100%">
+	 			<tr class="title" valign="top">
+	  				<td width="160" class="title">User</td>
+	  				<td width="160" class="title">Email</td>
+	  				<td width="220" class="title">Issue</td>
+	  				<td width="100" class="title">Date</td>
+	  				<td width="80" class="title">View</td>
+	  				<td width="80" class="title">Delete</td>
+	 			</tr>
+<!-- BEGIN tickets -->
+	 			<tr valign="top">
+	  				<td>&nbsp;&nbsp;{tickets.USER}</td>
+	  				<td>&nbsp;&nbsp;{tickets.EMAIL}</td>
+	  				<td align="center">{tickets.ISSUE}</td>
+	  				<td align="center">{tickets.DATE}</td>
+	  				<td align="center"><a href="tickets.php?mod=view&id={tickets.ID}" alt="view" title="view"><div id="small_view"></div></a></td>
+	  				<td align="center"><a href="tickets.php?mod=delete&id={tickets.ID}" alt="delete" title="delete" onclick= "return (window.confirm('Are you sure to delete this issue?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END tickets -->
+	 			<tr>
+					<td colspan="7">
+						{NPAGELIST}
+					</td>
+	 			</tr>
+			</table>
+		</div>
+	</div>
+</div>

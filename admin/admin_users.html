@@ -1,0 +1,50 @@
+	<div id="page_title">
+		Administrators
+	</div>
+	<a href="home.php?mod=add_user">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add New</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>User List</h2>
+{INFORM}
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   	  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="240" class="title" align="center">Username</td>
+								<td width="180" class="title" align="center">Group</td>
+								<td width="220" class="title" align="center">Email</td>
+								<td width="60" class="title" align="center">Edit</td>
+								<td width="60" class="title" align="center">Delete</td>
+							</tr>
+<!-- BEGIN user -->
+							<tr bgcolor="#ffffff">
+								<td>&nbsp;{user.USERNAME}</td>
+								<td align="center">{user.GROUP}</td>
+								<td align="center">{user.EMAIL}</td>
+								<td align="center"><a href="home.php?mod=add_user&id={user.USERID}" alt="edit user" title="edit user"><div id="small_edit"></div></a></td>
+								<td align="center"><a href="home.php?mod=admin_delete&id={user.USERID}" alt="delete user" title="delete user" onclick= "return (window.confirm('Are you sure to delete this user?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END user -->
+						</table>
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}<br>{INFO}
+					</td>
+	 			</tr>		  	   
+			</table>	
+
+	</div>
+</div>
+

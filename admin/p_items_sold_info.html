@@ -1,0 +1,52 @@
+	<a href="product.php?mod=items_sold">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="page_title">
+		Items
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>Sold Item Details</h2>
+			<table cellpadding="0" cellspacing="1" border="0" width="100%">		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="80" class="title" align="center">Sale ID</td>
+								<td width="300" class="title" align="center">Item SID</td>
+								<td width="150" class="title" align="center">Buyer</td>
+								<td width="80" class="title" align="center">Price</td>
+								<td width="120" class="title" align="center">Date</td>
+								<td width="140" class="title" align="center">Rating</td>
+							</tr>
+<!-- BEGIN pro -->
+							<tr valign="top">
+								<td align="center">{pro.S_ID}</td>
+								<td align="center">{pro.S_SID}</td>
+								<td>&nbsp;&nbsp;{pro.S_BUYER}</td>
+								<td align="center">{CURRENCY}{pro.S_PRICE}</td>
+								<td align="center">{pro.S_DATE}</td>
+								<td align="center">{pro.S_RATE}</td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END pro -->
+						</table>
+						{NODATA}
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>
+			<div>	
+		</div>
+	</div>

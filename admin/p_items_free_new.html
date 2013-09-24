@@ -1,0 +1,81 @@
+	<div id="page_title">
+		Items
+	</div>
+	<a href="product.php?mod=items_free">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>Add New Free Item</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">
+	 			<tr>
+					<td>
+						<p>
+		  					<form action="product.php?mod=items_free&add=new" method="post">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td width="100">
+										Product Name
+									</td>
+									<td width="280">
+										<input type="text" class="fields_small" name="proname">
+									</td>
+									<td width="80">
+										Posted by
+									</td>
+									<td width="300" align="left">
+										<input type="text" class="fields_small" name="membername">
+									</td>
+									<td width="100" align="left">
+										<input type="submit" class="submit_btn" name="search" value="Search">
+									</td>
+								</tr>
+							</table>
+							</form>
+						</p>
+					</td>
+      				</tr>	
+			</table>
+			<table cellpadding="0" cellspacing="1" border="0" width="100%">		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="370" class="title" align="center">Item Name</td>
+								<td width="180" class="title" align="center">Category</td>
+								<td width="140" class="title" align="center">Member</td>
+								<td width="80" class="title" align="center">Price</td>
+								<td width="50" class="title" align="center">View</td>
+								<td width="50" class="title" align="center">Free</td>
+							</tr>
+<!-- BEGIN pro -->
+							<tr valign="top">
+								<td>{pro.P_NAME2}</td>
+								<td>&nbsp;&nbsp;{pro.P_CATEGORY}</td>
+								<td>&nbsp;&nbsp;{pro.P_MEMBER}</td>
+								<td align="center">{CURRENCY}{pro.P_PRICE}</td>
+								<td align="center"><a href="../{pro.P_NAME}.html" target="_new" alt="view this item" title="view this item"><div id="small_view"></div></a></td>
+								<td align="center"><a href="product.php?mod=items_free&save_name={pro.P_NAME}&member={pro.P_MEMBER}&sid={pro.P_SID}" alt="make free download" title="make free download"><div id="small_free"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END pro -->
+						</table>
+						{NODATA}
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>
+			<div>	
+		</div>
+	</div>

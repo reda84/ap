@@ -1,0 +1,153 @@
+
+.content-padding{padding:0 15px;}
+#right-sidebar{ 
+    padding-right:12px;
+    .ver-sep{
+        vertical-align:middle;
+        display: inline-block;
+        margin:0 17px;
+    }
+   
+
+    .sidebar-box{
+        padding:15px;
+        margin-bottom:16px;
+    }
+    .sidebar-grey-box{
+        .gradient(#f5f5f5,#eeebeb,#646464,none);
+        .box-shadow(inset 0 1px px rgba(255,255,255,1));
+        border:1px solid #dcdcdc;
+        .sidebar-box;
+    }
+    .item-sales,
+    .design-item,
+    .item-details,
+    .user-profile
+    {
+        .sidebar-box;
+    }
+
+    .item-sales{
+         margin-top: 20px;
+        .sales-container{display: inline-block;vertical-align: middle;}
+        .sales{display: inline-block;vertical-align:top;}
+        .sales-count{
+            #font > .shorthand(26px, 600, 26px);
+        }
+        .rating{
+            display: inline-block;vertical-align:top;
+            text-align:center;
+            h3{color:@themeColor;#font > .shorthand(20px, 600, 26px);text-align:center;}
+            ul.rating-element{
+                text-align:center;  
+                margin:10px 0;
+                li{
+                    display: inline-block;vertical-align:top;
+                    .size(26px,26px);
+                    background:url(../images/rate.png) no-repeat;
+                    &.active{background:url(../images/active-rate.png) no-repeat;}
+                  }
+            }
+            
+        }
+    }
+
+    .item-details{
+        font-size:12px;
+        td{padding:3px 0;}
+        .info-meta{
+            background:url(../images/profile-info-icon.png) no-repeat;
+            padding-left:27px;
+            line-height: 25px;
+            display:inline-block;
+            &.meta-live{background-position:0 5px; }
+            &.meta-member{background-position:0 -25px; }
+        }
+    }
+
+
+    .design-item{
+        text-align:center;
+        h3{color:@themeColor;#font > .shorthand(20px, 600, 26px);text-align:center;};
+        .sidebar-grey-box;
+      .featured-design {
+        display: inline-block;
+        background: #fff;
+        width: 170px;
+        padding: 3px;
+        border: 1px solid #d8d8d8;
+        .box-shadow(1px 3px 3px rgba(230,228,228,1));
+        .border-radius (4px);
+        .featured-img{.size(108px, 161px); display: inline-block; }
+        .featured-info { margin: 8px 35px; text-align: center; display: inline-block; color: @profileColor; #font > .shorthand(11px, 600, 26px); }
+        .featured-info span { #font > .shorthand(14px, 600, 26px); display: inline-block; .comfortaa; }
+      }
+    }
+
+
+.user-profile{
+    .user-vcard{
+        text-align:center;
+        display: inline-block;
+        vertical-align: top;
+        h3{color:@themeColor;font-size:20px;margin:0;}
+            .user-avatar{
+                padding: 5px;
+                background: #fff;
+                display:block;
+                margin:10px auto;
+            }
+    }
+    .ver-sep{
+        margin: 0 13px;
+    }
+    
+}
+
+    
+}
+
+#single-item{
+    .profile-gallery { 
+        position:relative; margin-top:20px; width:97%; 
+        img{border:1px solid #ccc;}
+    .profile-social { right: 20px;  bottom: 15px; position: absolute; z-index:9999;
+      .profileSocial-icons{
+        height:49px;
+        display: inline-block;
+        text-align: right;
+        li{
+          display: inline-block;
+          a{
+            display:block;
+            .size(49px,49px);
+            background: url(../images/profile-social.png);
+            &.twitter{background-position:-49px 0;}
+            &.gplus{background-position:-98px 0;}
+          }
+        }
+      }
+    }
+}
+
+    .mail-panada {
+	  margin-top:43px; width:97%;
+      .gradient(#f5f5f5,#eeebeb,#646464,none);
+      .box-shadow(inset 0 1px px rgba(255,255,255,1));
+      border:1px solid #dcdcdc;
+      h3{color:@themeColor;#font > .shorthand(20px, 600, 26px);text-align:left; display: inline-block; }
+      p { color:#646464; display: inline-block;  #font > .shorthand(12px, 400, 22px); }
+	  
+	.upload-row{
+	.button-send{text-align:right;}
+	color: #646464; margin-bottom:5px; padding-right:15px;
+	.row-left{ margin:0; #font > .shorthand(14px, 400,26px); text-align:right; padding-right:10px; }
+		.row-right{margin:0;}
+	}
+	      textarea.mail-message { height:110px; }
+		  .btn-send { padding: 4px 24px; }
+    }
+
+
+}
+

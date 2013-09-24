@@ -1,0 +1,77 @@
+	<div id="page_title">
+		Items
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">  
+			<h2>Items Queue List</h2>
+{INFORM}
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">
+	 			<tr>
+					<td>
+						<p>
+		  					<form action="product.php?mod=review" method="post">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td width="100">
+										Product Name
+									</td>
+									<td width="280">
+										<input type="text" class="fields_small" name="proname">
+									</td>
+									<td width="80">
+										Posted by
+									</td>
+									<td width="300" align="left">
+										<input type="text" class="fields_small" name="membername">
+									</td>
+									<td width="100" align="left">
+										<input type="submit" class="submit_btn" name="search" value="Search">
+									</td>
+								</tr>
+							</table>
+							</form>
+						</p>
+					</td>
+      				</tr>	
+
+			</table>
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="40" class="title">#</td>
+	  				<td width="370" class="title">Item Name</td>
+	  				<td width="170" class="title">Category</td>
+	  				<td width="140" class="title">Member posted</td>
+	  				<td width="90" class="title">Date posted</td>
+	  				<td width="60" class="title">Preview</td>
+	 			</tr>		  	   
+				{NODATA}
+<!-- BEGIN pro -->
+				<tr valign="top">
+					<td align="center">{pro.NUM}</td>
+					<td>{pro.PRODUCT_NAME_EDIT}</td>
+					<td>&nbsp;&nbsp;{pro.CATEGORY}</td>
+					<td>&nbsp;&nbsp;{pro.MEMBER}</td>
+					<td align="center">{pro.DATE_POSTED}</td>
+					<td align="center"><a href="product.php?mod=review&id={pro.PROID}" alt="preview" title="preview"><div id="small_preview"></div></a></td>
+				</tr>
+	 			<tr>
+					<td colspan="6">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END pro -->
+			</table>	
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var childWindow = null;
+	function MM_openBrWindow(theURL,winName,features) {
+		if (childWindow) {
+			if (childWindow.close) childWindow.close();
+		}
+		childWindow = window.open(theURL,winName,features);
+	}
+</script>

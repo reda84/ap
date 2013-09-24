@@ -1,0 +1,41 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Language List</h2>
+			<form action="general.php?mod=language" method="post"> 
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="80" class="title">Select</td>
+	  				<td width="320" class="title">Language</td>
+	  				<td width="140" class="title">Short name</td>
+	  				<td width="70" class="title">Flag</td>
+	  				<td width="80" class="title">Active</td>
+	 			</tr>
+<!-- BEGIN lang -->
+	 			<tr valign="top">
+	  				<td align="center"><input type="radio" name="id" value="{lang.LANG_ID}" style="margin-top: 8px;" /></td>
+	  				<td align="center">{lang.LANG_NAME}</td>
+	  				<td align="center">{lang.LANG_SHORT}</td>
+	  				<td align="center"><img src="../{FLAGS_DIR}/{lang.LANG_FLAG}" width="23" height="22" style="margin-top: 8px;"></td>
+	  				<td align="center">{lang.LANG_ACTIVE}</td>
+	 			</tr>
+<!-- END lang -->	
+	 			<tr>
+					<td colspan="6">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+			</table> 
+    			<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 			<tr>
+	  				<td align="center">
+	   					<input type="submit" class="submit_btn" name="{SAVE}" value="Save">{INFO}
+	  				</td>
+	 			</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>

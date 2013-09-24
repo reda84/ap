@@ -1,0 +1,50 @@
+	<div id="page_title">
+		Items
+	</div>
+	<a href="product.php?mod=item_comments">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>Item Comments</h2>
+			<table cellpadding="0" cellspacing="1" border="0" width="100%">		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="60" class="title" align="center">Avatar</td>
+								<td width="150" class="title" align="center">Posted by</td>
+								<td width="520" class="title" align="center">Comment</td>
+								<td width="90" class="title" align="center">Date</td>
+								<td width="50" class="title" align="center">Delete</td>
+							</tr>
+<!-- BEGIN com -->
+							<tr valign="top">
+								<td align="center"><img src="../{com.P_AVATAR}" width="60" height="60"></td>
+								<td>&nbsp;&nbsp;{com.P_POST_BY}</td>
+								<td align="center"><textarea style="width:500px; height: 60px;">{com.P_COMMENT}</textarea></td>
+								<td align="center">{com.P_DATE}</td>
+								<td align="center"><a href="product.php?mod=item_comments&id={com.P_ID}&delete=yes" alt="delete comment" title="delete comment" onclick= "return (window.confirm('Are you sure to delete this comment ?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END com -->
+						</table>
+						{NODATA}
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>
+			</div>	
+		</div>
+	</div>

@@ -1,0 +1,89 @@
+<script>
+var childWindow = null;
+function MM_openBrWindow(theURL,winName,features) {
+	if (childWindow) {
+		if (childWindow.close) childWindow.close();
+	}
+	childWindow = window.open(theURL,winName,features);
+}
+</script>
+
+	<div id="page_title">
+		Users
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Users List</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   
+	 			<tr>
+					<td>
+						<p>
+		  					<form action="users.php?mod=list" method="post">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td width="270">
+										&nbsp;
+									</td>
+									<td width="250">
+										Quick Member Search by Username :
+									</td>
+									<td width="250" align="left">
+										<input type="text" class="fields_small" name="username"> 
+									</td>
+									<td width="100" align="left">
+										<input type="submit" class="submit_btn" name="search" value="Search">
+									</td>
+								</tr>
+							</table>
+							</form>
+						</p>
+					</td>
+      				</tr>		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="50" class="title" align="center">Avatar</td>
+								<td width="140" class="title" align="center">Username</td>
+								<td width="50" class="title" align="center">Active</td>
+								<td width="200" class="title" align="center">Email</td>
+								<td width="70" class="title" align="center">Deposit</td>
+								<td width="70" class="title" align="center">Items</td>
+								<td width="60" class="title" align="center">Feature</td>
+								<td width="40" class="title" align="center">View</td>
+								<td width="50" class="title" align="center">Block</td>
+								<td width="40" class="title" align="center">Edit</td>
+								<td width="50" class="title" align="center">Delete</td>
+							</tr>
+
+<!-- BEGIN user -->
+							<tr bgcolor="#ffffff">
+								<td align="center"><img src="../{user.AVATAR}" width="30"></td>
+								<td>&nbsp;{user.USERNAME}</td>
+								<td align="center">{user.STATUS}</td>
+								<td>&nbsp;{user.EMAIL}</td>
+								<td align="center">{CURRENCY}{user.BALLANCE}</td>
+								<td align="center">{user.ITEMS}</td>
+								<td align="center"><a href="users.php?mod=list&sid={user.USERID}&feat={user.FEAT}">{user.FEATURED}</a></td>
+								<td align="center"><a href="users.php?mod=view&sid={user.USERID}" alt="view user" title="view user"><div id="small_view"></div></a></td>
+								<td align="center"><a href="users.php?mod=list&sid={user.USERID}&block=yes" alt="block user" title="block user"><div id="small_block"></div></a></td>
+								<td align="center"><a href="users.php?mod=edit&id={user.USERID}" alt="edit user" title="edit user"><div id="small_edit"></div></a></td>
+								<td align="center"><a href="users.php?mod=list&sid={user.USERID}&delete=yes" alt="delete user" title="delete user" onclick= "return (window.confirm('Are you sure to delete this member?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END user -->
+						</table>
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>	
+		</div>
+	</div>

@@ -1,0 +1,43 @@
+	<div id="page_title">
+		News
+	</div>
+	<div id="middle_content2">
+		<div id="content_area">  
+			<h2>Send Newsletter</h2>
+    			<table cellpadding="8" cellspacing="8" border="0" width="100%">	  	   	  	   
+	 			<tr>
+					<td>
+						<form action="newsletter.php?mod=send" method="post">
+						<table cellpadding="8" cellspacing="8" border="0">
+	 						<tr>
+								<td>
+									<hr class="bottom">
+								</td>
+	 						</tr>
+							<tr>
+								<td align="center">
+									<b>Select News to send to all Subscribers</b><br>
+									<select class="sort_form_big" name="news">
+<!-- BEGIN news -->
+										<option name="{news.SUBJECT}" value="{news.ID}">{news.SUBJECT}</option>
+<!-- END news -->
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="submit" class="submit_btn" name="send" value="Send"></td>
+							</tr>
+	 						<tr>
+								<td>
+									<hr class="bottom">
+								</td>
+	 						</tr>
+						</table>
+						</form>
+						{INFO}
+					</td>
+      				</tr>		  	   
+			</table>
+		</div>
+	</div>
+</div>

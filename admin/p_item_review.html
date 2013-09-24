@@ -1,0 +1,217 @@
+		Items
+	</div>
+	<a href="product.php?mod=review">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">  
+			<h2>{FORMTITLE}</h2>
+			<hr class="bottom">
+			<table cellpadding="0" cellspacing="2" border="0" width="100%">
+				<tr valign="top">
+  					<td align="center">   
+						<form action="product.php?mod=review&id={P_SID}" method="post">	
+	      					<table cellpadding="4" cellspacing="0" border="0" width="100%" align="center">
+	  						<tr valign="top" class="white">
+								<td width="180"><b>Post ID:</b></td>
+								<td><b>{P_ID}</b></td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Post Date:</b></td>
+								<td><b>{P_DATE}</b></td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Category:</b></td>
+								<td>
+									<select name='product_cat'>
+										<option value="{P_CATEGORY_ID}" selected="selected">{P_CATEGORY_NAME}</option>
+<!-- BEGIN catselect -->
+										<option value="{catselect.VALUE}">{catselect.NAME}</option>
+<!-- END catselect -->
+									</select>
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Item Title:</b></td>
+								<td>	
+									<input type="text" name="product_title" size="95" value="{P_TITLE2}" readonly>
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Thumbnail Preview:</b></td>
+								<td>	
+									<input type="text" name="product_thumb_url" size="95" value="{P_THUMB_URL}">
+									<br><img src="{DWD_DIR}/{P_MEMBER_NAME}/{P_TITLE}/{P_THUMB_URL}" width="80" height="80" border="0">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Image Preview:</b></td>
+								<td>	
+									<input type="text" name="product_image_url" size="95" value="{P_IMG_URL}">
+									<br><img src="{DWD_DIR}/{P_MEMBER_NAME}/{P_TITLE}/{P_IMG_URL}" width="590" border="0">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Main File:</b></td>
+								<td>	
+									<input type="hidden" name="product_file_url" size="95" value="{P_MAIN_URL}">
+									<a href="{DWD_DIR}/{P_MEMBER_NAME}/{P_TITLE}/{P_MAIN_URL}">{P_MAIN_URL}</a>
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Image Set Preview:</b></td>
+								<td>	
+									<input type="hidden" name="product_preview_url" size="95" value="{P_IMG_SET_URL}">
+									<a href="{DWD_DIR}/{P_MEMBER_NAME}/{P_TITLE}/{P_IMG_SET_URL}">{P_IMG_SET_URL}</a>
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Description:</b></td>
+								<td>	
+									<textarea name="product_description" cols="92" rows="26" value="{P_DESCRIPTION}">{P_DESCRIPTION}</textarea>
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Layered :</b></td>
+								<td>	
+									<input type="text" name="product_layer" size="95" value="{P_LAYER}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Graphic Files:</b></td>
+								<td>	
+									<input type="text" name="product_graphic" size="95" value="{P_GRAPHIC_IN}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Adobe CS:</b></td>
+								<td>	
+									<input type="text" name="product_cs" size="95" value="{P_CS_IN}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Pixel Size:</b></td>
+								<td>	
+									<input type="text" name="product_pixel" size="95" value="{P_PIXEL}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Print Size:</b></td>
+								<td>	
+									<input type="text" name="product_print" size="95" value="{P_PRINT}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Theme Tags:</b></td>
+								<td>	
+									<input type="text" name="product_theme_tag" size="95" value="{P_THEME_TAG}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Subject Tags:</b></td>
+								<td>	
+									<input type="text" name="product_subject_tag" size="95" value="{P_SUBJECT_TAG}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Color Tags:</b></td>
+								<td>	
+									<input type="text" name="product_color_tag" size="95" value="{P_COLOR_TAG}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Style Tags:</b></td>
+								<td>	
+									<input type="text" name="product_style_tag" size="95" value="{P_STYLE_TAG}">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Comment:</b></td>
+								<td>	
+									<textarea name="product_comment" cols="92" rows="8">{P_COMMENT}</textarea>
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td><b>Owner:</b></td>
+								<td>	
+									<input type="text" name="product_own" size="95" value="{P_OWN}">
+								</td>
+	  						</tr>
+	 					</table>
+              				<table border="0" cellpadding="0" cellspacing="0" align="center">
+	  						<tr valign="top" class="white">
+								<td colspan="2">
+									<hr class="bottom">
+								</td>
+	  						</tr>
+	  						<tr valign="top" class="white">
+								<td width="190">
+									<div class="dhtmlgoodies_question">
+										<a href="#" id="profile_menu" class="submit">&nbsp;Approval</a>
+									</div>
+									<div class="dhtmlgoodies_answer" style="width: 192px;z-index:2;">
+										<div style="margin: 42px 0 0 -1px;">
+              									<table border="0" cellpadding="0" cellspacing="0" bgcolor="white">
+	  											<tr valign="top" class="white">
+													<td width="192"><b>Regular Price:</b></td>
+													<td>	
+														<input type="text" name="product_reg_price" size="95" value="">
+													</td>
+	  											</tr>
+	  											<tr valign="top" class="white">
+													<td><b>Extended Price:</b></td>
+													<td>	
+														<input type="text" name="product_ext_price" size="95" value="">
+													</td>
+	  											</tr>	
+											</table>
+											<input name="proid" type="hidden" value="{P_ID}">
+											<input name="product_member_id" type="hidden" value="{P_MEMBER_ID}">
+											<input name="product_creation_date" type="hidden" value="{P_DATE}">
+											<input name="product_sid" type="hidden" value="{P_SID}">
+											<input name="save_item" type="submit" value="Save">
+										</div>											
+									</div>
+						</form>
+								</td>
+								<td>
+									<div style="z-index:1;">
+										<a href="product.php?mod=review&id={P_SID}&delete=yes" class="submit" onclick= "return (window.confirm('Are you sure to delete this Post ?'));">Delete</a>
+									</div>
+								</td>
+	  						</tr>
+	 					</table>
+					</td>
+  				</tr>
+			</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+tinyMCE.init({
+        // General options
+        mode : "textareas",
+        theme : "advanced",
+        plugins : "imanager,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+
+        // Theme options
+        theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2 : "bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,imanager,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+        theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,ltr,rtl",
+        theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,insertfile,insertimage",
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_statusbar_location : "bottom",
+        theme_advanced_resizing : true,
+
+        // Skin options
+        skin : "o2k7",
+        skin_variant : "silver"
+
+});
+</script>

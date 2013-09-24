@@ -1,0 +1,39 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+					<form action="general.php?mod=percent" method="post">   
+    						<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 						<tr valign="top">
+	  							<td colspan="9" align="left">
+									<h2>Percent Settings</h2>
+									<hr class="bottom">
+								</td>
+	 						</tr>
+						</table>
+<!-- BEGIN percent -->
+
+						<ul class="order">
+							<li class="line">
+									<img src="{TEMPLATE_DIR}/images/{percent.PERCENT_VALUE}prct.png">
+									<h4>Member earnings <br>From / To</h4>
+	  								<input type="text" name="from{percent.PERCENT_ID}" class="fields_little" value="{percent.PERCENT_FROM}">
+	  								/<input type="text" name="to{percent.PERCENT_ID}" class="fields_little" value="{percent.PERCENT_TO}">
+							</li>
+						</ul>
+
+<!-- END percent -->
+						<b>* Set percent value to calculate member earnings</b><br><br><br><br>
+    						<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 						<tr>
+	  							<td align="center">
+									<hr class="bottom">
+	   								<input type="submit" class="submit_btn" name="{SAVE}" value="Save">{INFO}
+	  							</td>
+	 						</tr>
+						</table>
+					</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,207 @@
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="table_form4">
+					<ul>
+						<li style="width: 25%;">
+							&nbsp;
+						</li>
+						<li style="width: 45%;">
+							{NPAGELIST}
+						</li>
+						<li style="width: 30%;">
+							<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} COMMENTS</div>
+						</li>
+					</ul>
+				</div>
+				<div id="content_wrapper2">
+							<div id="table_form6">
+								<ul>
+									<li style="width: 14%;float:left;">
+										<a href="user-{F_AUTHOR}"><img src="{F_AVATAR}" alt="{F_AUTHOR}" title="{F_AUTHOR}" width="80" height="80" border="0"></a><br>
+<!-- BEGIN badges -->
+											{badges.MEM_BADGE1}
+											{badges.MEM_BADGE2}
+											{badges.MEM_BADGE3}
+											{badges.MEM_BADGE4}
+											{badges.MEM_BADGE5}
+											{badges.MEM_BADGE6}
+											{badges.MEM_BADGE7}
+											{badges.MEM_BADGE8}
+											{badges.MEM_BADGE9}
+											{badges.MEM_BADGE10}
+											{badges.MEM_BADGE11}
+											{badges.MEM_BADGE12}
+											{badges.MEM_BADGE13}
+											{badges.MEM_BADGE14}
+											{badges.MEM_BADGE15}
+											{badges.MEM_BADGE16}
+											{badges.MEM_BADGE17}
+											{badges.MEM_BADGE18}
+											{badges.MEM_BADGE19}
+											{badges.MEM_BADGE20}
+											{badges.MEM_BADGE21}
+											{badges.MEM_BADGE22}
+											{badges.MEM_BADGE23}
+											{badges.MEM_BADGE24}
+											{badges.MEM_BADGE25}
+											{badges.MEM_BADGE26}
+											{badges.MEM_BADGE27}
+											{badges.MEM_BADGE28}
+											{badges.MEM_BADGE29}
+											{badges.MEM_BADGE30}
+											{badges.MEM_BADGE31}
+											{badges.MEM_BADGE32}
+											{badges.MEM_BADGE33}
+											{badges.MEM_BADGE34}
+											{badges.MEM_BADGE35}
+<!-- END badges -->
+									</li>
+									<li style="width: 83%;">
+										<div id="form_1" class="new_border">
+											<table width="100%" height="100%" border="0" cellspacing="8" cellpadding="8">
+												<tr>
+													<td valign="top">
+														<div id="author_badge2"></div>
+														<a href="user-{F_AUTHOR}" class="black02">{F_AUTHOR}</a> &nbsp;says :<br><br>
+														<span style="line-height: 140%;font-size: 12px;">{F_CONTENT}</span><br><br><br>
+														<b>Topic {TID}</b> &nbsp;&nbsp;&nbsp; Posted {F_DATE} 
+													</td>
+												</tr>
+											</table>
+										</div>
+									</li>
+									<li style="width: 3%;">
+										&nbsp;
+									</li>
+								</ul>
+							</div>	
+							<div style="margin-bottom: 30px;">&nbsp;</div>
+<!-- BEGIN reply -->
+							<div id="table_form6">
+								<ul>
+									<li style="width: 14%;float:left;">
+										<a href="user-{reply.R_AUTHOR}"><img src="{reply.R_AVATAR}" alt="{reply.R_AUTHOR}" title="{reply.R_AUTHOR}" width="80" height="80" border="0"></a><br>
+<!-- BEGIN badges -->
+											{reply.badges.MEM_BADGE1}
+											{reply.badges.MEM_BADGE2}
+											{reply.badges.MEM_BADGE3}
+											{reply.badges.MEM_BADGE4}
+											{reply.badges.MEM_BADGE5}
+											{reply.badges.MEM_BADGE6}
+											{reply.badges.MEM_BADGE7}
+											{reply.badges.MEM_BADGE8}
+											{reply.badges.MEM_BADGE9}
+											{reply.badges.MEM_BADGE10}
+											{reply.badges.MEM_BADGE11}
+											{reply.badges.MEM_BADGE12}
+											{reply.badges.MEM_BADGE13}
+											{reply.badges.MEM_BADGE14}
+											{reply.badges.MEM_BADGE15}
+											{reply.badges.MEM_BADGE16}
+											{reply.badges.MEM_BADGE17}
+											{reply.badges.MEM_BADGE18}
+											{reply.badges.MEM_BADGE19}
+											{reply.badges.MEM_BADGE20}
+											{reply.badges.MEM_BADGE21}
+											{reply.badges.MEM_BADGE22}
+											{reply.badges.MEM_BADGE23}
+											{reply.badges.MEM_BADGE24}
+											{reply.badges.MEM_BADGE25}
+											{reply.badges.MEM_BADGE26}
+											{reply.badges.MEM_BADGE27}
+											{reply.badges.MEM_BADGE28}
+											{reply.badges.MEM_BADGE29}
+											{reply.badges.MEM_BADGE30}
+											{reply.badges.MEM_BADGE31}
+											{reply.badges.MEM_BADGE32}
+											{reply.badges.MEM_BADGE33}
+											{reply.badges.MEM_BADGE34}
+											{reply.badges.MEM_BADGE35}
+<!-- END badges -->
+									</li>
+									<li style="width: 83%;">
+										<div id="form_1">
+											<table width="100%" height="100%" border="0" cellspacing="8" cellpadding="8">
+												<tr>
+													<td valign="top">
+														{reply.R_AUTHOR_BADGE}
+														<a href="user-{reply.R_AUTHOR}" class="black02">{reply.R_AUTHOR}</a> &nbsp;says :<br><br>
+														<span style="line-height: 140%;font-size: 12px;">{reply.R_CONTENT}</span><br>
+														<table>
+															<tr>
+																<td>
+																	<b>Reply {reply.R_ID}</b> &nbsp;&nbsp;&nbsp; Posted {reply.R_TIME} &nbsp;&nbsp;&nbsp;
+																</td>
+																<td>
+																	<form name="reply_quote" action="reply-{reply.TID}-topic-{reply.TTOPIC}" method="post">
+																		<input type="hidden" name="reply_id" value="{reply.R_ID}">
+<!--
+																		<input type="hidden" name="ruser" value="{reply.R_AUTHOR}">
+																		<input type="hidden" name="quote" value="{reply.R_CONTENT}">
+-->
+																		<a class="blue2"><input type="submit" class="form_user" name="reply_quote" value="REPLY WITH QUOTE"></a>
+																	</form> 
+																</td>
+																<td>
+																	| &nbsp;<a href="forum_report.php?tid={reply.TID}&rid={reply.R_ID}&rc={reply.T_URL}id-{reply.TID}-topic-{reply.TTOPIC}-page-{reply.T_PAGE}" class="blue2">REPORT</a>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</li>
+									<li style="width: 3%;">
+										&nbsp;
+									</li>
+								</ul>
+							</div>	
+							<div style="margin-bottom: 30px;">&nbsp;</div>
+<!-- END reply -->
+							<div id="sprite">{NPAGELIST}</div><br>
+				</div>	   			
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<div id="sprite2"></div>
+				<a href="reply-{TID}-topic-{TTOPIC}" class="middle_white3"><div id="forum_btn">Post a Reply</div></a>
+				<div id="right_wrapper2">
+					<div id="form_r_gray" style="margin: 30px 0 20px 0;">
+						<table border="0" cellpadding="15" cellspacing="0" height="100%">		
+					  		<tr>
+					   			<td align="left">
+									<form action="forum_search.php" method="get">
+    										<input type="text" name="thread" class="search_form_small" onclick="if(this.value=='Search Threads'){this.value=''}" value="Search Threads">
+    										<input type="submit" class="search_btn" alt="search" title="search" value="">
+ 									</form>
+								</td>
+					  		</tr>
+						</table>
+					</div>
+					<div id="form_r_gray">
+						<div id="right_hd">
+							Your Recent Threads
+						</div>
+						<div id="sprite">
+							<h4 class="gr12">
+<!-- BEGIN activity -->
+								<p>
+									<a href="id-{activity.A_ID}-topic-{activity.A_TOPIC}-page-0" class="blue3">{activity.A_TOPIC2}</a><br>
+									<i style="float: right;">{activity.A_TIME}</i><br>
+								</p>
+								<hr class="gray2" style="width:180px;">
+<!-- END activity -->
+								<p align="center">last 20 activities</p> 
+							</h4>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,355 @@
+<!-- BEGIN account_topmenu -->
+<div id="content_wrapper0">
+    <div id="content_wrapper3">
+        <div id="form_0">
+            <div id="sprite1">
+                <ul class="top_acc_menu">
+                    <li class="top_acc_menu"><a href="author_dashboard" class="blue3">Author Dashboard</a></li>
+                    <li class="top_acc_menu"><hr class="vert4"></li>
+                    <li class="top_acc_menu"><a href="user-{USERNAME}" class="blue3">Profile</a></li>
+                    <li class="top_acc_menu"><hr class="vert4"></li>
+                    <li class="top_acc_menu"><a href="edit" class="blue3">My Settings</a></li>
+                    <li class="top_acc_menu"><hr class="vert4"></li>
+                    <li class="top_acc_menu"><a href="downloads" class="blue3">Downloads</a></li>
+                    <li class="top_acc_menu"><hr class="vert4"></li>
+                    <li class="top_acc_menu"><a href="invoices" class="blue3">History</a></li>
+                    <li class="top_acc_menu"><hr class="vert4"></li>
+                    <li class="top_acc_menu"><a href="earnings" class="blue3">Earnings</a></li>
+                    <li class="top_acc_menu"><hr class="vert4"></li>
+                    <li class="top_acc_menu"><a href="withdraw" class="blue3">Withdraw</a></li>
+                    <li class="top_acc_menu"><hr class="vert4"></li>
+                    <li class="top_acc_menu"><a href="statement" class="blue3">Statement</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END account_topmenu --> 
+
+<section id="single-item" class="container">
+    <div class="row">
+        <div class="span8">
+            <center><h2>{INFO}</h2></center>
+
+            <div class="span12 profile-gallery">
+
+                <img src="{TEMPLATE_DIR}/timthumb.php?src={HOME}&w=640&h=300" title="{USERNAME} home" width="640" height="300">
+            </div>      
+
+
+
+
+            <div class="span8 mail-panada">
+                <h3>Email {mail.USERNAME}</h3>
+                <p>All messages are recorded and spam is not tolerated. Your email address will be shown to the recipient.</p>
+                <form action="" method="post">
+
+                </form>
+                <div class="upload-row span9">
+                    <div class="row-left span1">From</div>
+                    <div class="row-right span5">
+
+                        <input type="text" class="span5" size="49" name="from_u" value="{mail.EMAIL2}">
+                    </div>
+                </div>
+
+                <div class="upload-row span9">
+                    <div class="row-left span1">Message</div>
+                    <div class="row-right span5">
+
+                        <textarea class="span5 mail-message" cols="46" rows="12" name="message"></textarea>
+                    </div>
+                </div>
+
+                <div class="upload-row span9">
+                    <div class="row-left span1"></div>
+                    <div class="row-right span5 button-send">
+                        <input type="hidden" name="to_u" value="{EMAIL}">
+                        <a href="" class="btn btn-danger btn-send" >Send</a>
+                        <input type="submit" id="btn_normal_bb" class="btn btn-danger btn-send" style="float:right;" name="send" value="Send"><p><br>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+            <!-- BEGIN mail -->
+            <div id="form_r_gray" class="down">
+                <div id="sprite">
+
+
+
+
+
+                </div>
+            </div>
+            <!-- END mail -->
+
+
+            <div>
+                <h2 class="b18">{HEADING}</h2><br><br><br>
+                <h4 class="b12"><p>{MESSAGE}</p></h4>
+            </div>
+        </div>
+        <div class="span4">
+            <div id="right-sidebar">
+
+
+
+                <div class="item-sales">
+
+                    <div class="sales-container">
+                        <img src="{TEMPLATE_DIR}/images/sales-icon.png"/>
+                        <div class="sales"> 
+                            <span class="sales-count">{SALES}</span><br />
+                            sales
+                        </div>
+                    </div>
+
+                    <img src="{TEMPLATE_DIR}/images/sales-ver-sep.png" class="ver-sep" />
+
+                    <div class="rating">
+
+                        <h3>{RATE_COUNT} Rating</h3>
+                        {STARS}
+                        <ul class="rating-element">
+                            <li class="active"></li>
+                            <li class="active"></li>
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+
+                <div class="designTotal">
+                    <div class="total-earnings">
+                        <div class="total-title">
+                            <div class="totalT">Followers</div>
+                        </div>
+                        <div class="total-data">{FOLLOWER_COUNT}</div>
+                    </div>
+
+<!--                    <div class="total-sales">
+                        <div class="total-title">
+                            <div class="totalT">Total Sales</div>
+                        </div>
+                        <div class="total-data">{SALES}</div>
+                    </div>-->
+                    <div class="clear"></div>
+                </div>
+                <div class="user-profile">
+                    <div class="user-vcard">
+                        <h3><a href="user-{USERNAME}" class="black01">{USERNAME}</a></h3>
+                        <a href="user-{USERNAME}"><img src="{AVATAR}" border="0" class="user-avatar"></a>
+                        <form action="portfolio-{USERNAME}-order-id-page-0" method="post">
+                            <input type="hidden" value="{USERNAME}">
+                            <input type="submit" class="btn btn-danger" value="WAREHOUSE">
+                        </form>
+                    </div>
+                    <img src="{TEMPLATE_DIR}/images/user-ver-sep.png" class="ver-sep" />
+                    <div class="badges">
+                        <p>								 
+                            <!-- BEGIN badges -->
+                            {badges.MEM_BADGE1}
+                            {badges.MEM_BADGE2}
+                            {badges.MEM_BADGE3}
+                            {badges.MEM_BADGE4}
+                            {badges.MEM_BADGE5}
+                            {badges.MEM_BADGE6}
+                            {badges.MEM_BADGE7}
+                            {badges.MEM_BADGE8}
+                            {badges.MEM_BADGE9}
+                            {badges.MEM_BADGE10}
+                            {badges.MEM_BADGE11}
+                            {badges.MEM_BADGE12}
+                            {badges.MEM_BADGE13}
+                            {badges.MEM_BADGE14}
+                            {badges.MEM_BADGE15}
+                            {badges.MEM_BADGE16}
+                            {badges.MEM_BADGE17}
+                            {badges.MEM_BADGE18}
+                            {badges.MEM_BADGE19}
+                            {badges.MEM_BADGE20}
+                            {badges.MEM_BADGE21}
+                            {badges.MEM_BADGE22}
+                            {badges.MEM_BADGE23}
+                            {badges.MEM_BADGE24}
+                            {badges.MEM_BADGE25}
+                            {badges.MEM_BADGE26}
+                            {badges.MEM_BADGE27}
+                            {badges.MEM_BADGE28}
+                            {badges.MEM_BADGE29}
+                            {badges.MEM_BADGE30}
+                            {badges.MEM_BADGE31}
+                            {badges.MEM_BADGE32}
+                            {badges.MEM_BADGE33}
+                            {badges.MEM_BADGE34}
+                            {badges.MEM_BADGE35}
+                            <!-- END badges -->
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="item-details">
+                    {COUNTRY_FLAG}
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td width="72%"><span class="info-meta meta-live">Lives In :</span></td>
+                            <td>{CITY}</td>
+                        </tr>
+                        <tr>
+                            <td><span class="info-meta meta-member">Member Since :</span></td>
+                            <td>{DATE}</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+                <div class="item-details">
+                    <ul>
+                        <li>
+
+
+                            <br>
+                            <!-- BEGIN portfolio -->
+                            <div class="sprite" style="float: right;margin: 0 10px 0 0;">
+                                <form action="portfolio-{USERNAME}-order-id-page-0" method="post">
+                                    <input type="submit" id="btn_normal_bb" class="middle_white3" name="follow" value="{portfolio.PF}">
+                                </form>
+                            </div>
+                            <!-- END portfolio -->
+                        </li>
+                    </ul>
+                </div>
+
+<!--                <div id="form_r_gray" class="item-details">
+                    <div id="table_form8">
+
+                        <ul>
+
+                            <li>
+
+                                <form action="user-{USERNAME}" method="post">
+                                    <input type="hidden" name="gideman_username" value="{USERNAME}">
+                                    <input type="hidden" name="gideman_sid" value="{SID}">
+                                    <input type="hidden" name="gideman_image" value="{AVATAR}">
+                                    <input type="hidden" name="followerman_username" value="{LOG_USER}">
+                                    <input type="hidden" name="followerman_sid" value="{LOG_SID}">
+                                    <input type="hidden" name="followerman_image" value="{LOG_AVATAR}">
+                                     BEGIN status 
+                                    <input type="submit" id="btn_normal_bb" class="middle_white3" name="follow" value="{status.STATUS}">
+                                     END status 
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <br><br><br><br>
+                </div>-->
+
+                <!-- BEGIN feat_item -->
+                <div class="design-item">
+                    <div class="row-fluid">
+                        <h3>My Best Design</h3>
+                        <div class="featured-design">
+                            <div class="featured-img"><a href="{feat_item.PRO_TITLE}.html">{feat_item.PRO_IMAGE}</a></div> 
+                            <div class="featured-info">
+                                <span><a href="{feat_item.PRO_TITLE}.html" class="black01">{feat_item.PRO_TITLE2}</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END feat_item -->
+
+
+
+
+
+<!--                <div id="form_r_gray" class="item-details">
+                    <div id="sprite">
+                        <p>
+                        <h2 class="b18">Social Profiles</h2><br><br><br><br>
+                        <a href="{DEVIANTART_LINK}">{DEVIANTART_IMG}</a>
+                        <a href="{DIGG_LINK}">{DIGG_IMG}</a>
+                        <a href="{FACEBOOK_LINK}">{FACEBOOK_IMG}</a>
+                        <a href="{FLICKR_LINK}">{FLICKR_IMG}</a>
+                        <a href="{MYSPACE_LINK}">{MYSPACE_IMG}</a>
+                        <a href="{TUMBLR_LINK}">{TUMBLR_IMG}</a>
+                        <a href="{TWITTER_LINK}">{TWITTER_IMG}</a>
+                        <a href="{YOUTUBE_LINK}">{YOUTUBE_IMG}</a>
+                        <br><br>
+                        </p>
+                    </div>
+                </div>-->
+
+
+                <div class="item-details">
+
+
+                    Would you like to display collections on your profile page? 
+                    To get started, create a <a href="bookmarks" class="blue2">public bookmarks</a> collection with a preview image. 
+                    Your three most recent collections will appear here. 
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!--
+<div class="container">
+    <div class="row">
+        <div class="span5 offset1">
+            <h2 class="b28">{FOLLOWER_COUNT} Followers</h2>
+             BEGIN g_men 
+            <a href="user-{g_men.G_NAME}"><img src="{g_men.G_AVATAR}" title="{g_men.G_NAME}" width="80" height="80" class="follow"></a>
+             END g_men 
+            <div style="float: left;margin: 45px;">...</div>
+
+        </div>
+        <div class="span5" >
+
+
+            <h2 class="b28">Authors | Follow</h2>
+
+
+             BEGIN f_men 
+            <a href="user-{f_men.F_NAME}"><img src="{f_men.F_AVATAR}" title="{f_men.F_NAME}" width="80" height="80" class="follow"></a>
+             END f_men 
+            <div style="float: left;margin: 45px;">...</div>
+
+        </div>
+    </div>
+</div>-->

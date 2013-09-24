@@ -1,0 +1,615 @@
+<!-- BEGIN error -->
+	{error.ERROR}
+<!-- END error -->
+<div id="ex" class="more2">
+	<div id="form_pay">
+		<ul>
+			<li style="width: 10%;">
+				&nbsp;
+			</li>
+			<li style="width: 30%;">
+				<p align="center">
+					<form action="" method="post">
+      						<input type="hidden" name="pay_method" value="deposit" />
+						<input type="submit" name="pay_deposit_01" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy with Prepaid Credit"><hr>
+					</form>
+				</p>
+				<p align="center">
+					Pay <b>{CURRENCY}{PRICE}</b> from your prepaid credit balance: <b>{CURRENCY}{BALANCE}</b><br>
+					( <a href="deposit" class="blue3">MAKE A DEPOSIT</a>  )
+				<p>
+			</li>
+			<li style="width: 5%;">
+				<br><p align="center"><img src="{IMAGES_PATH}/or.png"></p>
+			</li>
+			<li style="width: 30%;">
+				<p align="center">
+<!-- BEGIN ses -->
+					<form action='{ses.SESSION}' method='post'> 
+<!-- END ses -->
+
+<!-- BEGIN noses -->
+					<form action='{noses.SESSION}' method='post'> 
+<!-- END noses -->
+						<input type='hidden' name='cmd' value='_xclick'>
+						<input type='hidden' name='cbt' value='Continue'>
+						<input type='hidden' name='success_url' value='{SITE_URL}/downloads'>
+						<input type='hidden' name='continue_button_text' value='Continue'>
+						<input type='hidden' name='image_url' value='upload/logo/logo2.png'>
+						<input type='hidden' name='business' value='{SITE_PAYPAL_EMAIL}'>
+						<input type='hidden' name='currency_code' value='USD'>
+						<input type='hidden' name='return' value='{SITE_URL}/downloads'>									
+						<input type='hidden' name='cancel_return' value='{SITE_URL}/payment-cancelled.php'>																
+						<input type='hidden' name='amount' value='{PRICE2}'>
+						<input type='hidden' name='item_number' value='{PROID}'>
+						<input type='hidden' name='item_name' value='{TITLE}'>
+      						<input type="hidden" name="invoice" value="Purchase-{COUNTER}" />
+      						<input type="hidden" name="custom" value="{USERNAME}" />
+						<input type="submit" name="pay_paypal_01" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy Now (via PayPal)"><hr>	
+					</form>
+				</p>
+				<p align="center">
+					You will be redirected to pay <b>{CURRENCY}{PRICE2}</b> of credit via PayPal.<br>
+					( INCLUDES {CURRENCY}2 SURCHARGE )<br><br>
+					<a href=""><img src="{IMAGES_PATH}/paypal_options.jpg" border="0"></a>
+				</p>
+			</li>
+			<li style="width: 1%;">
+				<a href="" id="ex-hide" onclick="showHide('ex');return false;">
+					<div id="close_payboard"></div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="ex2" class="more3">
+	<div id="form_pay">
+		<ul>
+			<li style="width: 10%;">
+				&nbsp;
+			</li>
+			<li style="width: 30%;">
+				<p align="center">
+					<form action="" method="post">
+      						<input type="hidden" name="pay_method" value="deposit" />
+						<input type="submit" name="pay_deposit_02" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy with Prepaid Credit"><hr>
+					</form>
+				</p>
+				<p align="center">
+					Pay <b>{CURRENCY}{EXTENDED_PRICE}</b> from your prepaid credit balance: <b>{CURRENCY}{BALANCE}</b><br>
+					( <a href="deposit" class="blue3">MAKE A DEPOSIT</a>  )
+				<p>
+			</li>
+			<li style="width: 5%;">
+				<br><p align="center"><img src="{IMAGES_PATH}/or.png"></p>
+			</li>
+			<li style="width: 30%;">
+				<p align="center">
+<!-- BEGIN ses -->
+					<form action='{ses.SESSION}' method='post'> 
+<!-- END ses -->
+
+<!-- BEGIN noses -->
+					<form action='{noses.SESSION}' method='post'> 
+<!-- END noses -->
+						<input type='hidden' name='cmd' value='_xclick'>
+						<input type='hidden' name='cbt' value='Continue'>
+						<input type='hidden' name='success_url' value='{SITE_URL}/downloads'>
+						<input type='hidden' name='continue_button_text' value='Continue'>
+						<input type='hidden' name='image_url' value='upload/logo/logo2.png'>
+						<input type='hidden' name='business' value='{SITE_PAYPAL_EMAIL}'>
+						<input type='hidden' name='currency_code' value='USD'>
+						<input type='hidden' name='return' value='{SITE_URL}/downloads'>									
+						<input type='hidden' name='cancel_return' value='{SITE_URL}/payment-cancelled.php'>																	
+						<input type='hidden' name='amount' value='{EXTENDED_PRICE2}'>
+						<input type='hidden' name='item_number' value='{PROID}'>
+						<input type='hidden' name='item_name' value='{TITLE}'>
+      						<input type="hidden" name="invoice" value="Purchase-{COUNTER}" />
+      						<input type="hidden" name="custom" value="{USERNAME}" />
+						<input type="submit" name="pay_paypal_02" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy Now (via PayPal)"><hr>
+					</form>
+				</p>
+				<p align="center">
+					You will be redirected to pay <b>{CURRENCY}{EXTENDED_PRICE2}</b> of credit via PayPal.<br>
+					( INCLUDES {CURRENCY}2 SURCHARGE )<br><br>
+					<a href=""><img src="{IMAGES_PATH}/paypal_options.jpg" border="0"></a>
+				</p>
+			</li>
+			<li style="width: 1%;">
+				<a href="" id="ex2-hide" onclick="showHide('ex2');return false;">
+					<div id="close_payboard"></div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div class="txt_white" align="center">{ERROR}</div>
+					<div id="content_wrapper" class="down">
+						<div id="form_0" class="space">
+								<ul>
+									<li>
+										<a href="{SITE_URL}/{TITLE}.html" class="blue">Item Details</a>
+									</li>
+									<li>
+										<hr class="vert">
+									</li>
+									<li>
+										<a href="{SITE_URL}/discussion-{TITLE}-page-0" class="blue">Comments</a>
+									</li>
+								</ul>
+						</div>
+						<h2 class="b28">{TITLE2}</h2><br><br><br><br><br><br><br><br>
+						<p><hr class="gray2"></p>
+						<div id="cat_top_nav">
+							<div id="table_form3">
+								<ul>
+									<li style="width: 10%;">
+										Show:
+									</li>
+									<li style="width: 30%;">
+										<form action="search.php" method="post">
+	           										<select class="sort_form_small" name="sorter">
+													<option value="1">All Discussion</option>
+	               	           							</select>
+ 										</form>
+									</li>
+									<li style="width: 60%;">
+										&nbsp;
+									</li>
+								</ul>
+							</div>
+						</div>
+						<p></p><br><br>
+							<div id="table_form3" style="margin-top: -30px;">
+								<ul>
+									<li style="width: 20%;">
+										&nbsp;
+									</li>
+									<li style="width: 50%;">
+										{NPAGELIST}
+									</li>
+									<li style="width: 30%;">
+										<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} COMMENTS</div>
+									</li>
+								</ul>
+							</div>
+							<div style="margin-top: -45px;">
+<!-- BEGIN comments -->
+							<div id="table_form6">
+								<ul>
+									<li style="width: 16%;float:left;">
+										<a href="user-{comments.COM_NAME}"><img src="{comments.COM_AVATAR}" alt="{comments.COM_NAME}" title="{comments.COM_NAME}" width="80" height="80" border="0"></a><br>
+<!-- BEGIN badges -->
+											{comments.badges.MEM_BADGE1}
+											{comments.badges.MEM_BADGE2}
+											{comments.badges.MEM_BADGE3}
+											{comments.badges.MEM_BADGE4}
+											{comments.badges.MEM_BADGE5}
+											{comments.badges.MEM_BADGE6}
+											{comments.badges.MEM_BADGE7}
+											{comments.badges.MEM_BADGE8}
+											{comments.badges.MEM_BADGE9}
+											{comments.badges.MEM_BADGE10}
+											{comments.badges.MEM_BADGE11}
+											{comments.badges.MEM_BADGE12}
+											{comments.badges.MEM_BADGE13}
+											{comments.badges.MEM_BADGE14}
+											{comments.badges.MEM_BADGE15}
+											{comments.badges.MEM_BADGE16}
+											{comments.badges.MEM_BADGE17}
+											{comments.badges.MEM_BADGE18}
+											{comments.badges.MEM_BADGE19}
+											{comments.badges.MEM_BADGE20}
+											{comments.badges.MEM_BADGE21}
+											{comments.badges.MEM_BADGE22}
+											{comments.badges.MEM_BADGE23}
+											{comments.badges.MEM_BADGE24}
+											{comments.badges.MEM_BADGE25}
+											{comments.badges.MEM_BADGE26}
+											{comments.badges.MEM_BADGE27}
+											{comments.badges.MEM_BADGE28}
+											{comments.badges.MEM_BADGE29}
+											{comments.badges.MEM_BADGE30}
+											{comments.badges.MEM_BADGE31}
+											{comments.badges.MEM_BADGE32}
+											{comments.badges.MEM_BADGE33}
+											{comments.badges.MEM_BADGE34}
+											{comments.badges.MEM_BADGE35}
+<!-- END badges -->
+									</li>
+									<li style="width: 81%;">
+										<div id="form_1">
+											<table width="100%" height="100%" border="0" cellspacing="8" cellpadding="8">
+												<tr>
+													<td valign="top">
+														{comments.AUTHOR_BADGE}
+														<a href="user-{comments.COM_NAME}" class="black02">{comments.COM_NAME}</a> &nbsp;says :<br><br>
+														<p><span style="line-height: 140%;font-size: 12px;">{comments.COM}</span></p><br><br>
+														Posted {comments.COM_DATE}
+													</td>
+												</tr>
+											</table>
+										</div>
+									</li>
+									<li style="width: 3%;">
+										&nbsp;
+									</li>
+								</ul>
+							</div>	
+							<div style="margin-bottom: 0px;">&nbsp;</div>			  
+<!-- END comments -->
+							</div>
+							<br>{NPAGELIST}<br><br><br>
+
+
+
+						<div id="form_1">
+<!-- BEGIN comments_content -->
+							<div id="txt_left_align">
+								<h2 class="b24">Discuss This Item:</h2>
+								<br><br><br>
+								<div id="submitcomment" class="submitcomment">
+									<form name="submitcomment" method="post" action="submitcomment.php" onSubmit="return form_Validator(this)">
+										<table width="80%">
+											<tr>
+												<th></th>
+												<td><input type="hidden" tabindex="2" id="email" name="email" value="{comments_content.AVATAR}" /></td>
+											</tr>
+											<tr valign="top">
+												<th><div style="margin-left: -60px;">Comment</div></th>
+												<td><div style="margin-left:60px;"><textarea cols="65" rows="14" name="message"></textarea></div></td>
+											</tr>
+											<tr>	
+												<td>&nbsp;</td>
+												<td><input type="submit" id="btn_normal_bb" class="middle_white3" style="float:right;" name="register" value="Post"><br /></td>
+											</tr>
+										</table>
+										<input type="hidden" name="name" value="{comments_content.FROM_USER}" />
+										<input type="hidden" name="tutid2" value="{comments_content.TUTID2}" />
+										<input type="hidden" name="tuturl2" value="discussion-{comments_content.TUTURL2}" />
+									</form>
+								</div>
+							</div>
+<!-- END comments_content -->	
+						</div>
+					</div>	   
+			</td>
+
+
+			<td width="20">
+			</td>
+			<td valign="top">
+				<div id="right_wrapper">
+					<div id="wrap">
+<!-- BEGIN free -->
+						<div style="position: relative; z-index: 0;">
+							<div id="form_r_lightblue">
+									<table border="0" cellpadding="10" cellspacing="0">		
+					  					<tr>
+					   						<td align="center">
+												<img src="{IMAGES_PATH}/gold-star.png">&nbsp;&nbsp;&nbsp;
+												<a href="{free.URL}" class="black00">Download it for free!</a><br><br>
+												This item is Free File of the Month!<br>
+										 		Each user is entitled to <a href="{free.URL}" class="black03">one free regular license.</a>
+											</td>
+					  					</tr>
+									</table>
+							</div>
+						</div>
+<!-- END free -->
+						<div style="position: relative; z-index: 0;">
+							<div id="form_r_blue">
+								<div id="right_content_blue">
+									<table border="0" cellpadding="10" cellspacing="0">		
+					  					<tr>
+					   						<td align="left" width="230">
+												<h2 class="b18">Regular Licence</h2>
+												<br><br><br><br>
+												a brochure, poster or other graphic design project, in a website project
+										 		- <a href="license-terms" class="blue2">Details</a>
+											</td>
+					   						<td align="center" width="50">
+												<h2 class="b28">{CURRENCY}{PRICE}</h2>
+											</td>
+					   						<td align="right" width="50">
+												<a href="" id="ex-show" onclick="showHide('ex');return false;"><div id="buy_btn"><div style="padding-top: 7px;">Purchase</div></div></a>
+											</td>
+					  					</tr>
+									</table>
+								</div>
+							</div>
+<!-- BEGIN licenses -->
+							<a href="#" id="example-show" onclick="showHide('example');return false;">
+								<div id="right_foot_blue">
+									<table border="0" cellpadding="10" cellspacing="0">		
+					  					<tr>
+					   						<td align="left" width="250">
+												<b>Extended Licence</b>
+											</td>
+					   						<td align="right">
+												<b>{CURRENCY}{EXTENDED_PRICE}</b>
+											</td>
+					  					</tr>
+									</table>
+								</div>
+							</a>
+						{DIV}
+						<div id="example" class="more" style="margin-top: -112px; position: relative; z-index: 1;">
+							<a href="#" id="example-hide" onclick="showHide('example');return false;">
+								<div id="right_foot_blue">
+									<table border="0" cellpadding="10" cellspacing="0">		
+					  					<tr>
+					   						<td align="left" width="250">
+												<b>Regular Licence</b>
+											</td>
+					   						<td align="right">
+												<b>{CURRENCY}{PRICE}</b>
+											</td>
+					  					</tr>
+									</table>
+								</div>
+							</a>
+							<div id="form_r_blue">
+								<div id="right_content_blue">
+									<table border="0" cellpadding="10" cellspacing="0">		
+					  					<tr>
+					   						<td align="left" width="250">
+												<h2 class="b18">Extended Licence</h2>
+												<br><br><br><br>
+												t-shirt or other apparel for sale, poster for sale, website template for sale 
+												- <a href="license-terms" class="blue2">Details</a>
+											</td>
+					   						<td align="right">
+												<h2 class="b28">{CURRENCY}{EXTENDED_PRICE}</h2>
+											</td>
+					   						<td align="right">
+												<a href="" id="ex2-show" onclick="showHide('ex2');return false;"><div id="buy_btn"><div style="padding-top: 7px;">Purchase</div></div></a>
+											</td>
+					  					</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+<!-- END licenses -->
+					</div>
+
+					<i class="small">Add {CURRENCY}2 if you are not using prepaid credits</i><br><br><br>
+					<div id="form_r_gray">
+						<table border="0" cellpadding="10" cellspacing="0" height="100%">		
+					  		<tr>
+					   			<td align="left">
+									<div id="item_purchase_img"></div>
+									<br>
+									<div id="item_comment_img"></div>
+								</td>
+					   			<td align="left">
+									<p><a class="underline2">{SALES}</a><br><small>Purchases</small></<p>
+									<br>
+									<p><a href="{SITE_URL}/discussion-{TITLE}-page-0" class="underline2">{COMMENT_COUNT}</a><br><small>Comments</small></p>
+								</td>
+					   			<td colrow="2" align="center" height="100%">									 
+									<hr class="vert2">
+								</td>
+					   			<td align="center">									 
+ 									<h2 class="b24">Buyer Rating</h2><br><br>
+									<div class="sprite">
+										{STARS}<br>
+										( {RATING} ratings )
+									</div>
+								</td>
+					  		</tr>
+						</table>
+					</div>
+					<div id="form_r_gray" class="down">
+						<table border="0" cellpadding="10" cellspacing="0">		
+					  		<tr>
+					   			<td align="left" valign="top">
+									<a href="user-{AUTHOR}"><img src="{AVATAR}" border="0"></a>
+								</td>
+					   			<td valign="top" align="left">
+									<a href="user-{AUTHOR}" class="black01">{AUTHOR}</a>
+									<p>								 
+<!-- BEGIN badges -->
+											{badges.MEM_BADGE1}
+											{badges.MEM_BADGE2}
+											{badges.MEM_BADGE3}
+											{badges.MEM_BADGE4}
+											{badges.MEM_BADGE5}
+											{badges.MEM_BADGE6}
+											{badges.MEM_BADGE7}
+											{badges.MEM_BADGE8}
+											{badges.MEM_BADGE9}
+											{badges.MEM_BADGE10}
+											{badges.MEM_BADGE11}
+											{badges.MEM_BADGE12}
+											{badges.MEM_BADGE13}
+											{badges.MEM_BADGE14}
+											{badges.MEM_BADGE15}
+											{badges.MEM_BADGE16}
+											{badges.MEM_BADGE17}
+											{badges.MEM_BADGE18}
+											{badges.MEM_BADGE19}
+											{badges.MEM_BADGE20}
+											{badges.MEM_BADGE21}
+											{badges.MEM_BADGE22}
+											{badges.MEM_BADGE23}
+											{badges.MEM_BADGE24}
+											{badges.MEM_BADGE25}
+											{badges.MEM_BADGE26}
+											{badges.MEM_BADGE27}
+											{badges.MEM_BADGE28}
+											{badges.MEM_BADGE29}
+											{badges.MEM_BADGE30}
+											{badges.MEM_BADGE31}
+											{badges.MEM_BADGE32}
+											{badges.MEM_BADGE33}
+											{badges.MEM_BADGE34}
+											{badges.MEM_BADGE35}
+<!-- END badges -->
+									</p>
+									<form action="portfolio-{AUTHOR}-order-id-page-0" method="post">
+										<input type="hidden" value="{AUTHOR}">
+										<input type="submit" class="btn_bl_bl" value="VIEW PORTFOLIO">
+									</form>
+								</td>
+					  		</tr>
+						</table>
+					</div>
+					<div id="form_r_gray" class="down">
+						<table border="0" cellpadding="0" cellspacing="10" height="100%" style="margin-left: 10px;">		
+					  		<tr>
+					   			<td align="left">
+									Created
+								</td>
+					   			<td align="center" height="100%">									 
+									<hr class="vert2">
+								</td>
+					   			<td align="left">
+									{CREATIONDATE}
+								</td>
+					  		</tr>
+					  		<tr>
+					   			<td align="left">
+									Layered?
+								</td>
+					   			<td align="center" height="100%">									 
+									<hr class="vert2">
+								</td>
+					   			<td align="left">
+									{LAYERED}
+								</td>
+					  		</tr>
+					  		<tr>
+					   			<td align="left">
+									{ATTRIBUTES}
+								</td>
+					   			<td align="center" height="100%">									 
+									<hr class="vert2">
+								</td>
+					   			<td align="left">
+<!-- BEGIN graphic -->
+									<a href="keyword-{graphic.GRAPHICS}-order-id-page-0" class="blue2">{graphic.GRAPHICS}</a>,
+<!-- END graphic -->
+								</td>
+					  		</tr>
+					  		<tr>
+					   			<td align="left">
+									Minimum Adobe CS Version
+								</td>
+					   			<td align="center" height="100%">									 
+									<hr class="vert2">
+								</td>
+					   			<td align="left">
+									<a href="keyword-{CS}-order-id-page-0" class="blue2">{CS}</a>
+								</td>
+					  		</tr>
+					  		<tr>
+					   			<td align="left">
+									Pixel Dimensions
+								</td>
+					   			<td align="center" height="100%">									 
+									<hr class="vert2">
+								</td>
+					   			<td align="left">
+									<a href="keyword-{PIXEL}-order-id-page-0" class="blue2">{PIXEL}</a>
+								</td>
+					  		</tr>
+					  		<tr>
+					   			<td align="left">
+									Print Dimensions
+								</td>
+					   			<td align="center" height="100%">									 
+									<hr class="vert2">
+								</td>
+					   			<td align="left">
+									<a href="keyword-{PRINT}-order-id-page-0" class="blue2">{PRINT}</a>
+								</td>
+					  		</tr>
+						</table>
+					</div>
+					<div id="form_r_gray" class="down">
+						<table border="0" cellpadding="10" cellspacing="0">		
+					  		<tr>
+					   			<td valign="top" align="center">						 
+									<form action="" method="post">
+	           								<select class="sort_form_big" name="book_names_id">
+<!-- BEGIN bookmark -->
+											<option name="{bookmark.BOOK_ID}" value="{bookmark.BOOK_ID}">{bookmark.BOOK_TITLE2}</option>
+<!-- END bookmark -->
+	               	           					</select>
+										<input type="hidden" name="item_own_id" value="{PROID}">
+										<input type="submit" class="btn_bl_bl" name="book_item" value="BOOKMARK">
+									</form>
+									<br>or <a href="bookmarks" class="blue2">Create New Collection</a>	
+								</td>
+					  		</tr>
+						</table>
+					</div>
+					<div id="form_r_nogray">
+						<div id="right_tags">
+      							<ul class="tag-list">
+<!-- BEGIN tag1 -->
+								{tag1.TAG1_TXT}
+<!-- END tag1 -->
+
+<!-- BEGIN tag2 -->
+								{tag2.TAG2_TXT}
+<!-- END tag2 -->
+
+<!-- BEGIN tag3 -->
+								{tag3.TAG3_TXT}
+<!-- END tag3 -->
+
+<!-- BEGIN tag4 -->
+								{tag4.TAG4_TXT}
+<!-- END tag4 -->
+      							</ul>
+						</div>
+						<div id="right_copyright">
+							<hr class="gray2">
+    							<h3 class="b11">&copy; All Rights Reserved {AUTHOR} - <a href="support" class="blue2">CONTACT SUPPORT</a></h3>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<script language="javascript" type="text/javascript">
+function showHide(shID) {
+   if (document.getElementById(shID)) {
+      if (document.getElementById(shID+'-show').style.display != 'none') {
+         document.getElementById(shID+'-show').style.display = 'none';
+         document.getElementById(shID).style.display = 'block';
+      }
+      else {
+         document.getElementById(shID+'-show').style.display = 'inline';
+         document.getElementById(shID).style.display = 'none';
+      }
+   }
+}
+</script>
+<style type="text/css">
+   .more {
+      display: none;
+ }
+   .more2 {
+      display: none;
+ }
+   .more3 {
+      display: none;
+ }
+</style>
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/zoomer.js"></script> 
+
+<script language="javascript" type="text/javascript" src="template/default/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+tinyMCE.init({
+		mode : "textareas",
+		theme : "simple"
+});
+</script>

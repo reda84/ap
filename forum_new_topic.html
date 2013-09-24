@@ -1,0 +1,89 @@
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="cat_top_nav">
+					<h2>Start New Thread</h2>
+				</div>
+
+				<div class="txt_white" align="center">{ERROR}</div>
+				<div id="content_wrapper2">
+					<div id="form_1">
+						<form action="" method="post">
+						<table cellpadding="0" cellspacing="10" width="100%" style="margin: 20px 0 0px 20px;"> 	
+	 						<tr valign="top">
+								<td width="160">
+									<b style="margin: 0 0 0 20px;">Subject</b>
+								</td>
+								<td>
+									<input class="register" type="text" name="subject" size="25" value="{SUBJECT}">{SUBJECT_ALERT}
+								</td>
+	 						</tr> 
+						</table>
+						<table cellpadding="0" cellspacing="10" width="100%" style="margin: 0 0 20px 20px;"> 
+	  						<tr>
+								<td width="220">
+									<b style="margin: 0 0 0 20px;">Post</b>
+								</td>
+								<td>
+									<textarea cols="65" rows="14" name="content">{CONTENT}</textarea>
+								</td>
+	  						</tr>
+	  						<tr>
+								<td colspan="2" align="center">
+									<input id="btn_normal_bb" class="middle_white3" style="float:right;margin: 5px 20px 0 0;" type="submit" name="save" value="Post Thread">
+								</td>
+	  						</tr>
+						</table>
+						</form>
+					</div>
+				</div>	   			
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<div id="sprite2"></div>
+				<div id="right_wrapper2">
+					<div id="form_r_gray" style="margin: -26px 0 20px 0;">
+						<table border="0" cellpadding="15" cellspacing="0" height="100%">		
+					  		<tr>
+					   			<td align="left">
+									<form action="forum_search.php" method="get">
+    										<input type="text" name="thread" class="search_form_small" onclick="if(this.value=='Search Threads'){this.value=''}" value="Search Threads">
+    										<input type="submit" class="search_btn" alt="search" title="search" value="">
+ 									</form>
+								</td>
+					  		</tr>
+						</table>
+					</div>
+					<div id="form_r_gray">
+						<div id="right_hd">
+							Your Recent Threads
+						</div>
+						<div id="sprite">
+							<h4 class="gr12">
+<!-- BEGIN activity -->
+								<p>
+									<a href="id-{activity.A_ID}-topic-{activity.A_TOPIC}-page-0" class="blue3">{activity.A_TOPIC2}</a><br>
+									<i style="float: right;">{activity.A_TIME}</i><br>
+								</p>
+								<hr class="gray2" style="width:180px;">
+<!-- END activity -->
+								<p align="center">last 20 activities</p> 
+							</h4>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script language="javascript" type="text/javascript" src="template/default/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+tinyMCE.init({
+		mode : "textareas",
+		theme : "simple"
+});
+</script>

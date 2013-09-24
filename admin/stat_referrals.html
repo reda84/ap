@@ -1,0 +1,71 @@
+	<div id="page_title">
+		Referral Statistic
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field"> 
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="150" class="title">Today</td>
+	  				<td width="150" class="title">This Week</td>
+	  				<td width="150" class="title">This Month</td>
+	  				<td width="150" class="title">This Year</td>
+	  				<td width="180" class="title">Total Sales</td>
+	 			</tr>
+	 			<tr valign="top">
+	  				<td align="center"><b>{DAILY_COUNT}</b><i style="color: blue;"> / </i><b>{CURRENCY}{DAILY_PROFIT}</b></td>
+	  				<td align="center"><b>{WEEKLY_COUNT}</b><i style="color: blue;"> / </i><b>{CURRENCY}{WEEKLY_PROFIT}</b></td>
+	  				<td align="center"><b>{MONTHLY_COUNT}</b><i style="color: blue;"> / </i><b>{CURRENCY}{MONTHLY_PROFIT}</b></td>
+	  				<td align="center"><b>{YEARLY_COUNT}</b><i style="color: blue;"> / </i><b>{CURRENCY}{YEARLY_PROFIT}</b></td>
+	  				<td align="center"><b>{TOTAL_COUNT}</b><i style="color: blue;"> / </i><b>{CURRENCY}{TOTAL_PROFIT}</b></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+			</table>
+			<br>
+			<form action="statistic.php?mod=referrals" method="post">
+			<font size="4"><b>Daily</b></font><hr/>
+			<table style="height:220px;margin-top: 2px; border:0px solid red;">
+				<tr>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_day_next" value="{NEXT}">
+							<input type="hidden" name="first_dayz_next" value="{FIRST_NEXT}">
+							<input type="submit" name="date_d_next" value="&lsaquo;&lsaquo; NEXT">
+					</td>
+					<td width="80%" valign="top">
+						{CHART}
+					</td>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_day_back" value="{BACK}">
+							<input type="hidden" name="first_dayz_back" value="{FIRST_BACK}">
+							<input type="submit" name="date_d_back" value="BACK &rsaquo;&rsaquo;">
+					</td>
+				</tr>
+			</table>
+			<font size="4"><b>Monthly</b></font><hr/>
+			<table style="height:220px;margin-top: 2px; border:0px solid red;">
+				<tr>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_month_next" value="{NEXT2}">
+							<input type="hidden" name="first_monthz_next" value="{FIRST_NEXT2}">
+							<input type="submit" name="date_m_next" value="&lsaquo;&lsaquo; NEXT">
+					</td>
+					<td width="80%" valign="top">
+						{CHART2}
+					</td>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_month_back" value="{BACK2}">
+							<input type="hidden" name="first_monthz_back" value="{FIRST_BACK2}">
+							<input type="submit" name="date_m_back" value="BACK &rsaquo;&rsaquo;">
+					</td>
+				</tr>
+			</table>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,166 @@
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="table_form4">
+					<ul>
+						<li style="width: 10%;">
+							Order by:
+						</li>
+						<li style="width: 25%;">
+							<form action="" method="get">
+    								<select class="sort_form_small" id="sort_by" name="order" onchange="this.form.submit()">
+									<option value="id" {SELECT1}>Default</option>
+									<option value="published" {SELECT2}>Date</option>
+									<option value="name" {SELECT3}>Title</option>
+									<option value="username" {SELECT4}>Author</option>
+									<option value="category" {SELECT5}>Category</option>
+									<option value="cost" {SELECT6}>Price</option>
+								</select>
+    								<input class="sort" title="Descending">
+							</form>
+						</li>
+						<li style="width: 45%;">
+							{NPAGELIST}
+						</li>
+						<li style="width: 20%;">
+							<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} ITEMS</div>
+						</li>
+					</ul>
+				</div>
+				<div class="txt_white" align="center">{ERROR}</div>
+				<div id="content_wrapper2">
+					<div id="form_1">
+							<div id="List_Show">
+<!-- BEGIN new_product -->
+							<div id="table_form3">
+								<ul>
+									<li style="width: 13%;">
+										<a class="thumbnailz" href="{new_product.TITLE}.html"><img src="{new_product.IMG_DIR}/{new_product.BRIEF}" width="80" height="80" border="0" alt="{new_product.TITLE2}" title="{new_product.TITLE2}"/><span style="left:80px;"><img src="crop.php?h=560&w=560&f={new_product.IMG_DIR}/{new_product.IMAGE}" width="300" height="300" border="0"/></span></a>
+									</li>
+									<li style="width: 30%;">
+										<a href="{new_product.TITLE}.html" class="black02">{new_product.TITLE2}</a>
+										<form name="user" action="user-{new_product.USERNAME}" method="post">
+											<input type="hidden" name="username_q" value="{new_product.USERNAME}">
+											<h3 class="formtitle"><input type="submit" class="form_user" name="user" value="{new_product.USERNAME}"></h3>
+										</form>
+									</li>
+									<li style="width: 2%;">
+										&nbsp;
+									</li>
+									<li style="width: 38%; margin-top: 8px;">
+										in <a href="category-{new_product.SUBCATID}-{new_product.SUBCATEGORY}-{new_product.CATEGORY}" class="blue2">{new_product.CATEGORY} &#187; {new_product.SUBCATEGORY}</a><br>
+										Layered?: {new_product.LAYERED}, 
+										{new_product.CS} 
+										{new_product.PIXEL}
+										{new_product.PRINT}
+									</li>
+									<li style="width: 2%;">
+										&nbsp;
+									</li>
+									<li style="width: 15%; margin-top: -8px;">
+										<h2 class="b28">{CURRENCY}{new_product.PRICE}</h2>
+										<span style="margin: 60px 0 0 -30px; position: absolute;">{new_product.SALES} sales</span>
+									</li>
+								</ul>
+							</div>
+							<hr class="gray">				  
+<!-- END new_product -->
+							</div>
+							<div id="Grid_Show" style="display: none;">
+							<div id="table_form3" style="margin-top: 40px;">
+								<ul class="grid">
+<!-- BEGIN all_product2 -->
+									<li style="width: 153px; margin-left: -19px; margin-top: -35px;">
+										<p align="center"><a class="thumbnailz" href="{all_product2.TITLE}.html"><img src="{all_product2.IMG_DIR}/{all_product2.BRIEF}" width="80" height="80" border="0" alt="{all_product2.TITLE2}" title="{all_product2.TITLE2}"/><span style="left:80px;"><img src="crop.php?h=560&w=560&f={all_product2.IMG_DIR}/{all_product2.IMAGE}" width="300" height="300" border="0"/></span></a></p>
+										<p align="center" style="width: 150px;"><a href="{all_product2.TITLE}.html" class="black03">{all_product2.TITLE2}</a>
+											<ul>
+												<li style="margin-left: 22px;">{all_product2.SALES} Sales &nbsp;</li>
+												<li><hr class="vert"> &nbsp;&nbsp;&nbsp;</li>
+												<li>{CURRENCY}{all_product2.PRICE} &nbsp;</li>
+											</ul>
+										</p>	
+									</li>
+									<li style="width: 16px; height: 165px;"><hr class="vert2" style="height: 165px;margin-top: -30px;"></li>
+<!-- END all_product2 -->
+								</ul>
+							</div>
+							</div>
+							<div id="sprite">{NPAGELIST}</div><br>
+					</div>
+
+				</div>	   			
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<div id="sprite2"></div>
+				<div id="list-grid"><a id="List_Click" href="javascript:Cell2()"><small>:::</small> LIST VIEW</a></div>
+				<div id="list-grid2"><a id="Grid_Click" href="javascript:Cell()"><small>: :</small> GRID VIEW</a></div>
+				<div id="right_wrapper2">
+					<div id="form_r_gray">
+						<div id="form_r_gray_long">
+							<form action="search.php" method="get">
+    								<input type="text" name="keyword" class="search_form_small" onclick="if(this.value=='Search Category'){this.value=''}" value="Search Category">
+    								<input type="hidden" name="category" value="all">
+    								<input type="submit" class="search_btn" alt="search" title="search" value="">
+ 							</form>
+							<hr class="gray2" style="width:170px;">
+<!-- BEGIN cat -->
+							<div id="cat_list">
+								<ul>
+									<li>
+										<a href="category-{cat.ID}-{cat.NAME}" class="blue3">{cat.NAME}</a>
+<!-- BEGIN subcat -->
+										<div id="cat_vert"></div>
+										<div id="cat_horiz"></div>
+										<div id="cat_vert"></div>
+										<div id="cats">
+											<a href="category-{cat.subcat.ID}-{cat.subcat.NAME}-{cat.NAME}" class="blue3">{cat.subcat.NAME}</a>
+										</div>
+<!-- END subcat -->
+									</li>
+								</ul>
+							<div>
+<!-- END cat -->
+						</div>	
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<SCRIPT LANGUAGE = "Javascript">
+<!--
+function Cell() {
+  var d1 = document.getElementById("Grid_Show");
+  var d2 = document.getElementById("Grid_Click");
+  var d3 = document.getElementById("List_Show");
+  var d4 = document.getElementById("List_Click");
+
+  if (d2) {
+	d1.style.display = "";
+	d3.style.display = "none";
+  }
+}
+-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE = "Javascript">
+<!--
+function Cell2() {
+  var d1 = document.getElementById("Grid_Show");
+  var d2 = document.getElementById("Grid_Click");
+  var d3 = document.getElementById("List_Show");
+  var d4 = document.getElementById("List_Click");
+
+  if (d4) {
+	d3.style.display = "";
+	d1.style.display = "none";
+  }
+}
+-->
+</SCRIPT>
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/zoomer.js"></script>

@@ -1,0 +1,36 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=images">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Set Home Default Image</h2>
+			<form action="general.php?mod=set_home_img" method="post" enctype="multipart/form-data">
+				<table cellpadding="0" cellspacing="1" width="100%" border="0"> 	
+	 				<tr valign="top">
+	  					<td align="left">
+							<hr class="bottom">
+						</td>
+	 				</tr>
+	 				<tr valign="top">
+						<td width="200">
+							Home Image<br>
+							<input type="file" name="home" size="30">
+							<br><br><center><img src="../{HOME_IMG}"></center>
+						</td>
+	 				</tr>  
+	  				<tr valign="top">
+						<td align="center">
+							<br><br><br><hr class="bottom">
+							<br><input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

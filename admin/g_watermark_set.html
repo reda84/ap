@@ -1,0 +1,39 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=images">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content2">
+		<div id="content_area2">
+			<h2>Set Site Watermark</h2>
+			<form action="general.php?mod=set_watermark" method="post" enctype="multipart/form-data">
+				<table cellpadding="0" cellspacing="1" width="100%" border="0"> 	
+	 				<tr valign="top">
+	  					<td align="left" colspan="2">
+							<hr class="bottom">
+						</td>
+	 				</tr>
+	 				<tr valign="top">
+						<td width="200">
+							Watermark Image<br>
+							<input type="file" name="watermark" size="30">
+							<br>* Only .PNG images
+						</td>
+						<td width="400">
+							<img src="../{WATERMARK}">
+						</td>
+	 				</tr>  
+	  				<tr valign="top">
+						<td align="center" colspan="2">
+							<hr class="bottom">
+							<br><input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

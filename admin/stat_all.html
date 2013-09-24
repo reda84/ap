@@ -1,0 +1,31 @@
+	<div id="page_title">
+		All Statistic
+	</div>
+	<div id="middle_content2">
+		<div id="content_area">
+			<div id="scroll_field"> 
+			<form action="statistic.php?mod=all" method="post">
+			<font size="4"><b>Monthly</b></font><hr/>
+			<table style="height:300px;margin-top: 2px; border:0px;">
+				<tr>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_month_next" value="{NEXT2}">
+							<input type="hidden" name="first_monthz_next" value="{FIRST_NEXT2}">
+							<input type="submit" name="date_m_next" value="&lsaquo;&lsaquo; NEXT">
+					</td>
+					<td width="80%" valign="top">
+						{CHART2}
+					</td>
+					<td width="10%" valign="top">
+							<input type="hidden" name="date_month_back" value="{BACK2}">
+							<input type="hidden" name="first_monthz_back" value="{FIRST_BACK2}">
+							<input type="submit" name="date_m_back" value="BACK &rsaquo;&rsaquo;">
+					</td>
+				</tr>
+			</table>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+

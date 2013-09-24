@@ -1,0 +1,70 @@
+	<div id="page_title">
+		Users
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Sellers List</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   
+	 			<tr>
+					<td>
+						<p>
+		  					<form action="users.php?mod=sales" method="post">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td width="270">
+										&nbsp;
+									</td>
+									<td width="250">
+										Quick Member Search by Username :
+									</td>
+									<td width="250" align="left">
+										<input type="text" class="fields_small" name="username"> 
+									</td>
+									<td width="100" align="left">
+										<input type="submit" class="submit_btn" name="search" value="Search">
+									</td>
+								</tr>
+							</table>
+							</form>
+						</p>
+					</td>
+      				</tr>		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="380" class="title" align="center">Username</td>
+								<td width="60" class="title" align="center">Active</td>
+								<td width="120" class="title" align="center">Sales</td>
+								<td width="150" class="title" align="center">Sale Earnings</td>
+								<td width="100" class="title" align="center">Commission</td>
+								<td width="60" class="title" align="center">Delete</td>
+							</tr>
+
+<!-- BEGIN user -->
+							<tr bgcolor="#ffffff">
+								<td>&nbsp;&nbsp;{user.USERNAME}</td>
+								<td align="center">{user.ACTIVE}</td>
+								<td align="center">{user.SALES}</td>
+								<td align="center">{CURRENCY}{user.EARNINGS}</td>
+								<td align="center">{user.COMMISION}%</td>
+								<td align="center"><a href="users.php?mod=sales&name={user.USERNAME}&delete=yes" alt="delete user" title="delete user" onclick= "return (window.confirm('Are you sure to delete this member sales statistic?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END user -->
+
+						</table>
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>	
+		</div>
+	</div>

@@ -1,0 +1,284 @@
+<!-- BEGIN error -->
+	{error.ERROR}
+<!-- END error -->
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+					<div id="sprite4"></div>
+
+					<div id="content_wrapper2" style="height: 120px;">
+						<ul>
+							<li>
+								<div id="form_1" style="padding: 12px 12px 12px 12px; width: 260px; height: 140px;">
+									<img src="{BOOK_IMAGE}" width="260" height="140" border="0">
+								</div>
+							</li>		 
+							<li>
+								<div style="width: 300px;">
+									<h2 class="b18">{BOOK_TITLE2}</h2>
+								</div>
+								<div style="width: 280px;margin: 52px 0 0 0;">
+									<p>by <a href="user-{BOOK_USERNAME}" class="blue2">{BOOK_USERNAME}</a></p>
+								</div>
+								<div style="width: 320px;">
+									<p><h4 class="b12">{BOOK_COMMENT}</h4></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div id="sprite2"></div>
+					<hr class="gray2">
+							<div id="table_form4">
+								<ul>
+									<li style="width: 10%;">
+										Order by:
+									</li>
+									<li style="width: 25%;">
+										<form action="" method="get">
+    											<select class="sort_form_small" id="sort_by" name="order" onchange="this.form.submit()">
+												<option value="id" {SELECT1}>Default</option>
+												<option value="published" {SELECT2}>Date</option>
+												<option value="name" {SELECT3}>Title</option>
+												<option value="username" {SELECT4}>Author</option>
+												<option value="category" {SELECT5}>Category</option>
+												<option value="cost" {SELECT6}>Price</option>
+											</select>
+    											<input class="sort" title="Descending">
+										</form>
+									</li>
+								</ul>
+							</div>
+					<div id="content_wrapper2">
+						<div id="form_1">
+							<div id="List_Show">
+<!-- BEGIN new_product -->
+							<div id="table_form3">
+								<ul>
+									<li style="width: 13%;">
+										<a class="thumbnailz" href="{new_product.TITLE}.html"><img src="{new_product.IMG_DIR}/{new_product.BRIEF}" width="80" height="80" border="0" alt="{new_product.TITLE2}" title="{new_product.TITLE2}"/><span style="left:80px;"><img src="crop.php?h=560&w=560&f={new_product.IMG_DIR}/{new_product.IMAGE}" width="300" height="300" border="0"/></span></a>
+									</li>
+									<li style="width: 30%;">
+										<a href="{new_product.TITLE}.html" class="black02">{new_product.TITLE2}</a>
+										<form name="user" action="user-{new_product.USERNAME}" method="post">
+											<input type="hidden" name="username_q" value="{new_product.USERNAME}">
+											<h3 class="formtitle"><input type="submit" class="form_user" name="user" value="{new_product.USERNAME}"></h3>
+										</form>
+									</li>
+									<li style="width: 2%;">
+										&nbsp;
+									</li>
+									<li style="width: 36%; margin-top: 8px;">
+										in <a href="category-{new_product.SUBCATID}-{new_product.SUBCATEGORY}-{new_product.CATEGORY}" class="blue2">{new_product.CATEGORY} &#187; {new_product.SUBCATEGORY}</a><br>
+										Layered?: {new_product.LAYERED}, 
+										{new_product.CS} 
+										{new_product.PIXEL}
+										{new_product.PRINT}
+									</li>
+									<li style="width: 2%;">
+										&nbsp;
+									</li>
+									<li style="width: 12%; margin-top: -8px;">
+										<h2 class="b28">{CURRENCY}{new_product.PRICE}</h2>
+										<span style="margin: 60px 0 0 -30px; position: absolute;">{new_product.SALES} sales</span>
+									</li>
+									<li style="width: 5%;">
+										<form action="" method="post">
+											<input type="hidden" name="pro_id" value="{new_product.PROID}">
+											<input type="hidden" name="item_id" value="{new_product.ITEM_ID}">
+											<input type="hidden" name="book_id" value="{new_product.BOOK_ID}">
+											<input type="submit" class="delete_x" name="delete_item" value="">
+										</form>
+									</li>
+								</ul>
+							</div>
+							<hr class="gray">			  
+<!-- END new_product -->
+							</div>
+							<div id="Grid_Show" style="display: none;">
+							<div id="table_form3" style="margin-top: 40px;">
+								<ul class="grid">
+<!-- BEGIN all_product2 -->
+									<li style="width: 153px; margin-left: -19px; margin-top: -35px;">
+										<p align="center">
+											<a class="thumbnailz" href="{all_product2.TITLE}.html"><img src="{all_product2.IMG_DIR}/{all_product2.BRIEF}" width="80" height="80" border="0" alt="{all_product2.TITLE2}" title="{all_product2.TITLE2}"/><span style="left:80px;"><img src="crop.php?h=560&w=560&f={all_product2.IMG_DIR}/{all_product2.IMAGE}" width="300" height="300" border="0"/></span></a>
+											<form action="" method="post">
+												<input type="hidden" name="pro_id" value="{all_product2.PROID}">
+												<input type="hidden" name="item_id" value="{all_product2.ITEM_ID}">
+												<input type="hidden" name="book_id" value="{all_product2.BOOK_ID}">
+												<input type="submit" class="delete_x2" name="delete_item" value="">
+											</form>
+										</p>
+										<p align="center" style="width: 150px;"><a href="{all_product2.TITLE}.html" class="black03">{all_product2.TITLE2}</a>
+											<ul>
+												<li style="margin-left: 22px;">{all_product2.SALES} Sales &nbsp;</li>
+												<li><hr class="vert"> &nbsp;&nbsp;&nbsp;</li>
+												<li>{CURRENCY}{all_product2.PRICE} &nbsp;</li>
+											</ul>
+										</p>	
+									</li>
+									<li style="width: 16px; height: 165px;"><hr class="vert2" style="height: 165px;margin-top: -30px;"></li>
+<!-- END all_product2 -->
+								</ul>
+							</div>
+							</div>
+							<div id="sprite">{NPAGELIST}</div><br>
+						</div>
+					</div>      		
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+<!-- BEGIN rate -->
+				<div id="sprite">
+					<center>
+					<h3 class="b14">Rate This Collection</h3>
+					<div id="sprite2"></div>
+					<hr class="gray">
+					</center>
+				</div>
+<!-- END rate -->
+				<div id="sprite2"></div>
+				<div id="list-grid"><a id="List_Click" href="javascript:Cell2()"><small>:::</small> LIST VIEW</a></div>
+				<div id="list-grid2"><a id="Grid_Click" href="javascript:Cell()"><small>: :</small> GRID VIEW</a></div>
+				<div id="right_wrapper2">
+					<div id="form_r_gray">
+						<div id="right_hd">
+							Collection Owner
+						</div>
+						<div id="table_form7">
+							<ul>
+								<li>
+									<a href="user-{U_NAME}"><img src="{U_AVATAR}" title="{U_AVATAR}" border="0"></a> 
+								</li>
+								<li>
+									<h2 class="b24"><a href="user-{U_NAME}" class="black02">{U_NAME}</a></h2>
+								</li>
+							</ul>
+							<ul>
+								<li>	
+									<br>
+<!-- BEGIN badges -->
+											{badges.MEM_BADGE1}
+											{badges.MEM_BADGE2}
+											{badges.MEM_BADGE3}
+											{badges.MEM_BADGE4}
+											{badges.MEM_BADGE5}
+											{badges.MEM_BADGE6}
+											{badges.MEM_BADGE7}
+											{badges.MEM_BADGE8}
+											{badges.MEM_BADGE9}
+											{badges.MEM_BADGE10}
+											{badges.MEM_BADGE11}
+											{badges.MEM_BADGE12}
+											{badges.MEM_BADGE13}
+											{badges.MEM_BADGE14}
+											{badges.MEM_BADGE15}
+											{badges.MEM_BADGE16}
+											{badges.MEM_BADGE17}
+											{badges.MEM_BADGE18}
+											{badges.MEM_BADGE19}
+											{badges.MEM_BADGE20}
+											{badges.MEM_BADGE21}
+											{badges.MEM_BADGE22}
+											{badges.MEM_BADGE23}
+											{badges.MEM_BADGE24}
+											{badges.MEM_BADGE25}
+											{badges.MEM_BADGE26}
+											{badges.MEM_BADGE27}
+											{badges.MEM_BADGE28}
+											{badges.MEM_BADGE29}
+											{badges.MEM_BADGE30}
+											{badges.MEM_BADGE31}
+											{badges.MEM_BADGE32}
+											{badges.MEM_BADGE33}
+											{badges.MEM_BADGE34}
+											{badges.MEM_BADGE35}
+<!-- END badges -->
+								</li>
+							</ul>
+						</div>
+						<hr class="gray">
+						<div id="sprite">
+							<form action="" method="get">
+    								<input type="text" name="keyword" class="search_form_small" onclick="if(this.value=='Search Collection'){this.value=''}" value="Search Collection">
+    								<input type="submit" class="search_btn" alt="search" title="search" value="">
+ 							</form>
+							<br>
+						</div>
+					</div>
+<!-- BEGIN my_collection -->
+					<div id="form_r_gray" class="down">
+						<div id="right_hd">
+							Edit Collection
+						</div>
+						<div id="sprite">
+							<form action="usecol" method="post" enctype="multipart/form-data">
+								<h4 class="b12">Collection Title:</h4>
+								<input type="text" size="25" name="book_title" value="{BOOK_TITLE2}">
+								<h4 class="b12">Image: <i>(260x140px)</i></h4>
+								<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+								<input type="hidden" name="completed" value="1">
+								<input type="file" size="10" name="book_image" value="">
+								<h4 class="b12">Description:</h4>
+								<textarea name="book_comment" cols="23" rows="6">{BOOK_COMMENT}</textarea><br>
+	        						<input type="checkbox" name="check" value="1" /> Publicly viewable?<br><br><br>
+								<input type="hidden" name="book_id" value="{BOOK_ID}">
+								<input id="btn_normal_bb" class="middle_white3" type="submit" name="edit_name" value="Edit">
+								<br><br><br>
+							</form>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd">
+							Delete Collection ?
+						</div>
+						<div id="sprite">
+							<form action="" method="post">
+								<h4 class="b12">Delete All Items in :<br><b>{BOOK_TITLE2}</b></h4>
+								<input type="hidden" name="book_id" value="{BOOK_ID}">
+								<input id="btn_normal_bb" class="middle_white3" type="submit" name="delete_all_items" value="Delete">
+								<br><br><br>
+							</form>
+						</div>
+					</div>
+<!-- END my_collection -->
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<SCRIPT LANGUAGE = "Javascript">
+<!--
+function Cell() {
+  var d1 = document.getElementById("Grid_Show");
+  var d2 = document.getElementById("Grid_Click");
+  var d3 = document.getElementById("List_Show");
+  var d4 = document.getElementById("List_Click");
+
+  if (d2) {
+	d1.style.display = "";
+	d3.style.display = "none";
+  }
+}
+-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE = "Javascript">
+<!--
+function Cell2() {
+  var d1 = document.getElementById("Grid_Show");
+  var d2 = document.getElementById("Grid_Click");
+  var d3 = document.getElementById("List_Show");
+  var d4 = document.getElementById("List_Click");
+
+  if (d4) {
+	d3.style.display = "";
+	d1.style.display = "none";
+  }
+}
+-->
+</SCRIPT>
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/zoomer.js"></script>

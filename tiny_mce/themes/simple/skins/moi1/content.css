@@ -1,0 +1,16 @@
+body, td, pre {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	background: transparent;
+}
+
+body {
+	background: transparent;
+	height: auto;
+  	overflow: hidden;
+  	border: none;
+}
+
+img {border: none}
+
+

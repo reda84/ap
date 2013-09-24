@@ -1,0 +1,563 @@
+<!-- BEGIN error -->
+{error.ERROR}
+<!-- END error -->
+
+<div id="ex" class="more2 more">
+    <div id="form_pay">
+        <div class="container">
+            <div class="row">
+                <div class="span1"> &nbsp;</div>
+                <div class="span4">
+
+                    <p align="center">
+                    <form action="" method="post">
+                        <input type="hidden" name="pay_method" value="deposit" />
+                        <input type="submit" name="pay_deposit_01" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy with Prepaid Credit"><hr>
+                    </form>
+                    </p>
+                    <p align="center">
+                        Pay <b>{CURRENCY}{PRICE}</b> from your prepaid credit balance: <b>{CURRENCY}{BALANCE}</b><br>
+                        ( <a href="deposit" class="blue3">MAKE A DEPOSIT</a>  )
+                    <p>
+                </div>
+                <div class="span2">
+                    <br><p align="center"><img src="{IMAGES_PATH}/or.png"></p>
+                </div>
+                <div class="span4">
+
+                    <p align="center">
+                        <!-- BEGIN ses -->
+                    <form action='{ses.SESSION}' method='post'> 
+                        <!-- END ses -->
+
+                        <!-- BEGIN noses -->
+                        <form action='{noses.SESSION}' method='post'> 
+                            <!-- END noses -->
+                            <input type='hidden' name='cmd' value='_xclick'>
+                            <input type='hidden' name='cbt' value='Continue'>
+                            <input type='hidden' name='success_url' value='{SITE_URL}/downloads'>
+                            <input type='hidden' name='continue_button_text' value='Continue'>
+                            <input type='hidden' name='image_url' value='upload/logo/logo2.png'>
+                            <input type='hidden' name='business' value='{SITE_PAYPAL_EMAIL}'>
+                            <input type='hidden' name='currency_code' value='USD'>
+                            <input type='hidden' name='return' value='{SITE_URL}/downloads'>									
+                            <input type='hidden' name='cancel_return' value='{SITE_URL}/payment-cancelled.php'>																
+                            <input type='hidden' name='amount' value='{PRICE2}'>
+                            <input type='hidden' name='item_number' value='{PROID}'>
+                            <input type='hidden' name='item_name' value='{TITLE}'>
+                            <input type="hidden" name="invoice" value="Purchase-{COUNTER}" />
+                            <input type="hidden" name="custom" value="{USERNAME}" />
+                            <input type="submit" name="pay_paypal_01" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy Now (via PayPal)"><hr>	
+                        </form>
+                        </p>
+                        <p align="center">
+                            You will be redirected to pay <b>{CURRENCY}{PRICE2}</b> of credit via PayPal.<br>
+                            ( INCLUDES {CURRENCY}2 SURCHARGE )<br><br>
+                            <a href=""><img src="{IMAGES_PATH}/paypal_options.jpg" border="0"></a>
+                        </p>
+                </div>
+                <div class="span1">
+                    <a href="" id="ex-hide" onclick="showHide('ex');
+                            return false;">
+                        <div class="close_payboard"></div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div id="ex2" class="more3 more">
+    <div id="form_pay">
+        <div class="container">
+            <div class="row">
+                <div class="span1"> &nbsp;</div>
+                <div class="span4">
+
+                    <p align="center">
+                    <form action="" method="post">
+                        <input type="hidden" name="pay_method" value="deposit" />
+                        <input type="submit" name="pay_deposit_02" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy with Prepaid Credit"><hr>
+                    </form>
+                    </p>
+                    <p align="center">
+                        Pay <b>{CURRENCY}{EXTENDED_PRICE}</b> from your prepaid credit balance: <b>{CURRENCY}{BALANCE}</b><br>
+                        ( <a href="deposit" class="blue3">MAKE A DEPOSIT</a>  )
+                    <p>
+                </div>
+                <div class="span2">
+                    <br><p align="center"><img src="{IMAGES_PATH}/or.png"></p>
+                </div>
+                <div class="span4">
+                    <p align="center">
+                        <!-- BEGIN ses -->
+                    <form action='{ses.SESSION}' method='post'> 
+                        <!-- END ses -->
+
+                        <!-- BEGIN noses -->
+                        <form action='{noses.SESSION}' method='post'> 
+                            <!-- END noses -->
+                            <input type='hidden' name='cmd' value='_xclick'>
+                            <input type='hidden' name='cbt' value='Continue'>
+                            <input type='hidden' name='success_url' value='{SITE_URL}/downloads'>
+                            <input type='hidden' name='continue_button_text' value='Continue'>
+                            <input type='hidden' name='image_url' value='upload/logo/logo2.png'>
+                            <input type='hidden' name='business' value='{SITE_PAYPAL_EMAIL}'>
+                            <input type='hidden' name='currency_code' value='USD'>
+                            <input type='hidden' name='return' value='{SITE_URL}/downloads'>									
+                            <input type='hidden' name='cancel_return' value='{SITE_URL}/payment-cancelled.php'>																	
+                            <input type='hidden' name='amount' value='{EXTENDED_PRICE2}'>
+                            <input type='hidden' name='item_number' value='{PROID}'>
+                            <input type='hidden' name='item_name' value='{TITLE}'>
+                            <input type="hidden" name="invoice" value="Purchase-{COUNTER}" />
+                            <input type="hidden" name="custom" value="{USERNAME}" />
+                            <input type="submit" name="pay_paypal_02" style="border: 0px;background:transparent;color: #000;text-decoration:none;font-size: 20px;cursor: pointer;" value="Buy Now (via PayPal)"><hr>
+                        </form>
+                        </p>
+                        <p align="center">
+                            You will be redirected to pay <b>{CURRENCY}{EXTENDED_PRICE2}</b> of credit via PayPal.<br>
+                            ( INCLUDES {CURRENCY}2 SURCHARGE )<br><br>
+                            <a href=""><img src="{IMAGES_PATH}/paypal_options.jpg" border="0"></a>
+                        </p>
+                </div>
+                <div class="span1">
+                    <a href="" id="ex2-hide" onclick="showHide('ex2');
+                            return false;">
+                        <div class="close_payboard"></div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<section id="single-item" class="container">
+    <div class="row">
+        <div class="span8">
+            <div class="txt_white" align="center">{ERROR}</div>
+            <h1 class="design-title">{TITLE2}</h1>
+            <div id="item-promotion">
+
+                <div id="content_wrapper" class="down">
+                    <div id="form_1">
+                        <div id="center_align" align="center">
+                            <img class="big" src="{IMG_DIR}/{IMAGE}" width="590" alt="{TITLE2}" title="{TITLE2}">
+                        </div>
+                        <div id="center_align" align="center">
+                            <!-- BEGIN preview -->
+                            <form action="unzip/unzip.php" method="post" target="_blank">
+                                <input type="hidden" name="demo" value="../user_file_upload/{AUTHOR}/{TITLE}/{PREVIEW}">
+                                <input type="hidden" name="zip_path" value="../user_file_upload/{AUTHOR}/{TITLE}/">
+                                <input type="hidden" name="page" value="{TITLE}.html">
+                                <br />
+                                <input type="submit" class="btn btn-danger" value="SCREENSHOTS">
+                            </form>
+                            <!-- END preview -->
+                        </div>
+                        <br>
+                    </div>
+
+
+
+ 
+                </div> 
+
+            </div>
+            <ul class="nav nav-tabs" id="item-tabs">
+                <li class="active">
+                    <a href="{SITE_URL}/{TITLE}.html" class="blue">Item Details</a>
+                    <!--<a href="#item-details">Details</a>-->
+                </li>
+                <li>
+                    <a href="{SITE_URL}/discussion-{TITLE}-page-0" class="blue">Comments</a>
+                    <!--<a href="#item-comments">Comments <img src="images/comments-icon.png" /></a>-->
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="item-details">
+                    <h2 class="b28">{TITLE2}</h2>
+                    <h3 class="b14">post by <a href="portfolio-{AUTHOR}-order-id-page-0" class="blue2">{AUTHOR}</a></h3></p>
+
+                    {DESCRIPTION}
+
+
+
+                </div>
+                <div class="tab-pane" id="item-comments">...</div>
+            </div>
+
+
+           <div class="more-items">
+                                <h3> <a href="portfolio-{AUTHOR}-order-id-page-0" class="gray">More Items by {AUTHOR}</a></h3>
+                                <div class="feature-slider-container">
+                                    
+                                    <div id="week-feature">
+
+                                        <div class="team-slider slider ca-wrapper" style="width: 11610px;" >
+
+
+
+                                            <!--                                            <div class="team-slide slide ca-item">
+                                                                                            <a href="">
+                                                                                                <img src="images/thumb-80x70.png" alt />
+                                                                                            </a>
+                                                                                        </div>-->
+                                            <div class="team-slide slide ca-item">
+                                             <!-- BEGIN random_items -->
+                <a class="thumbnailz" style="margin-left:10px;" href="{random_items.R_TITLE}.html">
+                    <img src="{random_items.R_IMG_DIR}/{random_items.R_BRIEF}" width="80" height="80" border="0"/>
+                    <span style="left:80px;">
+                        <img src="crop.php?h=560&w=560&f={random_items.R_IMG_DIR}/{random_items.R_IMAGE}" width="300" height="300" border="0"/>
+                    </span>
+                </a>
+                <!-- END random_items -->
+                </div>
+                                            
+
+
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                    
+            <div id="img_table">
+               
+            </div>
+            
+
+        </div>
+        <div class="span4">
+
+            <div id="right-sidebar">
+                <div id="wrap">
+                    <!-- BEGIN free -->
+                    <div style="position: relative; z-index: 0;">
+                        <div id="form_r_lightblue">
+                            <table border="0" cellpadding="10" cellspacing="0">		
+                                <tr>
+                                    <td align="center">
+                                        <img src="{IMAGES_PATH}/gold-star.png">&nbsp;&nbsp;&nbsp;
+                                        <a href="{free.URL}" class="black00">Download it for free!</a><br><br>
+                                        This item is Free File of the Month!<br>
+                                        Each user is entitled to <a href="{free.URL}" class="black03">one free regular license.</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END free -->
+                    <div style="position: relative; z-index: 0;">
+
+                        <div class="buy-now-box">
+                            <div class="item-price">{CURRENCY}{PRICE}</div>
+                            <a href="#" class="btn btn-danger large" onclick="showHide('ex');
+                                    return false;">BUY NOW</a>
+                        </div>
+                        <div class="extended-license">
+                            Extended Licence	|	<strong>{CURRENCY}{EXTENDED_PRICE}</strong>
+                            <a href="#" class="pull-right" onclick="showHide('ex2');
+                                    return false;"><strong>Buy Now</strong></a>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="item-sales">
+
+
+                            <div class="sales-container">
+                                <img src="{TEMPLATE_DIR}/images/sales-icon.png" />
+                                <div class="sales"> 
+                                    <span class="sales-count">{SALES}</span><br />
+                                    sales
+                                </div>
+                            </div>
+
+                            <img src="{TEMPLATE_DIR}/images/sales-ver-sep.png" class="ver-sep" />
+                            <div class="rating">
+                                <h3>Rating</h3>
+                                <ul class="rating-element">
+                                    <li class="active"></li>
+                                    <li class="active"></li>
+                                    <li class="active"></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                {STARS}<br>
+                                ( {RATING} ratings )
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="user-profile">
+                        <div class="user-vcard">
+                            <h3><a href="user-{AUTHOR}" class="black01">{AUTHOR}</a></h3>
+                            <a href="user-{AUTHOR}"><img src="{AVATAR}" border="0" class="user-avatar"></a>
+                            <form action="portfolio-{AUTHOR}-order-id-page-0" method="post">
+                                <input type="hidden" value="{AUTHOR}">
+                                <input type="submit" class="btn btn-danger" value="WAREHOUSE">
+                            </form>
+                        </div>
+                        <img src="{TEMPLATE_DIR}/images/user-ver-sep.png" class="ver-sep" />
+<div class="badges">
+                <p>								 
+                            <!-- BEGIN badges -->
+                            {badges.MEM_BADGE1}
+                            {badges.MEM_BADGE2}
+                            {badges.MEM_BADGE3}
+                            {badges.MEM_BADGE4}
+                            {badges.MEM_BADGE5}
+                            {badges.MEM_BADGE6}
+                            {badges.MEM_BADGE7}
+                            {badges.MEM_BADGE8}
+                            {badges.MEM_BADGE9}
+                            {badges.MEM_BADGE10}
+                            {badges.MEM_BADGE11}
+                            {badges.MEM_BADGE12}
+                            {badges.MEM_BADGE13}
+                            {badges.MEM_BADGE14}
+                            {badges.MEM_BADGE15}
+                            {badges.MEM_BADGE16}
+                            {badges.MEM_BADGE17}
+                            {badges.MEM_BADGE18}
+                            {badges.MEM_BADGE19}
+                            {badges.MEM_BADGE20}
+                            {badges.MEM_BADGE21}
+                            {badges.MEM_BADGE22}
+                            {badges.MEM_BADGE23}
+                            {badges.MEM_BADGE24}
+                            {badges.MEM_BADGE25}
+                            {badges.MEM_BADGE26}
+                            {badges.MEM_BADGE27}
+                            {badges.MEM_BADGE28}
+                            {badges.MEM_BADGE29}
+                            {badges.MEM_BADGE30}
+                            {badges.MEM_BADGE31}
+                            {badges.MEM_BADGE32}
+                            {badges.MEM_BADGE33}
+                            {badges.MEM_BADGE34}
+                            {badges.MEM_BADGE35}
+                            <!-- END badges -->
+                        </p>
+
+</div>
+                        
+            
+                    </div>
+
+
+
+                    <div class="item-details">
+                        <table>
+                            <tr>
+                                <td width="60%"><span class="item-meta meta-price">Price</span></td>
+                                <td>{CURRENCY}{PRICE}</td>
+                            </tr>
+                            <tr>
+                                <td><span class="item-meta meta-date">Date</span></td>
+                                <td>{CREATIONDATE}</td>
+                            </tr>
+                            <tr>
+                                <td><span class="item-meta meta-license">License</span></td>
+                                <td> Regular / Extended</td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    {ATTRIBUTES}
+                                </td>
+
+                                <td align="left">
+                                    <!-- BEGIN graphic -->
+                                    <a href="keyword-{graphic.GRAPHICS}-order-id-page-0" class="blue2">{graphic.GRAPHICS}</a>,
+                                    <!-- END graphic -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <span class="item-meta meta-type">Minimum Adobe CS Version</span>
+                                </td>
+
+                                <td align="left">
+                                    <a href="keyword-{CS}-order-id-page-0" class="blue2">{CS}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="item-meta meta-type">File Types</span></td>
+                                <td>PSD, PNG,  JPEG</td>
+                            </tr>
+                            <tr>
+                                <td><span class="item-meta meta-size">File Size</span></td>
+                                <td>9.53 MB</td>
+                            </tr>
+                            <tr>
+                                <td><span class="item-meta meta-layered">Layered?</span></td>
+                                <td>{LAYERED}</td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <span class="item-meta meta-layered"> Print Dimensions</span>
+                                </td>
+
+                                <td align="left">
+                                    <a href="keyword-{PRINT}-order-id-page-0" class="blue2">{PRINT}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="item-meta meta-dimension">Dimensions</span></td>
+                                <td><a href="keyword-{PIXEL}-order-id-page-0" class="blue2">{PIXEL}</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="item-meta meta-resize">Resizable?</span></td>
+                                <td>Yes</td>
+                            </tr>
+                        </table>
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+                    <div class="bookmark-item">
+                        <div class="row-fluid">
+                            <form action="" method="post">
+
+
+                                <select class="sort_form_big" name="book_names_id">
+                                    <!-- BEGIN bookmark -->
+                                    <option name="{bookmark.BOOK_ID}" value="{bookmark.BOOK_ID}">{bookmark.BOOK_TITLE2}</option>
+                                    <!-- END bookmark -->
+                                </select>
+                                <input type="hidden" name="item_own_id" value="{PROID}">
+                                <input type="submit" class="btn btn-danger" name="book_item" value="BOOKMARK">
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="share-item clearfix">
+                        <ul class="share-icons pull-right">
+                            <li><a href="" class="facebook"></a></li>
+                            <li><a href="" class="twitter"></a></li>
+                            <li><a href="" class="gplus"></a></li>
+                        </ul>
+                        <a href="" class="share"><img src="{TEMPLATE_DIR}/images/share-icon.png" /> Share</a>
+
+                    </div>
+
+                    <div id="form_r_nogray">
+                        <div id="right_tags">
+                            <ul class="tag-list">
+                                <!-- BEGIN tag1 -->
+                                {tag1.TAG1_TXT}
+                                <!-- END tag1 -->
+
+                                <!-- BEGIN tag2 -->
+                                {tag2.TAG2_TXT}
+                                <!-- END tag2 -->
+
+                                <!-- BEGIN tag3 -->
+                                {tag3.TAG3_TXT}
+                                <!-- END tag3 -->
+
+                                <!-- BEGIN tag4 -->
+                                {tag4.TAG4_TXT}
+                                <!-- END tag4 -->
+                            </ul>
+                        </div>
+                        <div class="tags-box">
+                            <a href="" class="tag">design</a>
+                            <a href="" class="tag">box</a>
+                            <a href="" class="tag">windows 8</a>
+                            <a href="" class="tag">iPhone</a>
+                            <a href="" class="tag">shape</a>
+                            <a href="" class="tag">app</a>
+                            <a href="" class="tag">UI</a>
+                            <a href="" class="tag">phone</a>
+                            <a href="" class="tag">shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+    function showHide(shID) {
+
+
+
+        console.log($("#" + shID).css("display"));
+
+        if ($("#" + shID).css("display") == "none")
+        {
+            $("#" + shID).css("display", "block");
+        } else {
+            $("#" + shID).css("display", "none");
+        }
+        return false;
+//        if (document.getElementById(shID)) {
+//            if (document.getElementById(shID + '-show').style.display != 'none') {
+//                document.getElementById(shID + '-show').style.display = 'none';
+//                document.getElementById(shID).style.display = 'block';
+//            }
+//            else {
+//                document.getElementById(shID + '-show').style.display = 'inline';
+//                document.getElementById(shID).style.display = 'none';
+//            }
+//        }
+    }
+</script>
+<style type="text/css">
+    .more {
+        display: none;
+    }
+    .more2 {
+        display: none;
+    }
+    .more3 {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/zoomer.js"></script> 
+
+<script type="text/javascript" src="{TEMPLATE_DIR}/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+    tinyMCE.init({
+        mode: "textareas",
+        theme: "simple",
+        skin: "moi1",
+        readonly: true,
+        plugins: "autoresize"
+    });
+</script>

@@ -1,0 +1,164 @@
+							<!--<form action="bookmarks" method="post" enctype="multipart/form-data">
+								<h4 class="b12">Collection Title:</h4>
+								<h4 class="b12">Image: <i>(260x140px)</i></h4>
+								<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+								<input type="hidden" name="completed" value="1">
+								<input type="file" size="10" name="book_image" value="">
+							</form>-->
+
+<form action="bookmarks" method="post" enctype="multipart/form-data">
+	         <div class="row">
+                        <div class="span12">
+                        <div class="bookmarks-form">
+                        
+                            <div class="bookmarks">
+                            <div class="bookmarksData">{TITLE}<!--Bookmarks--></div>
+                            <div class="clear"></div>
+                            </div>
+
+                            <div class="bookmarks-wrapper">
+                            <div class="span2 bmCollection" >Create a Collection
+                            <div class="bmCollectionBtn"><a  type="submit" class="btn btn-danger btn-bookmarks" >SELECT FILES</a></div>
+                            </div>
+                            <div class="span8" >
+
+                            <div class="upload-row span8">
+                                <div class="row-left span2">Preview Image</div>
+                                <div class="row-right span6">
+                                    <select class="span6">
+                                          <option> </option>
+                                          <option> </option>
+                                      </select>
+                                      <div class="span6 upload-type">590 pixel wide JPEG preview of your design. Height can be any.</div>
+                                </div>
+                            </div>
+
+
+                            <div class="upload-row span9">
+                                <div class="row-left span2">Name</div>
+                                <div class="row-right span6">
+                                      <input type="text" class="span6" size="25" name="book_title" />
+                                </div>
+                            </div>
+
+                            <div class="upload-row span9">
+                                <div class="row-left span2">Description of your design</div>
+                                <div class="row-right span6">
+                                      <textarea class="span6 uploadTextarea" name="book_comment"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="upload-row span9">
+                                <div class="row-left span2"></div>
+                                <div class="row-right span6">
+                                        <div class="checkbox createCl">
+                                          <label>
+                                            <input type="checkbox" name="check" value="1"/>
+                                            <div class="bookmarksLicense">Publicly viewable?</div>
+                                          </label>
+                                        </div>
+                                       <div class="createCr"> 
+
+                                       <input class="btn btn-danger btn-bookmarks" type="submit" name="book_this" value="Create collection">
+
+                                       </div>
+                                </div>
+                            </div>
+
+
+                            </div>
+                            <div class="clear"></div>
+                            </div>
+
+                        </div>
+                        
+                        </div>
+                    </div>
+</form>
+
+
+
+
+                    <div class="privateCol">
+                    <div class="PrivCol">Private Collections</div>
+                    <div class="PrivBy">By <span>n-media</span></div>
+                    
+                                  <ul class="items-list-bookmarks">
+
+
+<!-- BEGIN collection_name -->
+<p>by <a href="user-{collection_name.BOOK_USERNAME}" class="blue2">{collection_name.BOOK_USERNAME}</a></p>
+                                    <li>
+                                        <div class="list-bookmark">
+                                        <a href="{collection_name.BOOK_ID}-{collection_name.BOOK_TITLE}-order-id-page-0"><img src="{collection_name.BOOK_IMAGE}" width="260" height="140" border="0"></a>
+                                        <h3>{collection_name.BOOK_COUNT} Items</h3>
+                                        <p>{collection_name.BOOK_COMMENT}</p>
+                                        </div>
+                                        <div class="rating-bookmark">
+                                            <ul class="rating-bookmark-element">
+                                                <li class="active"></li>
+                                                <li class="active"></li>
+                                                <li class="active"></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </div>
+                                        <div class="bookmark-download"><a  type="submit" class="btn btn-danger btn-bookmarks-download" >DOWNLOAD</a></div>
+                                    </li>
+<!-- END collection_name -->
+
+                                 
+
+                                </ul>
+                                <div class="clear"></div>
+                                <div class="bookmarks-pagination">
+                                <span class="pag-prev"><a href="">Previous</a></span>
+                                <span class="current">1</span>
+                                <span class="pagin"><a href="">2</a></span>
+                                <span class="pagin"><a href="">3</a></span>
+                                <span class="pagin"><a href="">4</a></span>
+                                <span class="pagin"><a href="">5</a></span>
+                                <span class="pagin"><a href="">6</a></span>
+                                <span class="pag-next"><a href="">Next</a></span>
+                                </div>
+                       
+                        <div class="clear"></div>
+                    </div>
+
+
+<!-- BEGIN collection_public -->
+							<div id="table_form3" style="height: 140px;">
+								<ul>
+									<li style="width: 38%;">
+										<a href="{collection_public.BOOK_ID}-{collection_public.BOOK_TITLE}-order-id-page-0"><img src="{collection_public.BOOK_IMAGE}" width="260" height="140" border="0"></a>
+									</li>		 
+									<li style="width: 45%;">
+										<div style="width: 300px;">
+											<a href="{collection_public.BOOK_ID}-{collection_public.BOOK_TITLE}-order-id-page-0" class="underline">{collection_public.BOOK_TITLE2}</a>
+										</div>
+										<div style="width: 280px; margin: 10px 0 0 0;">
+											<p>by <a href="user-{collection_public.BOOK_USERNAME}" class="blue2">{collection_public.BOOK_USERNAME}</a></p>
+										</div>
+										<div style="width: 320px;">
+											<h4 class="b12">{collection_public.BOOK_COMMENT}</h4>
+										</div>
+									</li>
+									<li style="width: 13%; float: right;"><div style="margin-right: 50px;"><h4 class="b12"><b>{collection_public.BOOK_COUNT} Items</b></h4></div></li>
+								</ul>
+							</div>
+							<hr class="gray">
+
+<!-- END collection_public -->
+
+
+
+                    <div class="publicCol">
+                    <div class="PublCol">Public Collections</div>
+                    You don't have any public collections yet ?
+                    <br><br>
+                    <span>Public Collections</span> allow you to group items together and make the link publicly available. They can be used to group items to show a client, to showcase work, to create links to use with your referral code or to create collections of related items to appear on item pages.
+                    </div>
+
+
+
+	

@@ -1,0 +1,42 @@
+	<div id="page_title">
+		Items
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>Blocked Items List</h2>
+			<table cellpadding="0" cellspacing="1" border="0" width="100%">		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="380" class="title" align="center">Item Name</td>
+								<td width="160" class="title" align="center">Category</td>
+								<td width="120" class="title" align="center">Member</td>
+								<td width="70" class="title" align="center">View</td>
+								<td width="70" class="title" align="center">Activate</td>
+								<td width="70" class="title" align="center">Delete</td>
+							</tr>
+<!-- BEGIN pro -->
+							<tr valign="top">
+								<td>{pro.P_NAME2}</td>
+								<td>&nbsp;&nbsp;{pro.P_CATEGORY}</td>
+								<td>&nbsp;&nbsp;{pro.P_MEMBER}</td>
+								<td align="center"><a href="../{pro.P_NAME}.html" target="_new" alt="view" title="view"><div id="small_view"></div></a></td>
+								<td align="center"><a href="product.php?mod=item_block&id={pro.P_SID}&active=yes" alt="activate" title="activate" onclick= "return (window.confirm('Are you want to activate this item ?'))"><div id="small_active"></div></a></td>
+								<td align="center"><a href="product.php?mod=item_block&id={pro.P_SID}&delete=yes" alt="delete" title="delete" onclick= "return (window.confirm('Are you sure to delete this item ?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END pro -->
+						</table>
+						{NODATA}
+					</td>
+      				</tr>	  	   
+			</table>
+			</div>	
+		</div>
+	</div>

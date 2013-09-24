@@ -1,0 +1,148 @@
+  
+                <div class="earningsHead">
+                <div class="earnings">Earnings</div>
+                <div class="request"><span>Cash your money?</span> <a type="submit" class="btn btn-danger" >Request a Payout</a></div>
+                <div class="clear"></div>
+                </div>
+
+
+                    <div class="span9 earningsSales">Sales</div>
+                    <div class="row ver-sep" >
+                        <div class="span9 earnings-content">
+                       
+                       <div class="earnings-sales">
+                       
+                        <table border="0" cellpadding="0" cellspacing="0" class="span9">
+                          <thead>
+                            <tr>
+                              <th class="thMonth">MONTH</th>
+                              <th class="thSales">SALES</th>
+                              <th class="thEarnings">Earnings</th>
+                            </tr>
+                          </thead>
+                          <tfoot>
+                              <tr>
+                                  <td class="tdMonth">Totals</td>
+                                  <td class="tdSales">{PERCENT_SALE}%</td>
+                                  <td class="tdEarnings"><b>{CURRENCY}{TOTAL_SALE}</b></td>
+                              </tr>
+                          </tfoot>
+                          <tbody>
+
+                             <!-- BEGIN datex -->
+                             <tr>
+                              <td class="tdMonth">{datex.MONTH}</td>
+                              <td class="tdSales">{datex.SALES} Sales</td>
+                              <td class="tdEarnings">{CURRENCY}{datex.EARNS}</td>
+                            </tr>
+							<!-- END datex -->
+
+  
+                          </tbody>
+                        </table>
+                        </div>
+
+                       <div class="earnings-refferals">
+                        <div class="span9 title-sp">Refferals</div>
+                        <table border="0" cellpadding="0" cellspacing="0" class="earnreff span9">
+                          <thead>
+                            <tr>
+                              <th class="thMonth">MONTH</th>
+                              <th class="thClick">clickthroughs</th>
+                              <th class="thRegistered">Registered</th>
+                              <th class="thRegistered">Deposits</th>
+                              <th>Earnings</th>
+                            </tr>
+                          </thead>
+                          <tfoot>
+                              <tr>
+                                  <td class="tdMonth">Totals</td>
+                                  <td class="tdClick">Referral Earnings  {PERCENT_REFE}% :</td>
+                                  <td class="tdRegistered"></td>
+                                  <td class="tdRegistered"></td>
+                                  <td>{CURRENCY}{TOTAL_REFE}</td>
+                              </tr>
+                          </tfoot>
+                          <tbody>
+
+                          <!-- BEGIN date -->
+                             <tr>
+                              <td class="tdMonth">{date.MONTH}</td>
+                              <td class="tdClick">{date.CLICKS} Clickthroughs</td>
+                              <td class="tdRegistered">{date.REGISTER} Registered Members</td>
+                              <td class="tdRegistered">{date.DEPOSIT} Deposits</td>
+                              <td>{CURRENCY}{date.EARNS}</td>
+                            </tr>
+                          <!-- END date -->
+                                                                       
+                          </tbody>
+                        </table>
+                        </div>
+
+
+                       <div class="earnings-withdraws">
+                        <div class="span9 title-sp">Withdraws</div>
+                        <table border="0" cellpadding="0" cellspacing="0" class="span9">
+                          <thead>
+                            <tr>
+                              <th class="thMonth">MONTH</th>
+                              <th class="thEarnings">EARNINGS</th>
+                            </tr>
+                          </thead>
+                          <tfoot>
+                              <tr>
+                                  <td class="tdMonth">Total withdraws</td>
+                                  <td class="tdEarnings">{CURRENCY}{TOTAL_WITHDRAW}</td>
+                              </tr>
+                          </tfoot>
+                          <tbody>
+                             <!--<tr>
+                              <td class="tdMonth">January 2013</td>
+                              <td class="tdEarnings">$0.00</td>
+                            </tr> 
+                             <tr>
+                              <td class="tdMonth">February 2013</td>
+                              <td class="tdEarnings">$0.00</td>
+                            </tr> -->                                                                                              
+                          </tbody>
+                        </table>
+                        </div>
+
+
+
+                        </div>
+                        <div class="span3 right-earnings">
+                                    <div class="earningsWrapper">
+                                    <div class="current-earnings">
+                                    <div class="earningsTot">Total Earnings</div>
+                                    </div>
+                                    <div class="earnings-data">{CURRENCY}{TOTAL}</div>
+                                    </div>
+                        </div>
+
+                    </div>
+
+
+	
+						<!--<div id="sprite">
+							<h4 class="gr12">
+								<p>Think you could make fantastic items to sell here ? Become an Marketplace author and you can put your digital goods up for sale and earn big % commission for your sales.<br>Find out how you can <a href="sell-your-work" class="blue2">Start Selling !</a></p>
+							</h4>
+						</div>-->
+
+<!--
+	<div id="content_wrapper0">
+        <div id="content_wrapper3">
+            <div id="form_0">
+                <div id="sprite1">
+                        <ul class="top_acc_menu">
+                            <li class="top_acc_menu"><a href="author_dashboard" class="blue3">Author Dashboard</a></li>
+                            <li class="top_acc_menu"><hr class="vert4"></li>
+                            <li class="top_acc_menu"><a href="user-{USERNAME}" class="blue3">Profile</a></li>
+                            <li class="top_acc_menu"><hr class="vert4"></li>
+                            <li class="top_acc_menu"><a href="invoices" class="blue3">History</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>-->

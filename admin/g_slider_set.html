@@ -1,0 +1,51 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=slider">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Set Slider Image</h2>
+			<form action="general.php?mod=set_slider&id={S_ID}" method="post" enctype="multipart/form-data">
+				<table cellpadding="0" cellspacing="1" width="100%"> 	
+	 				<tr valign="top">
+						<td>
+							<hr class="bottom">
+							URL<br>
+							<input class="fields" type="text" name="url" size="25" value="{S_URL}">
+						</td>
+	 				</tr> 	
+	 				<tr valign="top">
+						<td>
+							Image<br>
+							<input type="file" name="image" size="30"><br><br>
+							<input type="hidden" name="image2" value="{S_IMAGE}">
+							<img src="../../../{S_IMAGE}" width="780" height="240">
+						</td>
+	 				</tr> 
+	 				<tr valign="top">
+						<td>
+							Set Order<br>
+							<input type="text" name="order" size="6" value="{S_ORDER}">
+						</td>
+	 				</tr>
+	 				<tr valign="top">
+						<td>
+							Visible<br>
+							<input type="checkbox" name="visible" value="1" checked="checked" /> Yes
+						</td>
+	 				</tr>  
+	  				<tr valign="top">
+						<td align="center">
+							<hr class="bottom">
+							<br><input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,356 @@
+
+       <div class="row">
+           <div class="span12">
+
+                <div class="gStartTitle">
+                    {TITLE}<!--Settings-->
+                </div>
+
+           </div>
+       </div>	
+
+
+<div class="row-fluid">
+    <div id="settings-tabs" class="span9">
+
+          <!-- Tab Begin -->
+                <div class="span12 setting-box active">
+
+                    <h3 class="slider-handler">
+                        <span class="arrow"></span>Change Your Password</h3>
+                    <div class="slider-content">
+                        <div class="centeralign">
+                <form action="edit" method="post"> 
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Current Password</div>
+                            <div class="span8"><input class="span10" name="pass_1" type="password" value="{PASSWORD_1}"></div>
+                        </div>  
+                        <div class="span12 setting-pass">  
+                            <div class="span4 text-right">New Password</div>
+                            <div class="span8"><input name="pass_2" type="text" class="span10" value="{PASSWORD_2}" />
+											{PASSWORD_2_ALERT}
+							</div>
+                        </div> 
+                        <div class="span12 setting-pass">    
+                            <div class="span4 text-right">Re-type New Password</div>
+                            <div class="span8">
+							<input name="pass_3" type="text" class="span10" value="{PASSWORD_3}" />
+											{PASSWORD_3_ALERT}
+                            </div>
+                        </div> 
+                        <div class="span11 text-right button-save">
+                        	<input type="hidden" name="ref" id="ref" value="{REF}">
+                          <input type="submit" class="btn btn-danger pass-save" name="pass_save" value="Save">
+                        </div>                           
+                            <div class="clearfix"></div>
+                </form>            
+                        </div>
+
+                    </div>         
+                </div>
+          <!-- Tab End -->
+
+          <!-- Tab Begin -->
+                <div class="span12 setting-box">
+                    <h3 class="slider-handler">
+                        <span class="arrow"></span>Feature Design</h3>
+                    <div class="slider-content tab">
+                        <div class="centeralign">
+                   <form action="edit" method="post">        
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Select one from your items list :</div>
+                            <div class="span8">
+									
+	           								<select class="span10" name="item_sid">
+<!-- BEGIN feat_pro -->
+											<option name="{feat_pro.PRO_ID}" value="{feat_pro.PRO_SID}">{feat_pro.PRO_TITLE2}</option>
+<!-- END feat_pro -->
+	               	           					</select>
+										<input type="hidden" name="msid" value="{MSID}">
+									
+
+                            </div>
+                        </div> 
+
+                        <div class="span11 text-right button-save">
+                          <input type="submit" class="btn btn-danger pass-save" name="feature_item" value="Save">
+                        </div>  
+                   </form>                              
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>            
+                </div>
+          <!-- Tab End -->
+
+          <!-- Tab Begin -->
+                <div class="span12 setting-box">
+                    <h3 class="slider-handler">
+                        <span class="arrow"></span>Exclusivity of Your Design</h3>
+                    <div class="slider-content tab">
+                        <div class="centeralign">
+
+                        <div class="span11">
+                            <p>Agreeing to keep your portfolio of items for sale exclusive to Marketplace entitles you to a higher percentage of each sale - from 50% to 70%. You can still sell other items elsewhere (on other marketplaces, your own site) however any items you place on Marketplace must be exclusively sold there.</p>
+                        </div>
+
+                        <div class="span12 setting-pass">  
+                            <div class="span4 text-right">Your account is not set up as:</div>
+                            <div class="span8"></div>
+                        </div> 
+
+                        <div class="span12 setting-pass">  
+                            <div class="span4 text-right"><strong>Exclusive Author</strong></div>
+                            <div class="span8"></div>
+                        </div> 
+ 
+                         <div class="span11">
+								<p>You can try our exclusivity program by clicking the button below.</p>                     
+                        </div> 
+
+                        <div class="span11 text-right button-save">
+								<form action="" method="post">
+									<input type="submit" class="btn btn-danger pass-save" name="exclusive_save" value="Set">
+								</form>                              
+                        </div> 
+
+                        </div>
+                    </div>            
+                </div>
+          <!-- Tab End -->
+
+          <!-- Tab Begin -->
+                <div class="span12 setting-box">
+                    <h3 class="slider-handler">
+                        <span class="arrow"></span>Item License</h3>
+                    <div class="slider-content tab">
+                        <div class="centeralign">
+
+                        <div class="span11">
+                            <p>Choose the licences that your items are sold under. Note that not all licences will be used for all types of items. The Standard Single-Use Licence is mandatory.</p>
+                        </div>
+
+<form action="" method="post"> 	
+                        <div class="span12 setting-pass">  
+                            <div class="span4 text-right"><input {CHECKED} name="extended" type="checkbox" value="1" /> Extended License</div>
+                            <div class="span8"></div>
+                        </div> 
+
+                        <div class="span11 text-right button-save">
+								<input type="submit"  class="btn btn-danger pass-save" name="license_save" value="Save"><br><br>
+                        </div> 
+</form>              					
+								
+									 		
+							
+
+                        </div>
+                    </div>            
+                </div>
+          <!-- Tab End -->
+
+          <!-- Tab Begin -->
+                <div class="span12 setting-box">
+                    <h3 class="slider-handler">
+                        <span class="arrow"></span>Avatar & home Page Images</h3>
+                    <div class="slider-content tab">
+                        <div class="centeralign">
+<form action="edit" method="post" enctype="multipart/form-data"> 
+                        <div class="span12 setting-pass">    
+                            <div class="span4 text-right">Avatar</div>
+                            <div class="span2"><img src="{AVATAR}"></div>
+                            <div class="span6"><input class="span10" name="profile_image" type="file" /><br><small><i>JPEG 80x80px</i></small></div>
+                        </div>
+                        <div class="span12 setting-pass">    
+                            <div class="span4 text-right">Homepage Image</div>
+                            <div class="span2"><img src="{HOME}"></div>
+                            <div class="span6"><input class="span10" name="homepage_image" type="file" /><br><small><i>JPEG 590x242</i></small></div>
+                        </div>
+											
+											<input type="hidden" name="ref" id="ref" value="{REF}">
+											<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+											<input type="hidden" name="completed" value="1">
+
+                        <div class="span11 text-right button-save">
+                          <input type="submit" class="btn btn-danger pass-save" name="images_save" value="Save"><br><br>
+                        </div> 
+
+</form>
+
+                        </div>
+                    </div>            
+                </div>
+          <!-- Tab End -->          
+
+          <!-- Tab Begin -->
+                <div class="span12 setting-box">
+                    <h3 class="slider-handler">
+                        <span class="arrow"></span>Personal Information</h3>
+                    <div class="slider-content tab">
+                        <div class="centeralign">
+<form action="edit" method="post"> 
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">First Name</div>
+                            <div class="span8"><input type="text" class="span10" name="firstname" value="{FIRSTNAME}"></div>
+                        </div>  
+
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Surname</div>
+                            <div class="span8"><input type="text" class="span10" name="lastname" value="{LASTNAME}"></div>
+                        </div>  
+
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Email Address</div>
+                            <div class="span8"><input type="text" class="span10" name="email" value="{EMAIL}"></div>
+                        </div>  
+
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Company Name</div>
+                            <div class="span8"><input type="text" class="span10" name="company" value="{COMPANY}">
+							<br><small><i>If you want your invoices addressed to a company. Leave blank to use your full name.</i></small><br><br>
+                            </div>
+                        </div>  
+
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Profile Heading</div>
+                            <div class="span8"><input type="text" class="span10" name="heading" value="{HEADING}">
+							<br><small><i>Appears on your profile page</i></small><br><br>
+                            </div>
+                        </div> 
+
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Profile Text</div>
+                            <div class="span8"><textarea name="message" type="text" class="span10" rows="7" />{MESSAGE}</textarea>
+                            </div>
+                        </div> 
+
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Lives In</div>
+                            <div class="span8"><input type="text" class="span10" name="city" value="{CITY}">
+							<br><small><i>e.g. Sydney</i></small><br><br>
+                            </div>
+                        </div>    
+                                             
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right">Country</div>
+                            <div class="span8"><input type="text" class="span10" name="country" value="{COUNTRY}">
+							<br><small><i>Your country selection determines what flag appears in your badges</i></small><br><br>
+                            </div>
+                        </div> 
+
+                        <div class="span12 setting-pass">
+                            <div class="span4 text-right"></div>
+                            <div class="span8"><input name="freelancer" type="checkbox" value="1" /> Available for Freelance?
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="ref" id="ref" value="{REF}">
+                        <div class="span11 text-right button-save">
+                           <input type="submit" class="btn btn-danger pass-save" name="profile_save" value="Save">
+                        </div>                           
+                            <div class="clearfix"></div>
+</form>
+
+		                 </div>
+                    </div>            
+                </div>
+          <!-- Tab End -->   
+
+          <!-- Tab Begin -->
+                <div class="span12 setting-box">
+                    <h3 class="slider-handler">
+                        <span class="arrow"></span>Social Network Links</h3>
+                    <div class="slider-content tab">
+                        <div class="centeralign">
+<form action="edit" method="post"> 
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/deviantart.png" height="34" width="34" alt="deviantart" /></div>
+                            <div class="span3 text-left">Deviantart Username</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_devianart" value="{SOCIAL_DEVIANART}"></div>
+                        </div> 
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/digg.png" height="34" width="34" alt="digg" /></div>
+                            <div class="span3 text-left">Digg Username</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_digg" value="{SOCIAL_DIGG}"></div>
+                        </div> 
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/facebook.png" height="34" width="34" alt="facebook" /></div>
+                            <div class="span3 text-left">Facebook Profile ID</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_facebook" value="{SOCIAL_FACEBOOK}"></div>
+                        </div> 
+
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/flickr.png" height="34" width="34" alt="flickr" /></div>
+                            <div class="span3 text-left">Flickr Username</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_flickr" value="{SOCIAL_FLICKR}"></div>
+                        </div> 
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/myspace.png" height="34" width="34" alt="myspace" /></div>
+                            <div class="span3 text-left">MySpace Username</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_myspace" value="{SOCIAL_MYSPACE}"></div>
+                        </div> 
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/tumblr.png" height="34" width="34" alt="tumblr" /></div>
+                            <div class="span3 text-left">Tumblr Username</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_tumblr" value="{SOCIAL_TUMBLR}"></div>
+                        </div> 
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/twitter.png" height="34" width="34" alt="twitter" /></div>
+                            <div class="span3 text-left">Twitter Username</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_twitter" value="{SOCIAL_TWITTER}"></div>
+                        </div>
+
+                        <div class="span12 setting-pass">  
+                            <div class="span2 text-right"><img src="{SOCIALS_PATH}/youtube.png" height="34" width="34" alt="youtube" /></div>
+                            <div class="span3 text-left">YouTube Username</div>
+                            <div class="span7"><input type="text" class="span9" name="socials_youtube" value="{SOCIAL_YOUTUBE}"></div>
+                        </div>
+
+                        <input type="hidden" name="ref" id="ref" value="{REF}">
+
+                         <div class="span11 text-right button-save">
+                          <input type="submit" class="btn btn-danger pass-save" name="social_save" value="Save">
+                        </div>                           
+                            <div class="clearfix"></div>                       
+
+</form>
+
+                        </div>
+                    </div>            
+                </div>
+          <!-- Tab End --> 
+             
+
+    </div>
+</div>
+
+<div class="clearfix"></div>
+           
+<br><br><br> 
+
+	<!--<div id="content_wrapper0">
+		<div id="content_wrapper3">
+			<div id="form_0">
+				<div id="sprite1">
+						<ul class="top_acc_menu">
+							<li class="top_acc_menu"><a href="author_dashboard" class="blue3">Author Dashboard</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							
+							<li class="top_acc_menu"><a href="invoices" class="blue3">History</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>-->
+
+	
+

@@ -1,0 +1,41 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=set_slider">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add New</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">  
+			<h2>Slider</h2>
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="210" class="title">Image</td>
+	  				<td width="350" class="title">URL</td>
+	  				<td width="50" class="title">Order</td>
+	  				<td width="50" class="title">Visible</td>
+	  				<td width="50" class="title">Edit</td>
+	  				<td width="60" class="title">Delete</td>
+	 			</tr>
+<!-- BEGIN slide -->
+	 			<tr valign="top">
+	  				<td align="center"><img src="../../../{slide.S_IMAGE}" width="200" height="70" style="margin-top: 1px;"></td>
+	  				<td>&nbsp;&nbsp;&nbsp;{slide.S_URL}</td>
+	  				<td align="center">{slide.S_ORDER}</td>
+	  				<td align="center">{slide.S_ACTIVE}</td>
+	  				<td align="center"><a href="general.php?mod=set_slider&id={slide.S_ID}" alt="edit" title="edit"><div id="small_edit"></div></a></td>
+	  				<td align="center"><a href="general.php?mod=slider&id={slide.S_ID}&delete=yes" alt="delete" title="delete" onclick= "return (window.confirm('Are you sure to delete this image ?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END slide -->
+			</table>
+			</div>
+		</div>
+	</div>
+</div>

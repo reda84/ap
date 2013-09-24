@@ -1,0 +1,97 @@
+	<div id="content_wrapper0">
+		<div id="content_wrapper3">
+			<div id="form_0">
+				<div id="sprite1">
+						<ul class="top_acc_menu">
+							<li class="top_acc_menu"><a href="author_dashboard" class="blue3">Author Dashboard</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="user-{USERNAME}" class="blue3">Profile</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="edit" class="blue3">My Settings</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="downloads" class="blue3">Downloads</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="invoices" class="blue3">History</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="earnings" class="blue3">Earnings</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="withdraw" class="blue3">Withdraw</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="statement" class="blue3">Statement</a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- BEGIN error -->
+	{error.ERROR}
+<!-- END error -->
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<br><br>
+				<div id="content_wrapper2">
+					<div id="form_1">
+						<div id="table_form3">
+							<h2 class="b28">Make a Payment Request</h2>
+							<div id="sprite" style="padding-top: 70px;">
+								<p>
+									<b>All withdrawals are issued on the 15th of the following month 
+									(except when the 15th falls on a weekend or public holiday, in which case it is 
+									issued on the next business day).</b>
+								</p>
+								<form action='withdraw' method='post'>
+								<table cellspacing="2" cellpadding="6" height="160" width="100%"> 
+										<tr> 
+											<td width="120"><b>Amount</b></td> 
+											<td><input class="search_form_small" name="member_pay_amount" value="0.00"></td> 
+										</tr>
+										<tr> 
+											<td><b>Payment Method</b></td> 
+											<td>
+												<input type="radio" name="member_payment_method" value="PayPal"> PayPal &nbsp;&nbsp;
+											</td> 
+										</tr>  
+										<tr> 
+											<td>&nbsp;</td> 
+											<td>
+												<i>Minimum {CURRENCY}50.00 for PayPal</i>
+											</td> 
+										</tr> 
+										<tr> 
+											<td>&nbsp;</td> 
+											<td align="right">
+												<input type="submit" id="btn_submt" name="withdraw" value="Withdraw">
+											</td> 
+										</tr> 
+								</table>
+								</form> 
+							</div>
+						</div>
+					</div>
+				</div>
+   		
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<br>
+				<div id="right_wrapper2">
+					<div id="form_r_gray">
+						<div id="right_hd">
+							Current Earnings
+						</div>
+						<div id="sprite">
+							<p><h1 class="b22">{CURRENCY}{BALANCE}</h1></p>
+						</div>
+						<br><br><br>
+					</div>
+					<div id="calculator_img"></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/zoomer.js"></script>

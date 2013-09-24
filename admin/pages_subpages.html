@@ -1,0 +1,43 @@
+	<div id="page_title">
+		{TITLE} - Subpages
+	</div>
+	<a href="pages.php?mod=add&id={ID}">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add New</div>
+		</div>
+	</a>
+	<a href="pages.php?mod=all">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<table cellpadding="0" cellspacing="1" width="100%">
+	 			<tr class="title" valign="top">
+	  				<td width="275" class="title">Page Name</td>
+	  				<td width="275" class="title">Page Key</td>
+	  				<td width="80" class="title">Main Menu</td>
+	  				<td width="80" class="title">Visible</td>
+	  				<td width="80" class="title">Edit</td>
+	  				<td width="80" class="title">Delete</td>
+	 			</tr>
+<!-- BEGIN subpages -->
+	 			<tr valign="top">
+	  				<td>&nbsp;&nbsp;{subpages.PAGE_NAME}</td>
+	  				<td>&nbsp;&nbsp;{subpages.PAGE_KEY}</td>
+	  				<td align="center">{subpages.PAGE_MAIN}</td>
+	  				<td align="center">{subpages.PAGE_VISIBLE}</td>
+	  				<td align="center"><a href="pages.php?mod=edit&id={subpages.PAGE_ID}" alt="edit page" title="edit page"><div id="small_edit"></div></a></td>
+	  				<td align="center"><a href="pages.php?mod=delete&id={subpages.PAGE_ID}" alt="delete page" title="delete page" onclick= "return (window.confirm('Are you sure to delete this subpage?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END subpages -->
+			</table>
+		</div>
+	</div>
+</div>

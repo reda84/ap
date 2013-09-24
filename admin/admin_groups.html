@@ -1,0 +1,50 @@
+	<div id="page_title">
+		Groups
+	</div>
+	<a href="home.php?mod=add_group">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add New</div>
+		</div>
+	</a>
+	<div id="middle_content2">
+		<div id="content_area">
+			<h2>Group List</h2>
+{INFORM}
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   	  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="120" class="title" align="center">Group ID</td>
+								<td width="300" class="title" align="center">Group Name</td>
+								<td width="120" class="title" align="center">Group Permission</td>
+								<td width="120" class="title" align="center">Edit</td>
+								<td width="120" class="title" align="center">Delete</td>
+							</tr>
+<!-- BEGIN group -->
+							<tr bgcolor="#ffffff">
+								<td align="center">{group.ID}</td>
+								<td align="center">{group.NAME}</td>
+								<td align="center">{group.PERMISSION}</td>
+								<td align="center"><a href="home.php?mod=add_group&id={group.ID}" alt="edit group" title="edit group"><div id="small_edit"></div></a></td>
+								<td align="center"><a href="home.php?mod=admin_group_delete&id={group.ID}" alt="delete group" title="delete group" onclick= "return (window.confirm('Are you sure to delete this group?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END group -->
+						</table>
+					</td>
+      				</tr>	
+	 			<tr>
+					<td align="center">
+						{INFO}	
+					</td>
+      				</tr>	  	   
+			</table>	
+
+	</div>
+</div>
+

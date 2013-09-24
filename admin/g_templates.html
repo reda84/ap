@@ -1,0 +1,48 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">  
+			<h2>Templates</h2>
+			<form action="general.php?mod=templates" method="post"> 
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="60" class="title">Select</td>
+	  				<td width="120" class="title">Image</td>
+	  				<td width="350" class="title">Template Name</td>
+	  				<td width="140" class="title">Folder DIR</td>
+	  				<td width="50" class="title">Visible</td>
+	  				<td width="50" class="title">Edit</td> 
+	 			</tr>
+<!-- BEGIN theme -->
+	 			<tr valign="top">
+	  				<td align="center"><input type="radio" name="dir" value="{theme.T_DIR}" style="margin-top: 8px;" /></td>
+	  				<td align="center">
+						<a href="" class="thumbnailz"><img src="../../../{theme.T_S_IMG}" width="80" height="80" border="0" style="margin-top: 1px;"><span style="left:80px;"><img src="../../../crop.php?h=560&w=410&f={theme.T_B_IMG}" width="410" height="560" border="0"/></span></a>
+					</td>
+	  				<td>&nbsp;&nbsp;&nbsp;{theme.T_NAME}</td>
+	  				<td align="center">{theme.T_DIR}</td>
+	  				<td align="center">{theme.T_ACTIVE}</td>
+	  				<td align="center"><a href="general.php?mod=templates&id={theme.T_ID}&name={theme.T_DIR}" alt="edit" title="edit"><div id="small_edit"></div></a></td>
+	 			</tr>
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom"> 
+					</td>
+	 			</tr>
+<!-- END theme -->
+			</table>
+    			<table cellpadding="5" cellspacing="0" border="0" width="100%"> 
+	 			<tr>
+	  				<td align="center">
+	   					<input type="submit" class="submit_btn" name="save" value="Save"> 
+	  				</td>
+	 			</tr>
+			</table>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,223 @@
+	<div id="content_wrapper0">
+		<div id="content_wrapper3">
+			<div id="form_0">
+				<div id="sprite1">
+						<ul class="top_acc_menu">
+							<li class="top_acc_menu"><a href="author_dashboard" class="blue3">Author Dashboard</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="user-{USERNAME}" class="blue3">Profile</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="edit" class="blue3">My Settings</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="downloads" class="blue3">Downloads</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="invoices" class="blue3">History</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="earnings" class="blue3">Earnings</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="withdraw" class="blue3">Withdraw</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="statement" class="blue3">Statement</a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="content_wrapper0">
+		<div id="announce">
+			<div style="float:left; margin: 32px 0 0 260px;color:#87cdf5;font-size: 13px;">
+				{AN_TOPIC2}. <a href="id-{AN_ID}-topic-{AN_TOPIC}-page-0" class="white">{AN_LINK}</a>
+				<!--<a href=""><div id="close_img"></div></a>-->
+			</div>
+		</div>
+	</div>
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="content_wrapper" class="down">
+					<p><h2 class="b28">Your Items Recent Comments</h2></p>
+					<br><br><br><br><br><br>
+					<p><hr class="gray2"></p>
+							<div id="table_form3">
+								<ul>
+									<li style="width: 20%;">
+										&nbsp;
+									</li>
+									<li style="width: 50%;">
+										{NPAGELIST}
+									</li>
+									<li style="width: 30%;">
+										<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} COMMENTS</div>
+									</li>
+								</ul>
+							</div>
+							<div style="margin-top: -50px;">
+<!-- BEGIN comments -->
+							<div id="table_form6">
+								<ul>
+									<li style="width: 16%;float:left;">
+										<a href="user-{comments.COM_NAME}"><img src="{comments.COM_AVATAR}" alt="{comments.COM_NAME}" title="{comments.COM_NAME}" width="80" height="80" border="0"></a><br>
+<!-- BEGIN badges -->
+											{comments.badges.MEM_BADGE1}
+											{comments.badges.MEM_BADGE2}
+											{comments.badges.MEM_BADGE3}
+											{comments.badges.MEM_BADGE4}
+											{comments.badges.MEM_BADGE5}
+											{comments.badges.MEM_BADGE6}
+											{comments.badges.MEM_BADGE7}
+											{comments.badges.MEM_BADGE8}
+											{comments.badges.MEM_BADGE9}
+											{comments.badges.MEM_BADGE10}
+											{comments.badges.MEM_BADGE11}
+											{comments.badges.MEM_BADGE12}
+											{comments.badges.MEM_BADGE13}
+											{comments.badges.MEM_BADGE14}
+											{comments.badges.MEM_BADGE15}
+											{comments.badges.MEM_BADGE16}
+											{comments.badges.MEM_BADGE17}
+											{comments.badges.MEM_BADGE18}
+											{comments.badges.MEM_BADGE19}
+											{comments.badges.MEM_BADGE20}
+											{comments.badges.MEM_BADGE21}
+											{comments.badges.MEM_BADGE22}
+											{comments.badges.MEM_BADGE23}
+											{comments.badges.MEM_BADGE24}
+											{comments.badges.MEM_BADGE25}
+											{comments.badges.MEM_BADGE26}
+											{comments.badges.MEM_BADGE27}
+											{comments.badges.MEM_BADGE28}
+											{comments.badges.MEM_BADGE29}
+											{comments.badges.MEM_BADGE30}
+											{comments.badges.MEM_BADGE31}
+											{comments.badges.MEM_BADGE32}
+											{comments.badges.MEM_BADGE33}
+											{comments.badges.MEM_BADGE34}
+											{comments.badges.MEM_BADGE35}
+<!-- END badges -->
+									</li>
+									<li style="width: 81%;">
+										<div id="form_1">
+											<table width="100%" height="100%" border="0" cellspacing="8" cellpadding="8">
+												<tr>
+													<td valign="top">
+														<div style="position: absolute; float: left; margin: -4px 0 0 440px;"><a href="discussion-{comments.COM_PRO_TITLE}-page-0" class="blue3">REPLY</a></div>
+														<a href="user-{comments.COM_NAME}" class="black02">{comments.COM_NAME}</a> &nbsp;says :<br><br>
+														<p><span style="line-height: 140%;font-size: 12px;">{comments.COM}</span></p><br><br>
+														Posted {comments.COM_DATE} &nbsp;&nbsp;&nbsp;
+													</td>
+												</tr>
+											</table>
+										</div>
+									</li>
+									<li style="width: 3%;">
+										&nbsp;
+									</li>
+								</ul>
+							</div>	
+							<div style="margin-bottom: 0px;">&nbsp;</div>		  
+<!-- END comments --> 
+							</div>
+							<br>{NPAGELIST}<br>
+				</div>
+			</td>	
+
+			<td width="20">
+			</td>
+			<td valign="top">
+				<div id="right_wrapper">
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								Begin Upload
+							</div>
+						</div>
+						<div id="sprite">
+							<div id="sprite" style="margin-bottom: 28px;">
+							<form action="upload.php?type=" method="get">
+								<div id="sprite">
+									<p>
+	           							<select class="sort_form_big" name="type">
+<!-- BEGIN only_catselect -->
+    										<option selected="" value="{only_catselect.NAME}">{only_catselect.NAME}</option>
+<!-- END only_catselect -->
+	               	           				</select>
+									</p>
+								</div>
+								<li><input id="btn_normal_bb" class="middle_white3" type="submit" value="UPLOAD"></li>
+							</form>
+							<form action="upload-instruction" method="post">
+								<li><input id="btn_normal_bb" class="middle_white3" type="submit"  name="" value="HELP"></li>
+							</form>
+							</div>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								This Month's Stats
+							</div>
+						</div>
+						<div id="sprite">
+							<h4 class="b12">
+								<p>You have earned {CURRENCY}{E_EARN}</p>
+								<p>You have sold {E_SOLD} items</p> 
+							</h4>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								Fun Fact
+							</div>
+						</div>
+						<div id="sprite">
+							<h4 class="b12">
+								You'll be the owner of a shiny new orange paw after selling just {CURRENCY}1 more
+							</h4>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								Author Resources
+							</div>
+						</div>
+						<div id="sprite">
+							<table border="0" cellpadding="10" cellspacing="0">		
+					  			<tr>
+					   				<td align="left">
+					    					<h4 class="b12">It only takes a couple of minutes and your account will let you:</h4>
+										<div id="right_content">
+										<ul>
+    											<li class="right_arrow"><div class="right_arrow"></div> Deposit Cash & Download Files</li>
+   											<li class="right_arrow"><div class="right_arrow"></div> Have Your Own Profile Page</li>
+    											<li class="right_arrow"><div class="right_arrow"></div> Chat on the Forums</li>
+    											<li class="right_arrow"><div class="right_arrow"></div> Sell Your Own Work</li>
+    											<li class="right_arrow"><div class="right_arrow"></div> Refer Members to Make Money</li>
+										</ul>
+										</div>
+									</td>
+					  			</tr>
+							</table>
+						</div>
+					</div>
+					<div id="form_r_gray" class="down">
+						<div id="right_hd2">
+							<div id="sprite">
+								Previous Announcements
+							</div>
+						</div>
+						<div id="sprite">
+							<h4 class="gr12">
+<!-- BEGIN announce -->
+								<p>{announce.AN_DATE}</p>
+								<p>{announce.AN_TOPIC2}<br><a href="id-{announce.AN_ID}-topic-{announce.AN_TOPIC}-page-0" class="blue2">Read more.</a></p>
+<!-- END announce -->
+							</h4>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>	

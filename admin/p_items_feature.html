@@ -1,0 +1,88 @@
+<script>
+var childWindow = null;
+function MM_openBrWindow(theURL,winName,features) {
+	if (childWindow) {
+		if (childWindow.close) childWindow.close();
+	}
+	childWindow = window.open(theURL,winName,features);
+}
+</script>
+
+	<div id="page_title">
+		Items
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>Feature Items List</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">
+	 			<tr>
+					<td>
+						<p>
+		  					<form action="product.php?mod=items_feature" method="post">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td width="100">
+										Product Name
+									</td>
+									<td width="280">
+										<input type="text" class="fields_small" name="proname">
+									</td>
+									<td width="80">
+										Posted by
+									</td>
+									<td width="300" align="left">
+										<input type="text" class="fields_small" name="membername">
+									</td>
+									<td width="100" align="left">
+										<input type="submit" class="submit_btn" name="search" value="Search">
+									</td>
+								</tr>
+							</table>
+							</form>
+						</p>
+					</td>
+      				</tr>	
+			</table>
+			<table cellpadding="0" cellspacing="1" border="0" width="100%">		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="340" class="title" align="center">Item Name</td>
+								<td width="150" class="title" align="center">Category</td>
+								<td width="130" class="title" align="center">Member</td>
+								<td width="100" class="title" align="center">Feat By</td>
+								<td width="50" class="title" align="center">View</td>
+								<td width="50" class="title" align="center">Normal</td>
+								<td width="50" class="title" align="center">Delete</td>
+							</tr>
+<!-- BEGIN pro -->
+							<tr valign="top">
+								<td>{pro.P_NAME2}</td>
+								<td>&nbsp;&nbsp;{pro.P_CATEGORY}</td>
+								<td>&nbsp;&nbsp;{pro.P_MEMBER}</td>
+								<td align="center">{pro.P_FEAT_BY}</td>
+								<td align="center"><a href="../{pro.P_NAME}.html" target="_new" alt="view" title="view"><div id="small_view"></div></a></td>
+								<td align="center"><a href="product.php?mod=items_feature&sid={pro.P_SID}&feat=no"" alt="back to normal" title="back to normal"><div id="small_back_feat"></div></a></td>
+								<td align="center"><a href="product.php?mod=items_feature&sid={pro.P_SID}&delete=yes" alt="delete" title="delete" onclick= "return (window.confirm('Are you sure to delete this item ?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="14">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END pro -->
+						</table>
+						{NODATA}
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>
+			</div>	
+		</div>
+	</div>

@@ -1,0 +1,66 @@
+div.sample_popup { z-index: 1; }
+
+div.sample_popup div.menu_form_header
+{
+  	border: 2px solid black;
+	border-bottom: none;
+  	width: 960px;
+  	height:      30px;
+  	line-height: 19px;
+  	vertical-align: middle;
+  	background: black;
+  	text-decoration: none;
+  	font-family: Times New Roman, Serif;
+  	font-weight: 900;
+  	font-size:  13px;
+  	color:   #206040;
+  	cursor:  default;
+}
+
+div.sample_popup div.menu_form_body
+{
+  	width: 960px;
+  	height:      530px;
+  	border: 2px solid black;
+  	background: #fff;
+  	-moz-box-shadow:    0px 0px 88px 34px #000;
+  	-webkit-box-shadow: 0px 0px 88px 34px #000;
+  	box-shadow:         0px 0px 88px 34px #000;
+}
+
+div.sample_popup div.menu_form_text
+{
+  	font-size: 15px;
+  	font-family: Times New Roman, Serif;
+  	margin: 6px 0 0 10px;
+  	color: #fff;
+}
+
+div.sample_popup img.menu_form_exit
+{
+  	float:  right;
+  	margin: -5px 5px 0px 0px;
+  	cursor: pointer;
+}
+
+.button {
+	margin: 6px 0 0 0;
+    	border: none;
+    	background: url('small_edit.png') no-repeat top center;
+    	cursor: pointer;
+}
+
+.button2 {
+	margin: 6px 0 0 0;
+    	border: none;
+    	background: url('small_edit.png') no-repeat top center;
+    	cursor: pointer;
+}
+input.save {
+	float: right;
+	margin: 0 30px 0 0;
+    	border: none;
+    	cursor: pointer;
+	background:transparent;
+	color: #fff;
+}

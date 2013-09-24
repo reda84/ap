@@ -1,0 +1,114 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body,td,th {
+	font-family: Tahoma;
+	font-size: 10px;
+}
+
+td.header {
+	font-family: Tahoma;
+	font-size: 10px;
+	color:#FFFFFF;
+}
+input {
+	font-family: Tahoma;
+	font-size: xx-small;
+}
+select {
+	font-family: Tahoma;
+	font-size: xx-small;
+}
+.txt_grey_b {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #636262;
+}
+.bg_line {
+	background-color: #D3D3D3;
+	background-image: url(images/spacer.gif);
+	height: 1px;
+}
+.txt_orange_bold {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #ff6600;
+}
+.txt_grey {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #636262;
+}
+.bg_bottom {
+	background-image: url(images/bottom.gif);
+	height: 18px;
+}
+.bg_search {
+	background-image: url(images/seach_bg.gif);
+	height: 27px;
+}
+.txt_orange {
+	font-family: Tahoma;
+	font-size: 10px;
+	color: #FF9900;
+}
+.txt_orange_bold01 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight:bold;
+	color: #ff6600;
+}.select {
+	width: 140px;
+}
+.input01 {
+	width: 125px;
+}
+.select {
+	width: 155px;
+}
+.input02 {
+	width: 155px;
+}
+.txt_red {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #cb3333;
+}
+.txt_white_bold {
+	font-family: Tahoma;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 11px;
+}
+.input03 {
+	width: 294px;
+}
+.select01 {
+	width: 299px;
+}
+.bg_side {
+	background-image: url(images/bg_side.gif);
+	width: 179px;
+	height: 208px;
+}
+.bg_toptext {
+	background-image: url(images/mainpix04.gif);
+	height: 76px;
+	width: 230px;
+}
+.bg_toptext_she {
+	background-image: url(images/mainpix05.gif);
+	height: 66px;
+	width: 137px;
+}
+.txt_big {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 21px;
+	color: #FFFFFF;
+	font-weight: bold;
+}

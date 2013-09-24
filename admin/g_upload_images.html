@@ -1,0 +1,42 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<a href="general.php?mod=images">
+		<div id="add_btn">
+			<div id="add_btn_txt">Back</div>
+		</div>
+	</a>
+	<div id="middle_content2">
+		<div id="content_area2">
+			<h2>Upload Images</h2>
+			<b style="color:red;">* Please it's important to read this short note !!!</b><br>
+			<i>
+			Before upload image give it unique name, please ! Upload images and use them to edit templates and replace images ! <br>
+			Only use the unique name of this image and put it to the right places into the style.css file or *.html files for each template !<br>
+			When upload is done, please use the full path name for your new image !
+			</i>
+			<form action="general.php?mod=upload_images" method="post" enctype="multipart/form-data">
+				<table cellpadding="0" cellspacing="1" width="100%" border="0"> 	
+	 				<tr valign="top">
+	  					<td align="left">
+							<hr class="bottom">
+						</td>
+	 				</tr>
+	 				<tr valign="top">
+						<td width="200">
+							Select Image<br>
+							<input type="file" name="up_img" size="30">
+						</td>
+	 				</tr>  
+	  				<tr valign="top">
+						<td align="center">
+							<br><hr class="bottom">
+							<br><input class="submit_btn" type="submit" name="save" value="Save">
+						</td>
+	  				</tr>
+				</table>
+			</form>
+			<center><b style="color:green;">{INFO}</b></center>
+		</div>
+	</div>
+</div>

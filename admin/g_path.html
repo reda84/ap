@@ -1,0 +1,65 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+					<form action="general.php?mod=path" method="post">   
+    						<table cellpadding="5" cellspacing="0" border="0" width="100%" height="520">
+	 						<tr valign="top">
+	  							<td colspan="5" align="left">
+									<h2>Path Settings</h2>
+									<hr class="bottom">
+								</td>
+	 						</tr>
+	 						<tr valign="top">
+	  							<td align="center" width="280">
+									<img src="{TEMPLATE_DIR}/images/url_main_48.png">
+									<h4>Main template</h4>
+	  								<input type="text" name="template_url" class="fields_small" value="{TEMPLATE_URL}">
+								</td>
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="280">
+									<img src="{TEMPLATE_DIR}/images/url_prod_48.png">
+									<h4>Default product image</h4>
+	  								<input type="text" name="default_product_img" class="fields_small" value="{DEFAULT_PRODUCT_IMG}">
+								</td>	
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="280">
+									<img src="{TEMPLATE_DIR}/images/url_avat_48.png">
+									<h4>Default avatar image</h4>
+	  								<input type="text" name="default_avatar_img" class="fields_small" value="{DEFAULT_AVATAR_IMG}">
+								</td>
+							</tr>
+	 						<tr valign="top">
+	  							<td align="center" width="280">
+									<img src="{TEMPLATE_DIR}/images/url_home_48.png">
+									<h4>Default home image</h4>
+	  								<input type="text" name="default_home_img" class="fields_small" value="{DEFAULT_HOME_IMG}">
+								</td>
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="280">
+									<img src="{TEMPLATE_DIR}/images/url_coll_48.png">
+									<h4>Default collection image</h4>
+	  								<input type="text" name="default_collection_img" class="fields_small" value="{DEFAULT_COLLECTION_IMG}">
+								</td>
+								<td width="15">&nbsp;</td>
+	  							<td align="center" width="280">
+									<img src="{TEMPLATE_DIR}/images/url_flag_48.png">
+									<h4>Countries flag image</h4>
+	  								<input type="text" name="countries_flag" class="fields_small" value="{COUNTRIES_FLAG}">
+								</td>
+							</tr>	
+						</table>
+						<br><br><br>
+    						<table cellpadding="5" cellspacing="0" border="0" width="100%">
+	 						<tr>
+	  							<td align="center">
+									<hr class="bottom">
+	   								<input type="submit" class="submit_btn" name="{SAVE}" value="Save">{INFO}
+	  							</td>
+	 						</tr>
+						</table>
+					</form>
+		</div>
+	</div>
+</div>

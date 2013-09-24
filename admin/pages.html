@@ -1,0 +1,46 @@
+	<div id="page_title">
+		Pages
+	</div>
+	<a href="pages.php?mod=add">
+		<div id="add_btn">
+			<div id="add_btn_txt">Add New</div>
+		</div>
+	</a>
+	<div id="middle_content">
+		<div id="content_area">
+			<h2>Page List</h2>
+			<table cellpadding="0" cellspacing="1" width="100%">
+	 			<tr class="title" valign="top">
+	  				<td width="235" class="title">Page Name</td>
+	  				<td width="235" class="title">Page Key</td>
+	  				<td width="80" class="title">Main Menu</td>
+	  				<td width="80" class="title">Visible</td>
+	  				<td width="80" class="title">Subpages</td>
+	  				<td width="80" class="title">Edit</td>
+	  				<td width="80" class="title">Delete</td>
+	 			</tr>
+<!-- BEGIN pages -->
+	 			<tr valign="top">
+	  				<td>&nbsp;&nbsp;{pages.PAGE_NAME}</td>
+	  				<td>&nbsp;&nbsp;{pages.PAGE_KEY}</td>
+	  				<td align="center">{pages.PAGE_MAIN}</td>
+	  				<td align="center">{pages.PAGE_VISIBLE}</td>
+	  				<td align="center"><a href="pages.php?mod=subpages&id={pages.PAGE_ID}" alt="view subpages" title="view subpages"><div id="small_sub"></div></a></td>
+	  				<td align="center"><a href="pages.php?mod=edit&id={pages.PAGE_ID}" alt="edit page" title="edit page"><div id="small_edit"></div></a></td>
+	  				<td align="center"><a href="pages.php?mod=delete&id={pages.PAGE_ID}" alt="delete page" title="delete page" onclick= "return (window.confirm('Are you sure to delete this page?'))"><div id="small_delete"></div></a></td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="7">
+						<hr class="bottom">
+					</td>
+	 			</tr>
+<!-- END pages -->
+	 			<tr>
+					<td colspan="7">
+						{NPAGELIST}
+					</td>
+	 			</tr>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+	<div id="page_title">
+		Users
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">
+			<h2>Payout Requests</h2>
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">	  	   	  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="50" class="title" align="center">ID</td>
+								<td width="130" class="title" align="center">Username</td>
+								<td width="230" class="title" align="center">Email</td>
+								<td width="90" class="title" align="center">Available</td>
+								<td width="70" class="title" align="center">Amount</td>
+								<td width="100" class="title" align="center">Method</td>
+								<td width="90" class="title" align="center">Date</td>
+								<td width="60" class="title" align="center">Payout</td>
+								<td width="60" class="title" align="center">Delete</td>
+							</tr>
+
+<!-- BEGIN user -->
+							<tr bgcolor="#ffffff">
+								<td align="center">{user.ID}</td>
+								<td align="center">{user.NAME}</td>
+								<td align="center">{user.EMAIL}</td>
+								<td align="center">{CURRENCY}{user.BALANCE}</td>
+								<td align="center">{CURRENCY}{user.AMOUNT}</td>
+								<td align="center">{user.METHOD}</td>
+								<td align="center">{user.DATE}</td>
+								<td align="center"><a href="users.php?mod=payout&id={user.ID}&user={user.NAME}&sid={user.SID}&method={user.METHOD}&balance={user.BALANCE}&amount={user.AMOUNT}&w_date={user.DATE}&pay=yes" alt="payout" title="payout" onclick= "return (window.confirm('Are you want to make payout to this member ?'))"><div id="small_payout"></div></a></td>
+								<td align="center"><a href="users.php?mod=payout&id={user.ID}&delete=yes" alt="delete request" title="delete request" onclick= "return (window.confirm('Are you sure to delete this member request?'))"><div id="small_delete"></div></a></td>
+							</tr>
+	 						<tr>
+								<td colspan="10">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END user -->
+						</table>
+					</td>
+      				</tr>		  	   
+			</table>	
+			</div>
+		</div>
+	</div>

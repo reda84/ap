@@ -1,0 +1,72 @@
+<!-- BEGIN error -->
+	{error.ERROR}
+<!-- END error -->
+
+  
+       <div class="row">
+           <div class="span12">
+
+                <div class="gStartTitle">
+                    {TITLE}<!--Support-->
+                </div>
+
+           </div>
+       </div>
+
+            
+        <div class="span9 support-wrapper">
+          <div id="support">
+          <div class="span2 support-img"><img src="{TEMPLATE_DIR}/ap/images/icon-support.png"></div>
+          <div class="span7 support-data">
+          <div class="sup-head">Support Hours</div>
+          <div class="sup-content">Our support is open 7 days a week. Support tickets will generally be answered within 24 hours, complex issues may take longer.</div>
+          </div>
+          </div>
+        </div>        
+       
+
+
+<div class="span9 support-ticket">
+		<div id="support-ticket">Support ticket</div>
+
+
+					<div class="span9 ticket-row text-center">
+					{ERROR}
+					</div>
+<form action="support.php" method="post">
+
+					<div class="span9 ticket-row text-center">
+					{ERROR}
+					</div>
+
+					<div class="span9 ticket-row">
+					<div class="span2 text-right ticket">Username</div>
+					<div class="span6"><input type="text" class="span6" name="user" value="{USER}" /></div>
+					</div>
+
+					<div class="span9 ticket-row">
+					<div class="span2 text-right">Email</div>
+					<div class="span6"><input type="text" class="span6" name="email" value="{EMAIL}" /></div>
+					</div>
+
+					<div class="span9 ticket-row">
+					<div class="span2 text-right">User Issue</div>
+					<div class="span6"><input type="text" class="span6" name="issue" value="{ISSUE}" /></div>
+					</div>
+
+					<div class="span9 ticket-row">
+					<div class="span2 text-right">How can we help you?</div>
+					<div class="span6"><textarea class="span6" id="ticket-textarea" name="question" value="{QUESTION}" ></textarea></div>
+					</div>
+
+					<div class="span9 ticket-btn text-right">
+					<input type="hidden" name="ref" id="ref" value="{REF}">
+					<input type="submit" id="btn_submt" name="send" value="Send" class="btn btn-danger ticket">
+					</div>
+</form>
+
+
+        </div>
+
+<div class="clearfix"></div>
+<br><br><br> 

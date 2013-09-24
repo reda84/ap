@@ -1,0 +1,98 @@
+	<div id="content_wrapper0">
+		<div id="content_wrapper3">
+			<div id="form_0">
+				<div id="sprite1">
+						<ul class="top_acc_menu">
+							<li class="top_acc_menu"><a href="author_dashboard" class="blue3">Author Dashboard</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="user-{USERNAME}" class="blue3">Profile</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="edit" class="blue3">My Settings</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="downloads" class="blue3">Downloads</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="invoices" class="blue3">History</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="earnings" class="blue3">Earnings</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="withdraw" class="blue3">Withdraw</a></li>
+							<li class="top_acc_menu"><hr class="vert4"></li>
+							<li class="top_acc_menu"><a href="statement" class="blue3">Statement</a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="table_form3">
+					<ul>
+						<li style="margin-top: 32px;">
+							<form method='post' action='statement'>
+								<input type='hidden' name='month' value='{S_MONTH}'>
+								<input type='submit' id="left_normal_arrow" name='back' value=''>
+							</form>
+						</li>
+						<li>
+							<h2 class="b28">Statement for {S_MONTH_NAME} {S_YEAR}</h2>
+						</li>
+						<li style="margin-left: 20px;margin-top: 32px;">
+							<form method='post' action='statement'>
+								<input type='hidden' name='month' value='{S_MONTH}'>
+								<input type='submit' id="right_normal_arrow" name='next' value=''>
+							</form>
+						</li>
+					</ul>
+				</div>
+					<div id="content_wrapper">
+							<div id="sprite">
+								<table class="reg_general_table" cellspacing="0" cellpadding="4"> 
+									<thead class="reg_general_thead"> 
+										<tr> 
+											<td>DATE</td> 
+											<td>TYPE</td> 
+											<td>AMOUNT</td> 
+											<td>DETAIL</td> 
+										</tr> 
+									</thead> 
+									<tbody>
+<!-- BEGIN stats --> 
+    										<tr class="reg_general_tbody">
+    											<td class="reg_general_tbody">{stats.DATE}</td> 
+    											<td class="reg_general_tbody">{stats.TYPE}</td>
+    											<td class="reg_general_tbody">{CURRENCY} {stats.AMOUNT}</td> 
+    											<td class="reg_general_tbody">{stats.DETAIL}</td>
+    										</tr>
+<!-- END stats -->
+									</tbody> 
+								</table> 
+							</div>
+					</div>
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<div id="sprite5"></div>
+				<div id="right_wrapper">
+					<div id="form_r_gray" class="up">
+						<div id="right_hd2">
+							<div id="sprite">
+								Download a CSV File
+							</div>
+						</div>
+						<div id="sprite">
+							<h4 class="gr12">
+								<p>This is a full statement of activity that has altered your account balance. It lists all your items sales, purchases, deposits, withdrawals, exclusive author program enrollment and un-enrollment, referral program earnings, etc.</p>
+								<p>You can <a href="export.php" class="blue3"><b>download your statement in CSV format</b></a>, open it in a spreadsheet and perform your own calculations, graphing, etc.</p>
+							</h4>
+						</div>
+					</div>
+					<div id="examine_img"></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

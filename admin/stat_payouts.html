@@ -1,0 +1,100 @@
+	<div id="page_title">
+		Payout Statistic
+	</div>
+	<div id="middle_content">
+		<div id="content_area">
+    			<table cellpadding="0" cellspacing="4" border="0" width="100%">
+				<tr>
+					<td>
+						<div id="cat_top_nav">
+							<div id="table_form3">
+								<ul>
+									<li style="width: 20%;">
+										<b>Order Payout Stat By :</b>
+									</li>
+									<li style="width: 50%;">
+										<form action="statistic.php?mod=payouts" method="get">
+											<input type="hidden" name="mod" value="payouts">
+    											<select class="sort_form_small" id="sort_by" name="order" onchange="this.form.submit()">
+												<option value="id" {SELECT1}>Default</option>
+												<option value="username" {SELECT2}>Username</option>
+												<option value="request_date" {SELECT3}>Request Date</option>
+												<option value="payout_date" {SELECT4}>Payout Date</option>
+												<option value="payout_id" {SELECT5}>Payout ID</option>
+												<option value="amount" {SELECT6}>Amount</option>
+											</select>
+										</form>
+									</li>
+									<li style="width: 30%;">
+										<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} PAYOUTS</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</td>
+      				</tr>	  	   		  	   
+	 			<tr>
+					<td>
+						<table cellpadding="0" cellspacing="1" border="0" width="100%" align="left">
+							<tr class="title" valign="top">
+								<td width="50" class="title" align="center">ID</td>
+								<td width="160" class="title" align="center">Username</td>
+								<td width="120" class="title" align="center">Method</td>
+								<td width="100" class="title" align="center">Balance</td>
+								<td width="100" class="title" align="center">Amount</td>
+								<td width="100" class="title" align="center">Request Date</td>
+								<td width="100" class="title" align="center">Payout Date</td>
+								<td width="50" class="title" align="center">Invoice</td>
+							</tr>
+
+<!-- BEGIN payout -->
+							<tr bgcolor="#ffffff">
+								<td align="center">{payout.ID}</td>
+								<td align="center">{payout.USER}</td>
+								<td align="center">{payout.METHOD}</td>
+								<td align="center">{CURRENCY}{payout.BALANCE}</td>
+								<td align="center">- {CURRENCY}{payout.AMOUNT}</td>
+								<td align="center">{payout.REQ_DATE}</td>
+								<td align="center">{payout.PAY_DATE}</td>
+								<td align="center">
+									<form name="tag3" method="post" action="../pdf/ex.php">
+										<input name="c_name" type="hidden" value="{payout.C_NAME}">
+										<input name="c_address" type="hidden" value="{payout.C_ADDRESS}">
+										<input name="c_city" type="hidden" value="{payout.C_CITY}">
+										<input name="c_country" type="hidden" value="{payout.C_COUNTRY}">
+										<input name="c_post" type="hidden" value="{payout.C_POST}">
+										<input name="c_phone" type="hidden" value="{payout.C_PHONE}">
+										<input name="c_fax" type="hidden" value="{payout.C_FAX}">
+										<input name="userid" type="hidden" value="{payout.USER_ID}">	
+										<input name="username" type="hidden" value="{payout.USER}">
+										<input name="firstname" type="hidden" value="{payout.USER_FIRSTNAME}">
+										<input name="lastname" type="hidden" value="{payout.USER_LASTNAME}">
+										<input name="city" type="hidden" value="{payout.USER_CITY}">
+										<input name="country" type="hidden" value="{payout.USER_COUNTRY}">
+										<input name="email" type="hidden" value="{payout.USER_EMAIL}">	
+										<input name="company" type="hidden" value="{payout.USER_COMPANY}">					
+										<input name="id" type="hidden" value="{payout.ID}">
+										<input name="description" type="hidden" value="Payout-{payout.METHOD}">
+										<input name="price" type="hidden" value="{payout.AMOUNT}">
+										<input name="total" type="hidden" value="{payout.AMOUNT}">
+										<a href="../pdf/ex.php" class="black03" onclick="document.forms['tag3'].submit();return false;" alt="create PDF" title="create PDF"><div id="small_pdf"></div></a>
+									</form>
+								</td>
+							</tr>
+	 						<tr>
+								<td colspan="10">
+									<hr class="bottom">
+								</td>
+	 						</tr>
+<!-- END payout -->
+						</table>
+					</td>
+      				</tr>
+	 			<tr>
+					<td align="center">
+						{NPAGELIST}
+					</td>
+	 			</tr>		  	   
+			</table>	
+		</div>
+	</div>

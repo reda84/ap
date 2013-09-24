@@ -1,0 +1,70 @@
+<script>
+			var childWindow = null;
+
+			function MM_openBrWindow(theURL,winName,features) {
+			 if (childWindow)
+			  {
+			   if (childWindow.close) childWindow.close();
+			  }
+			  childWindow = window.open(theURL,winName,features);
+			}
+		</script>
+<table cellpadding="0" cellspacing="2" border="0" width="809" align="center"  bgcolor="#c5c5c5">
+<tr valign="top">
+  <td align="left">   
+    <table cellpadding="0" cellspacing="5" border="0" width="100%" align="left" bgcolor="#F5F5F5">
+	 <tr>
+	   <td class="error">{INFORM}</td>
+      </tr>		  	   
+	 <tr>
+		<td>
+		  <form action="affiliates.php" method="post">
+			<table cellpadding="1" cellspacing="1" border="0" width="100%" align="left">
+				<tr>
+					<td>User Name&nbsp;<input type="text" size="30" name="username"> &nbsp;<input type="submit" name="search" value="Quick search"></td>
+				</tr>
+			</table>
+		  </form>
+		</td>
+      </tr>		  	   
+	  <tr>
+	   <td class="style7"><hr size="1" color="#666666"><h4>User Affiliates</h4></td>
+	  </tr>
+	 <tr>
+		<td>
+		  <table cellpadding="1" cellspacing="1" border="0" width="100%" align="left">
+			<tr class="tableheader">
+				<td width="10">&nbsp;</td>
+				<td align="center">Member</td>
+				<td align="center">Balance</td>
+				<td align="center">Clicks</td>
+				<td align="center">Referral</td>
+				<td align="center">Commission</td>
+				<td align="center">Deposite</td>
+			</tr>
+			{NODATA}
+			<!-- BEGIN user -->
+			<tr bgcolor="#ffffff">
+				<td>{user.STT}&nbsp;</td>
+				<td>{user.PROMEMBER}{user.USERNAME}</td>
+				<td align="center">{user.BALANCE}</td>
+				<td align="center">{user.CLICKS}</td>
+				<td align="center">{user.REFERRAL}</td>
+				<td align="center">{user.COMMISSION}</td>
+				<td align="center">
+					<form action="affiliates.php" method="post" name="thisform">
+						<input type="text" name="deposite" value="{DEPOSITE}" rows=10>
+						<input name="btndeposite" type="submit" value="Update">
+						<input type="hidden" name="id" value="{user.USERID}">
+					 </form>
+					</td>
+				</tr>
+			 <!-- END user -->
+			</table>
+		</td>
+      </tr>		  	   
+	  <tr><td class='error'>* is promember</td></tr>
+	</table>	
+  </td>
+ </tr>
+</table>

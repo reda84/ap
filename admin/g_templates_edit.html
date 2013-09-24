@@ -1,0 +1,70 @@
+	<div id="page_title">
+		Site Configuration
+	</div>
+
+	<div id="middle_content">
+		<div id="content_area">
+			<div id="scroll_field">  
+			<h2>Edit Template Files</h2>
+			<div style="float:right;margin: -30px 22px 0 0;">
+<!-- BEGIN info -->
+					<b style="color: green;">{info.INFO}</b>
+<!-- END info -->
+			</div>
+			<div style="float:right;margin: -14px 14px 0 0;">
+				<form action="" onsubmit="return false;"> 
+					<input type="button" value="Click here to edit file with name:      {TITLE}" onClick="popup_show('popup', 'popup_drag', 'popup_exit', 0, 0);" />
+				</form>
+			</div>
+    			<table cellpadding="0" cellspacing="1" border="0" width="100%">	  	   
+	 			<tr class="title" valign="top">
+	  				<td width="50" class="title">#</td>
+	  				<td width="620" class="title">Template File Name</td>
+	  				<td width="100" class="title">Select File</td>
+	 			</tr>
+<!-- BEGIN files -->
+	 			<tr valign="top">
+	  				<td align="center">{files.NUM}</td> 
+	  				<td>&nbsp;&nbsp;{files.FILES}</td>
+	  				<td align="center">
+						<form action="" onsubmit="return false;"> 
+							<input type="button" class="button" onClick="window.location='http://{files.URL}/managers/general.php?mod=templates&id={files.T_ID}&name={files.T_DIR}&file={files.FILES}';"/>
+						</form>
+					</td>
+	 			</tr>	
+	 			<tr>
+					<td colspan="3">
+						<hr class="bottom"> 
+					</td>
+	 			</tr>
+<!-- END files -->
+			</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<div class="sample_popup" id="popup" style="display: none;">
+	<div class="menu_form_header" id="popup_drag""> 
+		<form action="" method="post">
+		<img class="menu_form_exit" id="popup_exit" style="float: right; margin: -12px 4px 0 0;" src="{TEMPLATE_DIR}/popup/form_exit.png" title="close window" alt="close window" />
+		<input type="submit" class="save" name="saved" value="Save" /> 
+		<div class="menu_form_text">{TITLE}</div>
+	</div>
+	<div class="menu_form_body">
+		<textarea name="write" cols="154" rows="36">
+<!-- BEGIN txt -->
+			{txt.TEXT}
+<!-- END txt -->
+		</textarea>
+		</form>
+	</div> 
+</div>
+</form>
+
+

@@ -1,0 +1,116 @@
+	<table width="984" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<div id="table_form4">
+					<ul>
+						<li style="width: 10%;">
+							Order by:
+						</li>
+						<li style="width: 25%;">
+							<form action=" " method="get">
+    								<select class="sort_form_small" id="sort_by" name="order" onchange="this.form.submit()">
+									<option value="id" {SELECT1}>Default</option>
+									<option value="date" {SELECT2}>Date</option>
+									<option value="title" {SELECT3}>Title</option>
+								</select>
+    								<input type="submit" class="sort" alt="sort_by" title="sort_by" value="">
+							</form>
+						</li>
+						<li style="width: 45%;">
+							{NPAGELIST}
+						</li>
+						<li style="width: 20%;">
+							<div style="float:right; margin-right:25px;">{FROM} - {TO} OF {OF} COLLECTIONS</div>
+						</li>
+					</ul>
+				</div>
+				<div class="txt_white" align="center">{ERROR}</div>
+				<div id="content_wrapper2">
+					<div id="form_1">
+<!-- BEGIN collection_public -->
+							<div id="table_form3">
+								<ul>
+									<li style="width: 37%;">
+										<a href="{collection_public.BOOK_ID}-{collection_public.BOOK_TITLE}-order-id-page-0">
+											<img src="{collection_public.BOOK_IMAGE}" border="0" width="260" height="140" alt="{collection_public.BOOK_TITLE2}" title="{collection_public.BOOK_TITLE2}">
+										</a>
+									</li>
+									<li style="width: 44%;">
+										<a href="{collection_public.BOOK_ID}-{collection_public.BOOK_TITLE}-order-id-page-0" class="underline">{collection_public.BOOK_TITLE2}</a>
+										<form name="user" action="user-{collection_public.BOOK_USERNAME}" method="post">
+											<input type="hidden" name="username_q" value="{collection_public.BOOK_USERNAME}">
+											by<input type="submit" class="form_user" name="user" value="{collection_public.BOOK_USERNAME}">
+										</form>
+										<h4 class="b12">{collection_public.BOOK_COMMENT}</h2>
+									</li>
+									<li style="width: 2%;">
+									</li>
+									<li style="width: 15%;display: table-cell;text-align: center;margin: -4px 0 0 -6px;">
+										<h3 class="b14"><b>{collection_public.BOOK_COUNT} Items</b></h3>
+										<h4 class="b16"><b>{collection_public.STAR_RATE}</b></h4>
+										<span>{collection_public.COUNT_RATE} RATINGS</span>
+									</li>
+									<li style="width: 2%;">
+									</li>
+								</ul>
+							</div>
+							<div id="sprite2">
+							</div>
+							<hr class="gray">	
+<!-- END collection_public -->
+							<div id="sprite">{NPAGELIST}</div><br>
+  
+					</div>
+				</div>	   			
+			</td>
+
+			<td width="20">
+			</td>
+
+			<td valign="top">
+				<div id="right_wrapper2">
+					<div id="form_r_gray">
+						<div id="right_hd">
+							What are Collections?
+						</div>
+						<div id="sprite">
+							<h4 class="gr12">
+								<p>Collections are groups of items compiled by different users on a theme.</p>
+								<p>They can be set to Private for personal use, or Public so that they appear on this page and on a user's homepage.</p> 
+							</h4>
+						</div>
+					</div>
+					<br>
+					<div id="form_r_gray">
+						<div id="sprite">
+							<p>
+								<form name="searchfrm" action="" method="get">
+    									<input type="text" name="keyword" class="search_form_small" onclick="if(this.value=='Search Collection'){this.value=''}" value="Search Collection">
+    									<input type="submit" class="search_btn" alt="search" title="search" value="">
+ 								</form>
+								<br>
+							</p>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+<script type="text/javascript" src="{TEMPLATE_DIR}/js/zoomer.js"></script>
+
+
+<!--
+									<li style="width: 15%; margin-top: -15px;">
+										<center>
+											<h3 class="b14"><b>{collection_public.BOOK_COUNT} Items</b></h3>
+											<div id="sprite">
+												<br>
+											</div>
+											<div id="sprite2">
+												{collection_public.STAR_RATE} <br>
+												{collection_public.COUNT_RATE} RATINGS
+											</div>
+										</center>
+									</li>
+-->
